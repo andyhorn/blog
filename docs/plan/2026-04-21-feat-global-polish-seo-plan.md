@@ -2,6 +2,8 @@
 
 **Type:** Enhancement  
 **Date:** 2026-04-21  
+**Status:** Complete  
+**Completed:** 2026-04-21  
 **Complexity:** Standard  
 **Phase:** 1 of 3  
 **Parent plan:** `docs/plan/2026-04-20-feat-personal-portfolio-blog-plan.md` (original Phase 5)  
@@ -296,29 +298,30 @@ Current values to replace:
 
 ## Files to Create
 
-- [ ] `lib/components/site_footer.dart` — shared site footer consumed by all page layouts
-- [ ] `lib/utils/tag_colors.dart` — `tagColor(String tag)` and `tagBgColor(String tag)` helpers
-- [ ] `web/404.html` — branded dark-theme 404 page
+- [x] `lib/components/site_footer.dart` — shared site footer consumed by all page layouts
+- [x] `lib/utils/tag_colors.dart` — `tagColor(String tag)` and `tagBgColor(String tag)` helpers
+- [x] `web/404.html` — branded dark-theme 404 page
 
 ## Files to Modify
 
-- [ ] `lib/constants/theme.dart` — full replacement with dark design system tokens
-- [ ] `lib/main.server.dart` — title, fonts, global meta, JSON-LD Person schema
-- [ ] `web/manifest.json` — name, short_name, description, theme_color, background_color
+- [x] `lib/constants/theme.dart` — full replacement with dark design system tokens
+- [x] `lib/main.server.dart` — title, fonts, global meta, JSON-LD Person schema
+- [x] `web/manifest.json` — name, short_name, description, theme_color, background_color
+- [x] `lib/components/counter.dart` — replaced stale `primaryColor` reference with `accentPurple`
 
 ---
 
 ## Acceptance Criteria
 
-- [ ] `lib/constants/theme.dart` exports all color, typography, spacing, and breakpoint constants
-- [ ] Global base styles in `theme.dart` remove the old Roboto import and set `bgBase` as body background
-- [ ] `lib/main.server.dart` uses `title: 'Andy Horn'`, imports Geist/Inter/Geist Mono fonts, has global `meta` defaults and JSON-LD Person schema
-- [ ] All pages have global fallback `<meta name="description">`, OG tags, and twitter card defaults in `<head>`
-- [ ] `web/404.html` exists with dark theme styling, `// 404` badge, and `← Back to Home` link
-- [ ] `web/manifest.json` has `name: "Andy Horn"`, `theme_color: "#A855F7"`, `background_color: "#0A0A0A"`
-- [ ] `lib/components/site_footer.dart` exists and renders the dark footer bar
-- [ ] `lib/utils/tag_colors.dart` exports `tagColor` and `tagBgColor` using theme constants
-- [ ] `jaspr build` produces a complete static site with no errors
+- [x] `lib/constants/theme.dart` exports all color, typography, spacing, and breakpoint constants
+- [x] Global base styles in `theme.dart` remove the old Roboto import and set `bgBase` as body background
+- [x] `lib/main.server.dart` uses `title: 'Andy Horn'`, imports Geist/Inter/Geist Mono fonts, has global `meta` defaults and JSON-LD Person schema
+- [x] All pages have global fallback `<meta name="description">`, OG tags, and twitter card defaults in `<head>`
+- [x] `web/404.html` exists with dark theme styling, `// 404` badge, and `← Back to Home` link
+- [x] `web/manifest.json` has `name: "Andy Horn"`, `theme_color: "#A855F7"`, `background_color: "#0A0A0A"`
+- [x] `lib/components/site_footer.dart` exists and renders the dark footer bar
+- [x] `lib/utils/tag_colors.dart` exports `tagColor` and `tagBgColor` using theme constants
+- [x] `jaspr build` produces a complete static site with no errors
 
 ---
 

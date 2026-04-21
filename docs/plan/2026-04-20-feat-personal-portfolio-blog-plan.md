@@ -270,17 +270,17 @@ Document.head(
 
 ---
 
-### Phase 5 — Global Polish
+### Phase 5 — Global Polish ✓
 
-- [ ] Update `lib/constants/theme.dart` — add typography scale, spacing tokens
-- [ ] Add responsive CSS breakpoints (mobile-first) in `app.dart` or a new `lib/constants/breakpoints.dart`
-- [ ] Update `lib/main.server.dart`:
-  - Change `title: 'blog'` to `title: 'Your Name'`
-  - Add global meta defaults (`og:image`, `twitter:site`)
-  - Add `Person` JSON-LD schema
-- [ ] Create `web/404.html` — branded 404 page with link back to `/`
-- [ ] Update `web/manifest.json` — replace placeholder `name`, `short_name`, `theme_color`
-- [ ] Update `README.md`
+> **Superseded by:** `docs/plan/2026-04-21-feat-global-polish-seo-plan.md` (completed 2026-04-21)
+
+- [x] Update `lib/constants/theme.dart` — full dark design system tokens (colors, typography, spacing, breakpoints)
+- [x] Add responsive CSS breakpoints in `lib/constants/theme.dart`
+- [x] Update `lib/main.server.dart` — title, fonts, global meta, OG tags, JSON-LD Person schema
+- [x] Create `web/404.html` — branded dark-theme 404 page
+- [x] Update `web/manifest.json` — name, short_name, description, theme_color, background_color
+- [x] Create `lib/components/site_footer.dart` — shared site footer
+- [x] Create `lib/utils/tag_colors.dart` — tag color helpers
 
 ---
 
