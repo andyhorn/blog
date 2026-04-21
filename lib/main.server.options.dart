@@ -8,7 +8,6 @@ import 'package:jaspr/server.dart';
 import 'package:blog/components/counter.dart' as _counter;
 import 'package:blog/components/header.dart' as _header;
 import 'package:blog/constants/theme.dart' as _theme;
-import 'package:blog/pages/about.dart' as _about;
 import 'package:blog/pages/home.dart' as _home;
 import 'package:blog/app.dart' as _app;
 
@@ -30,15 +29,11 @@ import 'package:blog/app.dart' as _app;
 /// ```
 ServerOptions get defaultServerOptions => ServerOptions(
   clientId: 'main.client.dart.js',
-  clients: {
-    _about.About: ClientTarget<_about.About>('about'),
-    _home.Home: ClientTarget<_home.Home>('home'),
-  },
+  clients: {_home.Home: ClientTarget<_home.Home>('home')},
   styles: () => [
     ..._theme.styles,
     ..._app.App.styles,
     ..._counter.CounterState.styles,
     ..._header.Header.styles,
-    ..._about.About.styles,
   ],
 );

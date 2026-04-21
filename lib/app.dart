@@ -3,27 +3,39 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
 import 'components/header.dart';
-import 'pages/about.dart';
+import 'generated/post_routes.dart';
+import 'pages/blog/blog_list.dart';
+import 'pages/blog/blog_post.dart';
 import 'pages/home.dart';
+import 'services/post_service.dart';
 
-// The main component of your application.
-//
-// By using multi-page routing, this component will only be built on the server during pre-rendering and
-// **not** executed on the client. Instead only the nested [Home] and [About] components will be mounted on the client.
 class App extends StatelessComponent {
   const App({super.key});
 
   @override
   Component build(BuildContext context) {
-    // This method is rerun every time the component is rebuilt.
-    
-    // Renders a <div class="main"> html element with children.
+    final posts = loadAllPosts();
+
     return div(classes: 'main', [
       const Header(),
-      Router(routes: [
-        Route(path: '/', title: 'Home', builder: (context, state) => const Home()),
-        Route(path: '/about', title: 'About', builder: (context, state) => const About()),
-      ]),
+      Router(
+        routes: [
+          Route(path: '/', title: 'Home', builder: (context, state) => const Home()),
+          Route(
+            path: '/blog',
+            title: 'Blog',
+            builder: (context, state) => BlogListPage(posts: posts),
+          ),
+          for (final slug in postSlugs)
+            Route(
+              path: '/blog/$slug',
+              title: posts.firstWhere((post) => post.meta.slug == slug).meta.title,
+              builder: (context, state) => BlogPostPage(
+                post: posts.firstWhere((post) => post.meta.slug == slug),
+              ),
+            ),
+        ],
+      ),
     ]);
   }
 

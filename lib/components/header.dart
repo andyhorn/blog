@@ -9,19 +9,23 @@ class Header extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    var activePath = context.url;
+    final activePath = context.url;
 
     return header([
       nav([
-        for (var route in [
-          (label: 'Home', path: '/'),
-          (label: 'About', path: '/about'),
-        ])
-          div(classes: activePath == route.path ? 'active' : null, [
-            Link(to: route.path, child: .text(route.label)),
-          ]),
+        _navItem(activePath, 'Home', '/'),
+        _navItem(activePath, 'Blog', '/blog'),
       ]),
     ]);
+  }
+
+  Component _navItem(String activePath, String label, String path) {
+    final isActive = path == '/' ? activePath == path : activePath.startsWith(path);
+    return div(
+      classes: isActive ? 'active' : null,
+      attributes: isActive ? {'aria-current': 'page'} : {},
+      [Link(to: path, child: .text(label))],
+    );
   }
 
   @css
@@ -36,7 +40,7 @@ class Header extends StatelessComponent {
         css('&').styles(
           display: .flex,
           height: 3.em,
-          radius: .all(.circular(10.px)), 
+          radius: .all(.circular(10.px)),
           overflow: .clip,
           justifyContent: .spaceBetween,
           backgroundColor: primaryColor,
@@ -65,7 +69,7 @@ class Header extends StatelessComponent {
             radius: .circular(1.px),
             backgroundColor: Colors.white,
           ),
-        ])
+        ]),
       ]),
     ]),
   ];
