@@ -31,7 +31,7 @@ ServerOptions get defaultServerOptions => ServerOptions(
   clientId: 'main.client.dart.js',
   clients: {_home.Home: ClientTarget<_home.Home>('home')},
   styles: () => [
-    ..._theme.styles,
+    ..._theme.globalStyles,
     ..._app.App.styles,
     ..._counter.CounterState.styles,
     ..._header.Header.styles,
