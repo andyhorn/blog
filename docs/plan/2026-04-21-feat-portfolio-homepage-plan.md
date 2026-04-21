@@ -8,6 +8,9 @@
 **Depends on:** data layer & routing (complete); Phase 1 for `SiteFooter` and `lib/utils/tag_colors.dart` (build Phase 1 shared-chrome tasks first)  
 **Independent of:** `feat-blog-pages-content-plan.md`
 
+> **Status: ✅ Complete — 2026-04-21**  
+> 4 commits on `main`: `5891e2d`, `1de3af2`, `0712160`, `50978d7`. All 14 acceptance criteria pass. `dart analyze` clean, `jaspr build` succeeds. Notable deviations from plan: `SiteFooter` moved to `app.dart` (shared chrome for all pages); `Document.head` used without `child:` param (Jaspr API); font family constants added to `theme.dart` to eliminate duplication flagged in review.
+
 > **Note:** This plan supersedes the original Phase 3 plan after the `design.pen` design review. The homepage is 10 sections (not 5), uses a dark purple design system, and requires data model amendments (see below) before any component work begins.
 
 ---
@@ -119,31 +122,31 @@ const packages = [
 
 ## Files to Create
 
-- [ ] `lib/models/app.dart` — `App` data class
-- [ ] `lib/models/package.dart` — `Package` data class
-- [ ] `lib/data/apps.dart` — `apps` const list (4 entries)
-- [ ] `lib/data/packages.dart` — `packages` const list (3 entries)
-- [ ] `lib/components/hero_section.dart`
-- [ ] `lib/components/bridge_section.dart` — decorative code snippet card (static)
-- [ ] `lib/components/stats_strip.dart`
-- [ ] `lib/components/about_section.dart`
-- [ ] `lib/components/apps_section.dart`
-- [ ] `lib/components/app_card.dart` — renders a single `App`
-- [ ] `lib/components/packages_section.dart`
-- [ ] `lib/components/package_card.dart` — renders a single `Package`
-- [ ] `lib/components/blog_preview_section.dart` — receives `List<Post>`, renders 3-col grid
-- [ ] `lib/components/blog_preview_card.dart` — renders a single post preview card
-- [ ] `lib/components/contact_section.dart`
+- [x] `lib/models/app.dart` — `App` data class
+- [x] `lib/models/package.dart` — `Package` data class
+- [x] `lib/data/apps.dart` — `apps` const list (4 entries)
+- [x] `lib/data/packages.dart` — `packages` const list (3 entries)
+- [x] `lib/components/hero_section.dart`
+- [x] `lib/components/bridge_section.dart` — decorative code snippet card (static)
+- [x] `lib/components/stats_strip.dart`
+- [x] `lib/components/about_section.dart`
+- [x] `lib/components/apps_section.dart`
+- [x] `lib/components/app_card.dart` — renders a single `App`
+- [x] `lib/components/packages_section.dart`
+- [x] `lib/components/package_card.dart` — renders a single `Package`
+- [x] `lib/components/blog_preview_section.dart` — receives `List<Post>`, renders 3-col grid
+- [x] `lib/components/blog_preview_card.dart` — renders a single post preview card
+- [x] `lib/components/contact_section.dart`
 
 ## Files to Modify
 
-- [ ] `lib/components/header.dart` — full rewrite to match design nav (see sketch below)
-- [ ] `lib/pages/home.dart` — full rewrite (see sketch below)
-- [ ] `lib/app.dart` — pass `posts.take(3).toList()` to `Home` for blog preview section
+- [x] `lib/components/header.dart` — full rewrite to match design nav (see sketch below)
+- [x] `lib/pages/home.dart` — full rewrite (see sketch below)
+- [x] `lib/app.dart` — pass `posts.take(3).toList()` to `Home` for blog preview section
 
 ## Files to Delete
 
-- [ ] `lib/pages/about.dart` — route was removed in the routing phase; now dead code
+- [x] `lib/pages/about.dart` — route was removed in the routing phase; now dead code
 
 ---
 
@@ -377,20 +380,20 @@ script(
 
 ## Acceptance Criteria
 
-- [ ] Model amendments: `lib/models/app.dart`, `lib/models/package.dart`, `lib/data/apps.dart`, `lib/data/packages.dart` exist and compile
-- [ ] `/` renders all 10 sections: Nav, Hero, Bridge, Stats, About, Apps, Packages, Blog Preview, Contact, Footer
-- [ ] Nav: logo left "andyhorn.dev", 4 links center, "Get in touch" pill CTA right; active Blog link turns purple fw600
-- [ ] Hero: purple background, correct title copy, two CTA buttons with correct `href` targets
-- [ ] Stats strip: 4 stats with correct values/labels
-- [ ] About section: 2-col layout, skill pills, experience card on right
-- [ ] Apps section: 4 cards with per-app badge colors
-- [ ] Packages section: 3 cards with icon, stars, version, pub.dev link
-- [ ] Blog Preview: 3 most recent posts with tag-color pills; "All posts →" links to `/blog`
-- [ ] Contact: LinkedIn CTA, secondary social links
-- [ ] Footer: copyright left, links right
-- [ ] `home.dart` has no `@client` annotation or `Counter` import
-- [ ] `lib/pages/about.dart` is deleted
-- [ ] `jaspr build` completes without errors
+- [x] Model amendments: `lib/models/app.dart`, `lib/models/package.dart`, `lib/data/apps.dart`, `lib/data/packages.dart` exist and compile
+- [x] `/` renders all 10 sections: Nav, Hero, Bridge, Stats, About, Apps, Packages, Blog Preview, Contact, Footer
+- [x] Nav: logo left "andyhorn.dev", 4 links center, "Get in touch" pill CTA right; active Blog link turns purple fw600
+- [x] Hero: purple background, correct title copy, two CTA buttons with correct `href` targets
+- [x] Stats strip: 4 stats with correct values/labels
+- [x] About section: 2-col layout, skill pills, experience card on right
+- [x] Apps section: 4 cards with per-app badge colors
+- [x] Packages section: 3 cards with icon, stars, version, pub.dev link
+- [x] Blog Preview: 3 most recent posts with tag-color pills; "All posts →" links to `/blog`
+- [x] Contact: LinkedIn CTA, secondary social links
+- [x] Footer: copyright left, links right
+- [x] `home.dart` has no `@client` annotation or `Counter` import
+- [x] `lib/pages/about.dart` is deleted
+- [x] `jaspr build` completes without errors
 
 ---
 
