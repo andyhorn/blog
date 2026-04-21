@@ -1,11 +1,11 @@
 {
-    "name": "blog",
-    "short_name": "blog",
+    "name": "Andy Horn",
+    "short_name": "AH",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Jaspr project",
+    "background_color": "#0A0A0A",
+    "theme_color": "#A855F7",
+    "description": "Flutter engineer & pub.dev package author.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
