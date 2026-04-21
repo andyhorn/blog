@@ -14,36 +14,27 @@ class BridgeSection extends StatelessComponent {
         div(classes: 'bridge__pane bridge__pane--left', [
           span(classes: 'bridge__file-badge', [.text('main.dart')]),
           pre(classes: 'bridge__code', [
-            .text(
-              "import 'package:flutter/material.dart';\n"
-              "import 'package:flutter_bloc/flutter_bloc.dart';\n"
-              '\n'
-              'void main() {\n'
-              '  runApp(\n'
-              '    BlocProvider(\n'
-              '      create: (_) => AppCubit(),\n'
-              '      child: const App(),\n'
-              '    ),\n'
-              '  );\n'
-              '}',
-            ),
+            span(classes: 'bridge__code--muted', [.text('void main() {\n')]),
+            span(classes: 'bridge__code--bright', [.text('  runApp(PortfolioApp());\n')]),
+            span(classes: 'bridge__code--muted', [.text('}\n\n')]),
+            span(classes: 'bridge__code--muted', [.text('class PortfolioApp extends StatelessWidget {\n')]),
+            span(classes: 'bridge__code--bright', [.text("  final experience = '5+ years';\n")]),
+            span(classes: 'bridge__code--bright', [.text("  final platform = 'Flutter & Dart';\n")]),
+            span(classes: 'bridge__code--bright', [.text('  final pubPackages = 20;\n')]),
+            span(classes: 'bridge__code--bright', [.text('  final appsShipped = 4;\n')]),
+            span(classes: 'bridge__code--muted', [.text('}')]),
           ]),
         ]),
         // Right pane — pubspec.yaml
         div(classes: 'bridge__pane bridge__pane--right', [
           span(classes: 'bridge__file-badge', [.text('pubspec.yaml')]),
           pre(classes: 'bridge__code', [
-            .text(
-              'name: my_app\n'
-              'description: A beautiful Flutter app.\n'
-              '\n'
-              'dependencies:\n'
-              '  flutter:\n'
-              '    sdk: flutter\n'
-              '  flutter_animated_list: ^2.1.0\n'
-              '  dart_result: ^1.4.2\n'
-              '  bloc_navigator: ^3.0.1',
-            ),
+            span(classes: 'bridge__code--muted', [.text('name: andrew_portfolio\n')]),
+            span(classes: 'bridge__code--bright', [.text("sdk: '>=3.0.0 <4.0.0'\n")]),
+            span(classes: 'bridge__code--muted', [.text('\ndependencies:\n')]),
+            span(classes: 'bridge__code--bright', [.text('  flutter: sdk: flutter\n')]),
+            span(classes: 'bridge__code--bright', [.text('  bloc: ^8.1.0\n')]),
+            span(classes: 'bridge__code--bright', [.text('  go_router: ^13.0.0')]),
           ]),
         ]),
       ]),
@@ -106,6 +97,8 @@ class BridgeSection extends StatelessComponent {
           'overflow': 'auto',
         },
       ),
+      css('.bridge__code--muted').styles(color: textMuted),
+      css('.bridge__code--bright').styles(color: textPrimary),
     ]),
   ];
 }
