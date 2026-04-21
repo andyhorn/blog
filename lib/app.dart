@@ -3,6 +3,7 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
 import 'components/header.dart';
+import 'components/site_footer.dart';
 import 'generated/post_routes.dart';
 import 'pages/blog/blog_list.dart';
 import 'pages/blog/blog_post.dart';
@@ -20,7 +21,11 @@ class App extends StatelessComponent {
       const Header(),
       Router(
         routes: [
-          Route(path: '/', title: 'Home', builder: (context, state) => const Home()),
+          Route(
+            path: '/',
+            title: 'Andy Horn — Flutter Engineer & Package Author',
+            builder: (context, state) => Home(recentPosts: posts.take(3).toList()),
+          ),
           Route(
             path: '/blog',
             title: 'Blog',
@@ -36,6 +41,7 @@ class App extends StatelessComponent {
             ),
         ],
       ),
+      const SiteFooter(),
     ]);
   }
 
@@ -45,21 +51,9 @@ class App extends StatelessComponent {
   // Must be a variable or getter of type [List<StyleRule>].
   @css
   static List<StyleRule> get styles => [
-    css('.main', [
-      // The '&' refers to the parent selector of a nested style rules.
-      css('&').styles(
-        display: .flex,
-        height: 100.vh,
-        flexDirection: .column,
-        flexWrap: .wrap,
-      ),
-      css('section').styles(
-        display: .flex,
-        flexDirection: .column,
-        justifyContent: .center,
-        alignItems: .center,
-        flex: Flex(grow: 1),
-      ),
-    ]),
+    css('.main').styles(
+      display: .flex,
+      flexDirection: .column,
+    ),
   ];
 }

@@ -11,66 +11,88 @@ class Header extends StatelessComponent {
   Component build(BuildContext context) {
     final activePath = context.url;
 
-    return header([
-      nav([
-        _navItem(activePath, 'Home', '/'),
-        _navItem(activePath, 'Blog', '/blog'),
+    return header(classes: 'site-header', [
+      // Logo
+      a(href: '/', classes: 'site-header__logo', [.text('andyhorn.dev')]),
+      // Nav links
+      nav(classes: 'site-header__nav', [
+        a(href: '/#about', classes: 'site-header__link', [.text('About')]),
+        a(href: '/#apps', classes: 'site-header__link', [.text('Apps')]),
+        a(href: '/#packages', classes: 'site-header__link', [.text('Packages')]),
+        div(
+          classes: activePath.startsWith('/blog')
+              ? 'site-header__nav-item site-header__nav-item--active'
+              : 'site-header__nav-item',
+          [
+            Link(
+              to: '/blog',
+              child: span(classes: 'site-header__link', [.text('Blog')]),
+            ),
+          ],
+        ),
       ]),
+      // CTA
+      a(href: '/#contact', classes: 'site-header__cta', [.text('Get in touch')]),
     ]);
-  }
-
-  Component _navItem(String activePath, String label, String path) {
-    final isActive = path == '/' ? activePath == path : activePath.startsWith(path);
-    return div(
-      classes: isActive ? 'active' : null,
-      attributes: isActive ? {'aria-current': 'page'} : {},
-      [Link(to: path, child: .text(label))],
-    );
   }
 
   @css
   static List<StyleRule> get styles => [
-    css('header', [
+    css('.site-header', [
       css('&').styles(
         display: .flex,
-        padding: .all(1.em),
-        justifyContent: .center,
+        alignItems: .center,
+        justifyContent: .spaceBetween,
+        backgroundColor: bgBase,
+        padding: Spacing.symmetric(horizontal: Unit.pixels(120)),
+        raw: {
+          'height': '72px',
+          'border-bottom': '1px solid #1A1A1A',
+          'position': 'sticky',
+          'top': '0',
+          'z-index': '100',
+        },
       ),
-      css('nav', [
-        css('&').styles(
-          display: .flex,
-          height: 3.em,
-          radius: .all(.circular(10.px)),
-          overflow: .clip,
-          justifyContent: .spaceBetween,
-          backgroundColor: accentPurple,
+      css('.site-header__logo').styles(
+        fontFamily: fontGeist,
+        fontSize: Unit.pixels(20),
+        fontWeight: .w700,
+        color: textPrimary,
+        raw: {'text-decoration': 'none', 'letter-spacing': '-0.5px'},
+      ),
+      css('.site-header__nav').styles(
+        display: .flex,
+        alignItems: .center,
+        raw: {'gap': '40px'},
+      ),
+      css('.site-header__link').styles(
+        fontFamily: fontInter,
+        fontSize: Unit.pixels(15),
+        color: textMuted,
+        raw: {'text-decoration': 'none'},
+      ),
+      css('.site-header__link:hover').styles(color: textPrimary),
+      css('.site-header__nav-item--active .site-header__link').styles(
+        color: accentPurple,
+        fontWeight: .w600,
+      ),
+      css('.site-header__cta').styles(
+        fontFamily: fontInter,
+        fontSize: Unit.pixels(14),
+        fontWeight: .w600,
+        color: bgBase,
+        backgroundColor: accentPurple,
+        padding: Spacing.symmetric(
+          vertical: Unit.pixels(9),
+          horizontal: Unit.pixels(20),
         ),
-        css('a', [
-          css('&').styles(
-            display: .flex,
-            height: 100.percent,
-            padding: .symmetric(horizontal: 2.em),
-            alignItems: .center,
-            color: Colors.white,
-            fontWeight: .w700,
-            textDecoration: TextDecoration(line: .none),
-          ),
-          css('&:hover').styles(
-            backgroundColor: const Color('#0005'),
-          ),
-        ]),
-        css('div.active', [
-          css('&').styles(position: .relative()),
-          css('&::before').styles(
-            content: '',
-            display: .block,
-            position: .absolute(bottom: 0.5.em, left: 20.px, right: 20.px),
-            height: 2.px,
-            radius: .circular(1.px),
-            backgroundColor: Colors.white,
-          ),
-        ]),
-      ]),
+        raw: {
+          'border-radius': '9999px',
+          'text-decoration': 'none',
+          'display': 'inline-flex',
+          'align-items': 'center',
+        },
+      ),
     ]),
   ];
 }
