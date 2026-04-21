@@ -38,6 +38,12 @@ const accentBlue = Color('#3B82F6');
 const accentGreen = Color('#10B981');
 const accentAmber = Color('#F59E0B');
 
+// ─── Font families ───────────────────────────────────────────────────────────
+
+FontFamily get fontGeist => FontFamily.list([const FontFamily('Geist'), FontFamilies.sansSerif]);
+FontFamily get fontGeistMono => FontFamily.list([const FontFamily('Geist Mono'), FontFamilies.monospace]);
+FontFamily get fontInter => FontFamily.list([const FontFamily('Inter'), FontFamilies.sansSerif]);
+
 // ─── Typography ──────────────────────────────────────────────────────────────
 
 const fontSizeXs = Unit.rem(0.75); // 12px
@@ -101,5 +107,32 @@ List<StyleRule> get globalStyles => [
     maxWidth: 1200.px,
     padding: const Spacing.symmetric(horizontal: space8),
     margin: const Spacing.symmetric(horizontal: Unit.auto),
+  ),
+  // Shared section badge — used by all homepage sections
+  css('.section-badge').styles(
+    fontSize: Unit.pixels(12),
+    color: accentPurple,
+    padding: Spacing.symmetric(
+      vertical: Unit.pixels(4),
+      horizontal: Unit.pixels(10),
+    ),
+    raw: {
+      'font-family': "'Geist Mono', monospace",
+      'background': '#A855F715',
+      'border-radius': '4px',
+      'display': 'inline-block',
+      'align-self': 'flex-start',
+    },
+  ),
+  // Shared section heading — 40px Geist bold, used by Apps/Packages/Blog sections
+  css('.section-heading').styles(
+    fontSize: Unit.pixels(40),
+    fontWeight: .w700,
+    color: textPrimary,
+    margin: Spacing.zero,
+    raw: {
+      'font-family': "'Geist', sans-serif",
+      'letter-spacing': '-1px',
+    },
   ),
 ];
