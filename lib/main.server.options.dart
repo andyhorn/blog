@@ -8,8 +8,8 @@ import 'package:jaspr/server.dart';
 import 'package:blog/components/about_section.dart' as _about_section;
 import 'package:blog/components/app_card.dart' as _app_card;
 import 'package:blog/components/apps_section.dart' as _apps_section;
-import 'package:blog/components/blog_filters.dart' as _blog_filters;
-import 'package:blog/components/blog_hero.dart' as _blog_hero;
+import 'package:blog/components/blog_interactive_section.dart'
+    as _blog_interactive_section;
 import 'package:blog/components/blog_preview_card.dart' as _blog_preview_card;
 import 'package:blog/components/blog_preview_section.dart'
     as _blog_preview_section;
@@ -47,14 +47,20 @@ import 'package:blog/app.dart' as _app;
 /// ```
 ServerOptions get defaultServerOptions => ServerOptions(
   clientId: 'main.client.dart.js',
+  clients: {
+    _blog_interactive_section.BlogInteractiveSection:
+        ClientTarget<_blog_interactive_section.BlogInteractiveSection>(
+          'blog_interactive_section',
+          params: __blog_interactive_sectionBlogInteractiveSection,
+        ),
+  },
   styles: () => [
     ..._theme.globalStyles,
     ..._app.App.styles,
     ..._about_section.AboutSection.styles,
     ..._app_card.AppCard.styles,
     ..._apps_section.AppsSection.styles,
-    ..._blog_filters.BlogFilters.styles,
-    ..._blog_hero.BlogHero.styles,
+    ..._blog_interactive_section.BlogInteractiveSection.styles,
     ..._blog_preview_card.BlogPreviewCard.styles,
     ..._blog_preview_section.BlogPreviewSection.styles,
     ..._blog_sidebar.BlogSidebar.styles,
@@ -72,3 +78,7 @@ ServerOptions get defaultServerOptions => ServerOptions(
     ..._blog_post.BlogPostPage.styles,
   ],
 );
+
+Map<String, Object?> __blog_interactive_sectionBlogInteractiveSection(
+  _blog_interactive_section.BlogInteractiveSection c,
+) => {'posts': c.posts.map((i) => i.encode()).toList()};
