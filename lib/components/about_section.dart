@@ -21,27 +21,46 @@ class AboutSection extends StatelessComponent {
         ]),
         p(classes: 'about__bio', [
           .text(
-            "I'm a software engineer at Very Good Ventures, specializing in Flutter and Dart. "
-            'Over the past 6+ years I\'ve shipped cross-platform apps used by thousands of people '
-            'and published open-source packages with hundreds of stars on pub.dev.',
+            "I'm a Flutter engineer at Very Good Ventures and founder of Ember City Studio. "
+            "I've spent 6+ years shipping production apps across finance, health, and consumer SaaS "
+            '— and building open-source tools for the Flutter ecosystem.',
           ),
         ]),
         div(classes: 'about__skills', [
           for (final skill in _skills) span(classes: 'about__skill-pill', [.text(skill)]),
         ]),
       ]),
-      // Right column — experience card
+      // Right column — experience timeline
       div(classes: 'about__right', [
-        div(classes: 'about__exp-card', [
-          span(classes: 'about__exp-date', [.text('2015 – Present')]),
-          span(classes: 'about__exp-company', [.text('Very Good Ventures')]),
-          span(classes: 'about__exp-title', [.text('Flutter Engineer')]),
-          p(classes: 'about__exp-desc', [
-            .text(
-              'Building cross-platform mobile and web applications '
-              'with Flutter, Dart, and a strong emphasis on clean architecture, '
-              'testing, and developer experience.',
-            ),
+        div(classes: 'about__timeline', [
+          div(classes: 'about__timeline-line', []),
+          div(classes: 'about__timeline-entry', [
+            span(classes: 'about__timeline-dot', []),
+            div(classes: 'about__timeline-content', [
+              span(classes: 'about__timeline-title', [.text('Software Engineer 3')]),
+              span(classes: 'about__timeline-meta', [.text('Very Good Ventures  ·  Sep 2025 – Present')]),
+            ]),
+          ]),
+          div(classes: 'about__timeline-entry', [
+            span(classes: 'about__timeline-dot', []),
+            div(classes: 'about__timeline-content', [
+              span(classes: 'about__timeline-title', [.text('Founder & Principal Engineer')]),
+              span(classes: 'about__timeline-meta', [.text('Ember City Studio  ·  Feb 2025 – Present')]),
+            ]),
+          ]),
+          div(classes: 'about__timeline-entry', [
+            span(classes: 'about__timeline-dot', []),
+            div(classes: 'about__timeline-content', [
+              span(classes: 'about__timeline-title', [.text('Senior Flutter Engineer')]),
+              span(classes: 'about__timeline-meta', [.text('MacroFactor  ·  Dec 2024 – Jul 2025')]),
+            ]),
+          ]),
+          div(classes: 'about__timeline-entry', [
+            span(classes: 'about__timeline-dot', []),
+            div(classes: 'about__timeline-content', [
+              span(classes: 'about__timeline-title', [.text('Software Engineer')]),
+              span(classes: 'about__timeline-meta', [.text('Uptech Studio  ·  Jul 2022 – Apr 2024')]),
+            ]),
           ]),
         ]),
       ]),
@@ -103,37 +122,52 @@ class AboutSection extends StatelessComponent {
       css('.about__right').styles(
         raw: {'width': '480px', 'flex-shrink': '0'},
       ),
-      css('.about__exp-card').styles(
+      css('.about__timeline').styles(
+        raw: {'position': 'relative'},
+      ),
+      css('.about__timeline-line').styles(
+        raw: {
+          'position': 'absolute',
+          'left': '4px',
+          'top': '9px',
+          'bottom': '9px',
+          'width': '2px',
+          'background': '#A855F730',
+        },
+      ),
+      css('.about__timeline-entry').styles(
+        display: .flex,
+        raw: {
+          'align-items': 'flex-start',
+          'gap': '12px',
+          'min-height': '64px',
+        },
+      ),
+      css('.about__timeline-dot').styles(
+        raw: {
+          'width': '10px',
+          'height': '10px',
+          'border-radius': '50%',
+          'background': '#A855F7FF',
+          'flex-shrink': '0',
+          'margin-top': '7px',
+        },
+      ),
+      css('.about__timeline-content').styles(
         display: .flex,
         flexDirection: .column,
-        backgroundColor: bgCard,
-        radius: .all(.circular(8.px)),
-        padding: Spacing.all(Unit.pixels(24)),
-        raw: {'border': '1px solid #1A1A1A', 'gap': '8px'},
+        raw: {'gap': '4px'},
       ),
-      css('.about__exp-date').styles(
-        fontFamily: fontGeistMono,
-        fontSize: Unit.pixels(12),
-        color: accentPurple,
-      ),
-      css('.about__exp-company').styles(
-        fontFamily: fontGeistMono,
-        fontSize: Unit.pixels(12),
-        color: textMuted,
-      ),
-      css('.about__exp-title').styles(
+      css('.about__timeline-title').styles(
         fontFamily: fontGeist,
-        fontSize: Unit.pixels(18),
+        fontSize: Unit.pixels(15),
         fontWeight: .w600,
         color: textPrimary,
       ),
-      css('.about__exp-desc').styles(
-        fontFamily: fontInter,
-        fontSize: Unit.pixels(14),
+      css('.about__timeline-meta').styles(
+        fontFamily: fontGeistMono,
+        fontSize: Unit.pixels(11),
         color: textMuted,
-        margin: Spacing.zero,
-        maxWidth: Unit.pixels(400),
-        raw: {'line-height': '1.6'},
       ),
     ]),
   ];
