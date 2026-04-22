@@ -53,6 +53,13 @@ class BlogPostPage extends StatelessComponent {
                 [.text(tag)],
               ),
           ]),
+        // Cover image
+        if (post.meta.image != null)
+          img(
+            src: post.meta.image!,
+            alt: post.meta.title,
+            classes: 'blog-post__cover',
+          ),
         // Content
         div(classes: 'blog-post__content', [RawText(post.htmlContent)]),
         // JSON-LD BlogPosting schema
@@ -70,6 +77,7 @@ class BlogPostPage extends StatelessComponent {
               'url': 'https://andyhorn.dev',
             },
             'url': 'https://andyhorn.dev/blog/${post.meta.slug}',
+            if (post.meta.image != null) 'image': 'https://andyhorn.dev${post.meta.image}',
           }),
         ),
       ]),
@@ -89,6 +97,11 @@ class BlogPostPage extends StatelessComponent {
           horizontal: Unit.pixels(32),
         ),
         raw: {'gap': '24px'},
+      ),
+      css('.blog-post__cover').styles(
+        width: 100.percent,
+        radius: .all(.circular(8.px)),
+        raw: {'aspect-ratio': '16 / 9', 'object-fit': 'cover', 'display': 'block'},
       ),
       css('.blog-post__back-link').styles(
         fontFamily: fontInter,

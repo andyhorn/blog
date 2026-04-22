@@ -19,8 +19,15 @@ class FeaturedPostCard extends StatelessComponent {
       href: '/blog/${post.meta.slug}',
       classes: 'featured-post-card',
       [
-        // Left image placeholder
-        div(classes: 'featured-post-card__image', []),
+        // Left image
+        if (post.meta.image != null)
+          img(
+            src: post.meta.image!,
+            alt: post.meta.title,
+            classes: 'featured-post-card__image',
+          )
+        else
+          div(classes: 'featured-post-card__image', []),
         // Right content
         div(classes: 'featured-post-card__content', [
           // Meta row
@@ -74,7 +81,13 @@ class FeaturedPostCard extends StatelessComponent {
       css('&:hover .featured-post-card__title').styles(color: accentPurple),
       css('.featured-post-card__image').styles(
         backgroundColor: Color('#A855F710'),
-        raw: {'width': '436px', 'height': '315px', 'flex-shrink': '0'},
+        raw: {
+          'width': '436px',
+          'height': '315px',
+          'flex-shrink': '0',
+          'object-fit': 'cover',
+          'display': 'block',
+        },
       ),
       css('.featured-post-card__content').styles(
         display: .flex,
