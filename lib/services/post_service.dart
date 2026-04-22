@@ -38,9 +38,8 @@ Post? _parsePost(File file) {
   final tags = rawTags is YamlList ? rawTags.map((t) => t.toString()).toList() : <String>[];
   final image = data['image'] as String?;
 
-  final htmlContent = md.markdownToHtml(
-    body,
-    extensionSet: md.ExtensionSet.gitHubWeb,
+  final htmlContent = _fixCodeBlockNewlines(
+    md.markdownToHtml(body, extensionSet: md.ExtensionSet.gitHubWeb),
   );
   final wordCount = body.split(RegExp(r'\s+')).where((w) => w.isNotEmpty).length;
   final readingTimeMinutes = (wordCount / 200).ceil().clamp(1, 999);
@@ -56,6 +55,24 @@ Post? _parsePost(File file) {
     ),
     htmlContent: htmlContent,
     readingTimeMinutes: readingTimeMinutes,
+  );
+}
+
+/// Replaces newlines inside `<pre><code>` blocks with `&#10;` HTML entities.
+///
+/// Jaspr's server-side HTML formatter indents every newline to match the
+/// current component tree depth. Inside raw HTML from [RawText], that adds
+/// unwanted spaces to every line after the first in code blocks. Using
+/// `&#10;` instead of literal newlines avoids the indentation while the
+/// browser still renders them as newlines inside `<pre>`.
+String _fixCodeBlockNewlines(String html) {
+  return html.replaceAllMapped(
+    RegExp(r'<pre><code([^>]*)>([\s\S]*?)</code></pre>'),
+    (match) {
+      final attrs = match.group(1)!;
+      final code = match.group(2)!.replaceAll('\n', '&#10;');
+      return '<pre><code$attrs>$code</code></pre>';
+    },
   );
 }
 
