@@ -115,9 +115,9 @@ class Header extends StatefulComponent {
         padding: Spacing.symmetric(horizontal: Unit.pixels(16)),
         raw: {'flex-wrap': 'wrap', 'height': 'auto', 'min-height': '72px'},
       ),
-      css('.site-header__nav').styles(display: .none),
-      css('.site-header__cta').styles(display: .none),
-      css('.site-header__hamburger').styles(display: .flex),
+      css('.site-header .site-header__nav').styles(display: .none),
+      css('.site-header .site-header__cta').styles(display: .none),
+      css('.site-header .site-header__hamburger').styles(display: .flex),
     ]),
   ];
 }

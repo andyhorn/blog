@@ -82,11 +82,11 @@ class BlogPreviewSection extends StatelessComponent {
       css('.blog-preview').styles(
         padding: Spacing.symmetric(vertical: 60.px, horizontal: 24.px),
       ),
-      css('.blog-preview__header').styles(
+      css('.blog-preview .blog-preview__header').styles(
         flexDirection: .column,
         raw: {'align-items': 'flex-start', 'gap': '8px'},
       ),
-      css('.blog-preview__grid').styles(
+      css('.blog-preview .blog-preview__grid').styles(
         raw: {'grid-template-columns': '1fr'},
       ),
     ]),

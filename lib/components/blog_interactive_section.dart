@@ -182,10 +182,10 @@ class BlogInteractiveSection extends StatefulComponent {
       css('.blog-hero').styles(
         padding: Spacing.symmetric(vertical: 48.px, horizontal: 24.px),
       ),
-      css('.blog-hero__title').styles(
+      css('.blog-hero .blog-hero__title').styles(
         raw: {'font-size': '36px', 'letter-spacing': '-1px'},
       ),
-      css('.blog-hero__search').styles(
+      css('.blog-hero .blog-hero__search').styles(
         maxWidth: 100.percent,
       ),
       css('.blog-filters').styles(

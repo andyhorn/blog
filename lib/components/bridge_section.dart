@@ -120,13 +120,13 @@ class BridgeSection extends StatelessComponent {
       css('.bridge').styles(
         padding: Spacing.symmetric(vertical: 48.px, horizontal: 16.px),
       ),
-      css('.bridge__card').styles(
+      css('.bridge .bridge__card').styles(
         flexDirection: .column,
       ),
-      css('.bridge__pane').styles(
+      css('.bridge .bridge__pane').styles(
         padding: Spacing.all(20.px),
       ),
-      css('.bridge__code').styles(
+      css('.bridge .bridge__code').styles(
         raw: {'font-size': '12px'},
       ),
     ]),

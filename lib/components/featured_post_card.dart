@@ -160,14 +160,14 @@ class FeaturedPostCard extends StatelessComponent {
       css('.featured-post-card').styles(
         flexDirection: .column,
       ),
-      css('.featured-post-card__image').styles(
+      css('.featured-post-card .featured-post-card__image').styles(
         raw: {
           'width': '100%',
           'height': '200px',
           'flex-shrink': '1',
         },
       ),
-      css('.featured-post-card__content').styles(
+      css('.featured-post-card .featured-post-card__content').styles(
         padding: Spacing.all(20.px),
       ),
     ]),

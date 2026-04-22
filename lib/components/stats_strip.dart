@@ -74,10 +74,10 @@ class StatsStrip extends StatelessComponent {
           'justify-content': 'space-around',
         },
       ),
-      css('.stats-strip__stat').styles(
+      css('.stats-strip .stats-strip__stat').styles(
         raw: {'width': '50%'},
       ),
-      css('.stats-strip__divider').styles(display: .none),
+      css('.stats-strip .stats-strip__divider').styles(display: .none),
     ]),
   ];
 }

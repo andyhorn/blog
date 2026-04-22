@@ -221,7 +221,7 @@ class BlogPostPage extends StatelessComponent {
         padding: Spacing.symmetric(vertical: 32.px, horizontal: 16.px),
         raw: {'gap': '0'},
       ),
-      css('.blog-post__title').styles(
+      css('.blog-post .blog-post__title').styles(
         raw: {'font-size': '28px', 'letter-spacing': '-0.5px'},
       ),
     ]),

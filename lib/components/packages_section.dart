@@ -92,12 +92,12 @@ class PackagesSection extends StatelessComponent {
       css('.packages-section').styles(
         padding: Spacing.symmetric(vertical: 60.px, horizontal: 24.px),
       ),
-      css('.packages-section__grid').styles(
+      css('.packages-section .packages-section__grid').styles(
         raw: {'grid-template-columns': 'repeat(2, 1fr)'},
       ),
     ]),
     css.media(MediaQuery.all(maxWidth: breakpointSm.px), [
-      css('.packages-section__grid').styles(
+      css('.packages-section .packages-section__grid').styles(
         raw: {'grid-template-columns': '1fr'},
       ),
     ]),

@@ -129,10 +129,10 @@ class ContactSection extends StatelessComponent {
       css('.contact').styles(
         padding: Spacing.symmetric(vertical: 60.px, horizontal: 24.px),
       ),
-      css('.contact__heading').styles(
+      css('.contact .contact__heading').styles(
         raw: {'font-size': '36px', 'letter-spacing': '-1px'},
       ),
-      css('.contact__links').styles(
+      css('.contact .contact__links').styles(
         flexDirection: .column,
         alignItems: .center,
       ),
