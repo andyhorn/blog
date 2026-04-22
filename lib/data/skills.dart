@@ -4,6 +4,8 @@ const List<Skill> skills = [
   Skill(name: 'Dart', category: 'Languages'),
   Skill(name: 'TypeScript', category: 'Languages'),
   Skill(name: 'Python', category: 'Languages'),
+  Skill(name: 'C#', category: 'Languages'),
+  Skill(name: 'Java', category: 'Languages'),
   Skill(name: 'Flutter', category: 'Frameworks'),
   Skill(name: 'Jaspr', category: 'Frameworks'),
   Skill(name: 'React', category: 'Frameworks'),
