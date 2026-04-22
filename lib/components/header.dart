@@ -110,7 +110,7 @@ class Header extends StatefulComponent {
       css('.site-header__mobile-link:hover').styles(color: textPrimary),
     ]),
     // Mobile breakpoint
-    css('@media (max-width: ${breakpointMd}px)', [
+    css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
       css('.site-header').styles(
         padding: Spacing.symmetric(horizontal: Unit.pixels(16)),
         raw: {'flex-wrap': 'wrap', 'height': 'auto', 'min-height': '72px'},

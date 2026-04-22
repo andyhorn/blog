@@ -64,7 +64,7 @@ class StatsStrip extends StatelessComponent {
         raw: {'height': '40px', 'flex-shrink': '0'},
       ),
     ]),
-    css('@media (max-width: ${breakpointMd}px)', [
+    css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
       css('.stats-strip').styles(
         padding: Spacing.symmetric(vertical: 32.px, horizontal: 24.px),
         raw: {

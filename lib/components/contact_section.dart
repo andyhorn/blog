@@ -125,7 +125,7 @@ class ContactSection extends StatelessComponent {
       ),
       css('.contact__link:hover').styles(color: textPrimary),
     ]),
-    css('@media (max-width: ${breakpointMd}px)', [
+    css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
       css('.contact').styles(
         padding: Spacing.symmetric(vertical: 60.px, horizontal: 24.px),
       ),

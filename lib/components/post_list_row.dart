@@ -111,7 +111,7 @@ class PostListRow extends StatelessComponent {
         color: textMuted,
       ),
     ]),
-    css('@media (max-width: ${breakpointMd}px)', [
+    css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
       css('.post-list-row').styles(
         raw: {
           'height': 'auto',

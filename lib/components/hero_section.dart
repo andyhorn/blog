@@ -114,7 +114,7 @@ class HeroSection extends StatelessComponent {
         raw: {'background': '#FFFFFF20', 'border': '1px solid #FFFFFF40'},
       ),
     ]),
-    css('@media (max-width: ${breakpointMd}px)', [
+    css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
       css('.hero').styles(
         padding: Spacing.symmetric(vertical: 60.px, horizontal: 24.px),
         raw: {'min-height': '360px'},

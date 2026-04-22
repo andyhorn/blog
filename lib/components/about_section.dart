@@ -170,7 +170,7 @@ class AboutSection extends StatelessComponent {
         color: textMuted,
       ),
     ]),
-    css('@media (max-width: ${breakpointMd}px)', [
+    css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
       css('.about').styles(
         flexDirection: .column,
         padding: Spacing.symmetric(vertical: 60.px, horizontal: 24.px),

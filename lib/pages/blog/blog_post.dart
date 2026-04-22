@@ -213,10 +213,10 @@ class BlogPostPage extends StatelessComponent {
         ),
       ]),
     ]),
-    css('@media (max-width: ${breakpointLg}px)', [
+    css.media(MediaQuery.all(maxWidth: breakpointLg.px), [
       css('.blog-post__toc-sidebar').styles(display: .none),
     ]),
-    css('@media (max-width: ${breakpointMd}px)', [
+    css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
       css('.blog-post-layout').styles(
         padding: Spacing.symmetric(vertical: 32.px, horizontal: 16.px),
         raw: {'gap': '0'},

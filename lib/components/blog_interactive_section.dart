@@ -178,7 +178,7 @@ class BlogInteractiveSection extends StatefulComponent {
         raw: {'border': '1px solid #1A1A1A', 'gap': '1px'},
       ),
     ]),
-    css('@media (max-width: ${breakpointMd}px)', [
+    css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
       css('.blog-hero').styles(
         padding: Spacing.symmetric(vertical: 48.px, horizontal: 24.px),
       ),

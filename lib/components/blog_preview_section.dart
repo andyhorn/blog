@@ -78,7 +78,7 @@ class BlogPreviewSection extends StatelessComponent {
         margin: Spacing.zero,
       ),
     ]),
-    css('@media (max-width: ${breakpointMd}px)', [
+    css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
       css('.blog-preview').styles(
         padding: Spacing.symmetric(vertical: 60.px, horizontal: 24.px),
       ),

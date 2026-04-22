@@ -135,7 +135,7 @@ List<StyleRule> get globalStyles => [
       'letter-spacing': '-1px',
     },
   ),
-  css('@media (max-width: ${breakpointMd}px)', [
+  css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
     css('.section-heading').styles(
       raw: {'font-size': '28px'},
     ),

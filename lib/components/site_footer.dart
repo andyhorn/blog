@@ -38,7 +38,7 @@ class SiteFooter extends StatelessComponent {
         fontSize: Unit.pixels(13),
       ),
     ]),
-    css('@media (max-width: ${breakpointMd}px)', [
+    css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
       css('.site-footer').styles(
         padding: Spacing.symmetric(horizontal: space6, vertical: space8),
       ),

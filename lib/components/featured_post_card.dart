@@ -156,7 +156,7 @@ class FeaturedPostCard extends StatelessComponent {
         raw: {'margin-top': 'auto'},
       ),
     ]),
-    css('@media (max-width: ${breakpointMd}px)', [
+    css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
       css('.featured-post-card').styles(
         flexDirection: .column,
       ),
