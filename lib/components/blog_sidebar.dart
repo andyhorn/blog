@@ -127,5 +127,8 @@ class BlogSidebar extends StatelessComponent {
         raw: {'border-radius': '9999px', 'display': 'inline-block'},
       ),
     ]),
+    css('@media (max-width: ${breakpointMd}px)', [
+      css('.blog-sidebar').styles(display: .none),
+    ]),
   ];
 }

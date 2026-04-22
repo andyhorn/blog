@@ -216,5 +216,14 @@ class BlogPostPage extends StatelessComponent {
     css('@media (max-width: ${breakpointLg}px)', [
       css('.blog-post__toc-sidebar').styles(display: .none),
     ]),
+    css('@media (max-width: ${breakpointMd}px)', [
+      css('.blog-post-layout').styles(
+        padding: Spacing.symmetric(vertical: 32.px, horizontal: 16.px),
+        raw: {'gap': '0'},
+      ),
+      css('.blog-post__title').styles(
+        raw: {'font-size': '28px', 'letter-spacing': '-0.5px'},
+      ),
+    ]),
   ];
 }
