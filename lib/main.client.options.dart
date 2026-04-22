@@ -8,6 +8,7 @@ import 'package:jaspr/client.dart';
 
 import 'package:blog/components/blog_interactive_section.dart'
     deferred as _blog_interactive_section;
+import 'package:blog/components/header.dart' deferred as _header;
 import 'package:blog/models/post.dart' as _post;
 
 /// Default [ClientOptions] for use with your Jaspr project.
@@ -35,6 +36,10 @@ ClientOptions get defaultClientOptions => ClientOptions(
             .toList(),
       ),
       loader: _blog_interactive_section.loadLibrary,
+    ),
+    'header': ClientLoader(
+      (p) => _header.Header(),
+      loader: _header.loadLibrary,
     ),
   },
 );

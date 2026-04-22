@@ -170,5 +170,18 @@ class AboutSection extends StatelessComponent {
         color: textMuted,
       ),
     ]),
+    css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
+      css('.about').styles(
+        flexDirection: .column,
+        padding: Spacing.symmetric(vertical: 60.px, horizontal: 24.px),
+        raw: {'gap': '40px'},
+      ),
+      css('.about .about__right').styles(
+        raw: {'width': '100%'},
+      ),
+      css('.about .about__heading').styles(
+        raw: {'font-size': '36px'},
+      ),
+    ]),
   ];
 }

@@ -116,5 +116,19 @@ class BridgeSection extends StatelessComponent {
         textDecoration: TextDecoration(line: .underline),
       ),
     ]),
+    css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
+      css('.bridge').styles(
+        padding: Spacing.symmetric(vertical: 48.px, horizontal: 16.px),
+      ),
+      css('.bridge .bridge__card').styles(
+        flexDirection: .column,
+      ),
+      css('.bridge .bridge__pane').styles(
+        padding: Spacing.all(20.px),
+      ),
+      css('.bridge .bridge__code').styles(
+        raw: {'font-size': '12px'},
+      ),
+    ]),
   ];
 }

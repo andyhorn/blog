@@ -178,6 +178,35 @@ class BlogInteractiveSection extends StatefulComponent {
         raw: {'border': '1px solid #1A1A1A', 'gap': '1px'},
       ),
     ]),
+    css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
+      css('.blog-hero').styles(
+        padding: Spacing.symmetric(vertical: 48.px, horizontal: 24.px),
+      ),
+      css('.blog-hero .blog-hero__title').styles(
+        raw: {'font-size': '36px', 'letter-spacing': '-1px'},
+      ),
+      css('.blog-hero .blog-hero__search').styles(
+        maxWidth: 100.percent,
+      ),
+      css('.blog-filters').styles(
+        padding: Spacing.symmetric(horizontal: 24.px),
+        raw: {
+          'height': 'auto',
+          'padding-top': '12px',
+          'padding-bottom': '12px',
+          'flex-wrap': 'wrap',
+          'row-gap': '8px',
+        },
+      ),
+      css('.blog-body').styles(
+        flexDirection: .column,
+        padding: Spacing.symmetric(vertical: 40.px, horizontal: 24.px),
+        raw: {'gap': '32px'},
+      ),
+      css('.blog-empty').styles(
+        padding: Spacing.symmetric(vertical: 40.px, horizontal: 24.px),
+      ),
+    ]),
   ];
 }
 

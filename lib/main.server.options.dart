@@ -54,6 +54,7 @@ ServerOptions get defaultServerOptions => ServerOptions(
           'blog_interactive_section',
           params: __blog_interactive_sectionBlogInteractiveSection,
         ),
+    _header.Header: ClientTarget<_header.Header>('header'),
   },
   styles: () => [
     ..._theme.globalStyles,

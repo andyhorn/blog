@@ -69,6 +69,20 @@ Static data for the portfolio sections lives in `lib/data/` (apps, packages, ski
 
 The `lib/widgets/` and `lib/components/embedded_counter.dart` demonstrate the Flutter embedding pattern. Interactive Flutter widgets are annotated with `@client` and hydrated in the browser. The `jaspr` config in `pubspec.yaml` sets `flutter: embedded`.
 
+## Git Conventions
+
+Always use [Conventional Commits](https://www.conventionalcommits.org/) prefixes for commit messages and PR titles:
+
+- `feat:` — new feature
+- `fix:` — bug fix
+- `refactor:` — code change that neither fixes a bug nor adds a feature
+- `style:` — formatting, whitespace, CSS-only changes
+- `docs:` — documentation changes
+- `chore:` — build process, tooling, dependency updates
+- `test:` — adding or updating tests
+
+Examples: `feat: add mobile nav hamburger menu`, `fix: correct header z-index on scroll`
+
 ## Jaspr Reference
 
 For Jaspr API questions, always fetch `https://jaspr.site/llms.txt` first rather than searching through framework source code. The available Jaspr skills (`jaspr-fundamentals`, `jaspr-styling`, `jaspr-pre-rendering-and-hydration`, `jaspr-convert-html`, `jaspr-js-interop`) cover the most common patterns and should be invoked before attempting to write Jaspr code from scratch.

@@ -111,5 +111,15 @@ class PostListRow extends StatelessComponent {
         color: textMuted,
       ),
     ]),
+    css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
+      css('.post-list-row').styles(
+        raw: {
+          'height': 'auto',
+          'min-height': '72px',
+          'padding-top': '12px',
+          'padding-bottom': '12px',
+        },
+      ),
+    ]),
   ];
 }
