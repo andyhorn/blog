@@ -6,8 +6,6 @@
 
 import 'package:jaspr/server.dart';
 import 'package:blog/components/about_section.dart' as _about_section;
-import 'package:blog/components/app_card.dart' as _app_card;
-import 'package:blog/components/apps_section.dart' as _apps_section;
 import 'package:blog/components/blog_interactive_section.dart'
     as _blog_interactive_section;
 import 'package:blog/components/blog_preview_card.dart' as _blog_preview_card;
@@ -60,8 +58,6 @@ ServerOptions get defaultServerOptions => ServerOptions(
     ..._theme.globalStyles,
     ..._app.App.styles,
     ..._about_section.AboutSection.styles,
-    ..._app_card.AppCard.styles,
-    ..._apps_section.AppsSection.styles,
     ..._blog_interactive_section.BlogInteractiveSection.styles,
     ..._blog_preview_card.BlogPreviewCard.styles,
     ..._blog_preview_section.BlogPreviewSection.styles,

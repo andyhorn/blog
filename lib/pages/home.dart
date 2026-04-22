@@ -2,7 +2,6 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../components/about_section.dart';
-import '../components/apps_section.dart';
 import '../components/blog_preview_section.dart';
 import '../components/bridge_section.dart';
 import '../components/contact_section.dart';
@@ -30,7 +29,6 @@ class Home extends StatelessComponent {
       const BridgeSection(),
       const StatsStrip(),
       const AboutSection(),
-      const AppsSection(),
       const PackagesSection(),
       BlogPreviewSection(posts: recentPosts),
       const ContactSection(),
