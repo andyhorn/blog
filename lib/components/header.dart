@@ -112,7 +112,7 @@ class Header extends StatefulComponent {
     // Mobile breakpoint
     css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
       css('.site-header').styles(
-        padding: Spacing.symmetric(horizontal: Unit.pixels(16)),
+        padding: Spacing.symmetric(vertical: 16.px, horizontal: 16.px),
         raw: {'flex-wrap': 'wrap', 'height': 'auto', 'min-height': '72px'},
       ),
       css('.site-header .site-header__nav').styles(display: .none),
