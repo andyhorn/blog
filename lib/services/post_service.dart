@@ -4,6 +4,7 @@ import 'package:markdown/markdown.dart' as md;
 import 'package:yaml/yaml.dart';
 
 import '../models/post.dart';
+import '../utils/headings.dart';
 
 /// Loads and parses all markdown posts from [content/posts/].
 ///
@@ -38,8 +39,10 @@ Post? _parsePost(File file) {
   final tags = rawTags is YamlList ? rawTags.map((t) => t.toString()).toList() : <String>[];
   final image = data['image'] as String?;
 
-  final htmlContent = _fixCodeBlockNewlines(
-    md.markdownToHtml(body, extensionSet: md.ExtensionSet.gitHubWeb),
+  final htmlContent = injectHeadingIds(
+    _fixCodeBlockNewlines(
+      md.markdownToHtml(body, extensionSet: md.ExtensionSet.gitHubWeb),
+    ),
   );
   final wordCount = body.split(RegExp(r'\s+')).where((w) => w.isNotEmpty).length;
   final readingTimeMinutes = (wordCount / 200).ceil().clamp(1, 999);

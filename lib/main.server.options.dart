@@ -24,6 +24,7 @@ import 'package:blog/components/packages_section.dart' as _packages_section;
 import 'package:blog/components/post_list_row.dart' as _post_list_row;
 import 'package:blog/components/site_footer.dart' as _site_footer;
 import 'package:blog/components/stats_strip.dart' as _stats_strip;
+import 'package:blog/components/table_of_contents.dart' as _table_of_contents;
 import 'package:blog/constants/theme.dart' as _theme;
 import 'package:blog/pages/blog/blog_list.dart' as _blog_list;
 import 'package:blog/pages/blog/blog_post.dart' as _blog_post;
@@ -74,6 +75,7 @@ ServerOptions get defaultServerOptions => ServerOptions(
     ..._post_list_row.PostListRow.styles,
     ..._site_footer.SiteFooter.styles,
     ..._stats_strip.StatsStrip.styles,
+    ..._table_of_contents.TableOfContents.styles,
     ..._blog_list.BlogListPage.styles,
     ..._blog_post.BlogPostPage.styles,
   ],

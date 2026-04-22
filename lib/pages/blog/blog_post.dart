@@ -4,9 +4,11 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
+import '../../components/table_of_contents.dart';
 import '../../constants/theme.dart';
 import '../../models/post.dart';
 import '../../utils/format_date.dart';
+import '../../utils/headings.dart';
 import '../../utils/tag_colors.dart';
 
 class BlogPostPage extends StatelessComponent {
@@ -16,6 +18,8 @@ class BlogPostPage extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
+    final tocItems = extractTocItems(post.htmlContent);
+
     return div([
       Document.head(
         title: '${post.meta.title} | Andy Horn',
@@ -28,75 +32,95 @@ class BlogPostPage extends StatelessComponent {
           'twitter:card': 'summary_large_image',
         },
       ),
-      main_(classes: 'blog-post', [
-        // Back link
-        Link(
-          to: '/blog',
-          child: span(classes: 'blog-post__back-link', [.text('← Back to Blog')]),
-        ),
-        // Post header
-        h1(classes: 'blog-post__title', [.text(post.meta.title)]),
-        // Byline: date · reading time
-        div(classes: 'blog-post__byline', [
-          .text('${formatDate(post.meta.date)} · ${post.readingTimeMinutes} min read'),
-        ]),
-        // Tag pills
-        if (post.meta.tags.isNotEmpty)
-          div(classes: 'blog-post__tags', [
-            for (final tag in post.meta.tags)
-              span(
-                classes: 'blog-post__tag',
-                styles: Styles(
-                  color: tagColor(tag),
-                  backgroundColor: tagBgColor(tag),
-                ),
-                [.text(tag)],
-              ),
-          ]),
-        // Cover image
-        if (post.meta.image != null)
-          img(
-            src: post.meta.image!,
-            alt: post.meta.title,
-            classes: 'blog-post__cover',
+      div(classes: 'blog-post-layout', [
+        main_(classes: 'blog-post', [
+          // Back link
+          Link(
+            to: '/blog',
+            child: span(classes: 'blog-post__back-link', [.text('← Back to Blog')]),
           ),
-        // Content
-        div(classes: 'blog-post__content', [RawText(post.htmlContent)]),
-        // JSON-LD BlogPosting schema
-        script(
-          attributes: {'type': 'application/ld+json'},
-          content: jsonEncode({
-            '@context': 'https://schema.org',
-            '@type': 'BlogPosting',
-            'headline': post.meta.title,
-            'description': post.meta.description,
-            'datePublished': post.meta.date.toIso8601String(),
-            'author': {
-              '@type': 'Person',
-              'name': 'Andy Horn',
-              'url': 'https://andyhorn.dev',
-            },
-            'url': 'https://andyhorn.dev/blog/${post.meta.slug}',
-            if (post.meta.image != null) 'image': 'https://andyhorn.dev${post.meta.image}',
-          }),
-        ),
+          // Post header
+          h1(classes: 'blog-post__title', [.text(post.meta.title)]),
+          // Byline: date · reading time
+          div(classes: 'blog-post__byline', [
+            .text('${formatDate(post.meta.date)} · ${post.readingTimeMinutes} min read'),
+          ]),
+          // Tag pills
+          if (post.meta.tags.isNotEmpty)
+            div(classes: 'blog-post__tags', [
+              for (final tag in post.meta.tags)
+                span(
+                  classes: 'blog-post__tag',
+                  styles: Styles(
+                    color: tagColor(tag),
+                    backgroundColor: tagBgColor(tag),
+                  ),
+                  [.text(tag)],
+                ),
+            ]),
+          // Cover image
+          if (post.meta.image != null)
+            img(
+              src: post.meta.image!,
+              alt: post.meta.title,
+              classes: 'blog-post__cover',
+            ),
+          // Content
+          div(classes: 'blog-post__content', [RawText(post.htmlContent)]),
+          // JSON-LD BlogPosting schema
+          script(
+            attributes: {'type': 'application/ld+json'},
+            content: jsonEncode({
+              '@context': 'https://schema.org',
+              '@type': 'BlogPosting',
+              'headline': post.meta.title,
+              'description': post.meta.description,
+              'datePublished': post.meta.date.toIso8601String(),
+              'author': {
+                '@type': 'Person',
+                'name': 'Andy Horn',
+                'url': 'https://andyhorn.dev',
+              },
+              'url': 'https://andyhorn.dev/blog/${post.meta.slug}',
+              if (post.meta.image != null) 'image': 'https://andyhorn.dev${post.meta.image}',
+            }),
+          ),
+        ]),
+        if (tocItems.isNotEmpty)
+          aside(classes: 'blog-post__toc-sidebar', [
+            TableOfContents(
+              items: tocItems,
+              basePath: '/blog/${post.meta.slug}',
+            ),
+          ]),
       ]),
     ]);
   }
 
   @css
   static List<StyleRule> get styles => [
-    css('.blog-post', [
+    css('.blog-post-layout', [
       css('&').styles(
         display: .flex,
-        flexDirection: .column,
-        maxWidth: Unit.pixels(800),
+        alignItems: .start,
+        maxWidth: Unit.pixels(1120),
         margin: Spacing.symmetric(horizontal: Unit.auto),
         padding: Spacing.symmetric(
           vertical: Unit.pixels(64),
           horizontal: Unit.pixels(32),
         ),
-        raw: {'gap': '24px'},
+        raw: {'gap': '60px'},
+      ),
+      css('.blog-post__toc-sidebar').styles(
+        // 72px sticky navbar + 32px breathing room
+        raw: {'position': 'sticky', 'top': '104px', 'flex-shrink': '0'},
+      ),
+    ]),
+    css('.blog-post', [
+      css('&').styles(
+        display: .flex,
+        flexDirection: .column,
+        raw: {'flex': '1', 'min-width': '0', 'gap': '24px'},
       ),
       css('.blog-post__cover').styles(
         width: 100.percent,
@@ -188,6 +212,9 @@ class BlogPostPage extends StatelessComponent {
           raw: {'font-style': 'italic'},
         ),
       ]),
+    ]),
+    css('@media (max-width: ${breakpointLg}px)', [
+      css('.blog-post__toc-sidebar').styles(display: .none),
     ]),
   ];
 }
