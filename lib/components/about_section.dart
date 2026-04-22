@@ -150,7 +150,7 @@ class AboutSection extends StatelessComponent {
           'border-radius': '50%',
           'background': '#A855F7FF',
           'flex-shrink': '0',
-          'margin-top': '4px',
+          'margin-top': '7px',
         },
       ),
       css('.about__timeline-content').styles(
