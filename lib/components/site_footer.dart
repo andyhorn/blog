@@ -10,7 +10,7 @@ class SiteFooter extends StatelessComponent {
   Component build(BuildContext context) {
     return footer(classes: 'site-footer', [
       span(classes: 'site-footer__left', [.text('andyhorn.dev')]),
-      span(classes: 'site-footer__right', [.text('Built with Flutter & Jaspr')]),
+      span(classes: 'site-footer__right', [.text('Built with Jaspr')]),
     ]);
   }
 
