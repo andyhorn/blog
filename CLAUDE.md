@@ -17,7 +17,12 @@ jaspr build
 
 # Regenerate post routes after adding/removing blog posts
 dart run tool/generate_routes.dart
+
+# Generate cover images for posts with image_prompt in frontmatter
+source bin/get-gemini-api-key.sh && dart run tool/generate_images.dart
 ```
+
+> **Gemini API key**: `bin/get-gemini-api-key.sh` retrieves the key from 1Password and exports it as `GEMINI_API_KEY`. Always `source` this script before running `tool/generate_images.dart` — never hardcode or prompt for the key manually.
 
 ## Architecture
 
