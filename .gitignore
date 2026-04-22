@@ -6,6 +6,9 @@
 # Conventional directory for build output.
 /build/
 
+# Firebase
+.firebase/
+
 # Miscellaneous
 *.class
 *.log
