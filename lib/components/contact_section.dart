@@ -32,19 +32,19 @@ class ContactSection extends StatelessComponent {
           href: 'https://linkedin.com/in/andyjhorn',
           classes: 'contact__link',
           attributes: {'target': '_blank', 'rel': 'noopener noreferrer'},
-          [.text('LinkedIn')],
+          [.text('linkedin.com/in/andyjhorn')],
         ),
         a(
           href: 'https://github.com/andyhorn',
           classes: 'contact__link',
           attributes: {'target': '_blank', 'rel': 'noopener noreferrer'},
-          [.text('GitHub')],
+          [.text('github.com/andyhorn')],
         ),
         a(
           href: 'https://pub.dev/publishers/andyhorn.dev',
           classes: 'contact__link',
           attributes: {'target': '_blank', 'rel': 'noopener noreferrer'},
-          [.text('pub.dev')],
+          [.text('pub.dev/publishers/andyhorn.dev')],
         ),
       ]),
     ]);
