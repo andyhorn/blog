@@ -1,8 +1,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
-import 'package:web/web.dart' as web;
-
+import 'package:universal_web/web.dart' as web;
 import '../constants/theme.dart';
 
 @client
@@ -128,7 +127,9 @@ class _HeaderState extends State<Header> {
 
   void _navigateTo(String href) {
     setState(() => _menuOpen = false);
-    web.window.location.href = href;
+    if (kIsWeb) {
+      web.window.location.href = href;
+    }
   }
 
   @override
@@ -141,7 +142,6 @@ class _HeaderState extends State<Header> {
       // Desktop nav links
       nav(classes: 'site-header__nav', [
         a(href: '/#about', classes: 'site-header__link', [.text('About')]),
-        a(href: '/#apps', classes: 'site-header__link', [.text('Apps')]),
         a(href: '/#packages', classes: 'site-header__link', [.text('Packages')]),
         div(
           classes: activePath.startsWith('/blog')
@@ -172,12 +172,6 @@ class _HeaderState extends State<Header> {
             classes: 'site-header__mobile-link',
             onClick: () => _navigateTo('/#about'),
             [.text('About')],
-          ),
-          a(
-            href: '/#apps',
-            classes: 'site-header__mobile-link',
-            onClick: () => _navigateTo('/#apps'),
-            [.text('Apps')],
           ),
           a(
             href: '/#packages',
