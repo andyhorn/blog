@@ -26,6 +26,13 @@ void main() {
         'twitter:card': 'summary_large_image',
       },
       head: [
+        // Viewport meta — must be first for correct mobile scaling
+        meta(
+          attributes: {
+            'name': 'viewport',
+            'content': 'width=device-width, initial-scale=1',
+          },
+        ),
         // Font preconnect
         link(href: 'https://fonts.googleapis.com', rel: 'preconnect'),
         link(
