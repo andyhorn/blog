@@ -1,6 +1,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
+import 'package:web/web.dart' as web;
 
 import '../constants/theme.dart';
 
@@ -125,7 +126,10 @@ class Header extends StatefulComponent {
 class _HeaderState extends State<Header> {
   bool _menuOpen = false;
 
-  void _closeMenu() => setState(() => _menuOpen = false);
+  void _navigateTo(String href) {
+    setState(() => _menuOpen = false);
+    web.window.location.href = href;
+  }
 
   @override
   Component build(BuildContext context) {
@@ -166,19 +170,19 @@ class _HeaderState extends State<Header> {
           a(
             href: '/#about',
             classes: 'site-header__mobile-link',
-            onClick: _closeMenu,
+            onClick: () => _navigateTo('/#about'),
             [.text('About')],
           ),
           a(
             href: '/#apps',
             classes: 'site-header__mobile-link',
-            onClick: _closeMenu,
+            onClick: () => _navigateTo('/#apps'),
             [.text('Apps')],
           ),
           a(
             href: '/#packages',
             classes: 'site-header__mobile-link',
-            onClick: _closeMenu,
+            onClick: () => _navigateTo('/#packages'),
             [.text('Packages')],
           ),
           Link(
@@ -188,7 +192,7 @@ class _HeaderState extends State<Header> {
           a(
             href: '/#contact',
             classes: 'site-header__mobile-link site-header__mobile-link--cta',
-            onClick: _closeMenu,
+            onClick: () => _navigateTo('/#contact'),
             [.text('Get in touch')],
           ),
         ]),
