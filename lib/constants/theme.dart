@@ -103,7 +103,7 @@ List<StyleRule> get globalStyles => [
     display: Display.block,
     maxWidth: 100.percent,
   ),
-  css('.container').styles(
+  css('.site-container').styles(
     maxWidth: 1200.px,
     padding: const Spacing.symmetric(horizontal: space8),
     margin: const Spacing.symmetric(horizontal: Unit.auto),
@@ -135,4 +135,9 @@ List<StyleRule> get globalStyles => [
       'letter-spacing': '-1px',
     },
   ),
+  css('@media (max-width: ${breakpointMd}px)', [
+    css('.section-heading').styles(
+      raw: {'font-size': '28px'},
+    ),
+  ]),
 ];
