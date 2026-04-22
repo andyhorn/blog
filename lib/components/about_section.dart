@@ -21,8 +21,8 @@ class AboutSection extends StatelessComponent {
         ]),
         p(classes: 'about__bio', [
           .text(
-            "I'm a software engineer specializing in Flutter and Dart. "
-            'Over the past 5+ years I\'ve shipped cross-platform apps used by thousands of people '
+            "I'm a software engineer at Very Good Ventures, specializing in Flutter and Dart. "
+            'Over the past 6+ years I\'ve shipped cross-platform apps used by thousands of people '
             'and published open-source packages with hundreds of stars on pub.dev.',
           ),
         ]),
@@ -33,8 +33,9 @@ class AboutSection extends StatelessComponent {
       // Right column — experience card
       div(classes: 'about__right', [
         div(classes: 'about__exp-card', [
-          span(classes: 'about__exp-date', [.text('2019 – Present')]),
-          span(classes: 'about__exp-title', [.text('Senior Flutter Engineer')]),
+          span(classes: 'about__exp-date', [.text('2015 – Present')]),
+          span(classes: 'about__exp-company', [.text('Very Good Ventures')]),
+          span(classes: 'about__exp-title', [.text('Flutter Engineer')]),
           p(classes: 'about__exp-desc', [
             .text(
               'Building cross-platform mobile and web applications '
@@ -114,6 +115,11 @@ class AboutSection extends StatelessComponent {
         fontFamily: fontGeistMono,
         fontSize: Unit.pixels(12),
         color: accentPurple,
+      ),
+      css('.about__exp-company').styles(
+        fontFamily: fontGeistMono,
+        fontSize: Unit.pixels(12),
+        color: textMuted,
       ),
       css('.about__exp-title').styles(
         fontFamily: fontGeist,
