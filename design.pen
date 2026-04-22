@@ -5795,15 +5795,6 @@
               "children": [
                 {
                   "type": "text",
-                  "id": "3uAJy",
-                  "fill": "#A1A1AAFF",
-                  "content": "RSS",
-                  "fontFamily": "Inter",
-                  "fontSize": 13,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
                   "id": "VnjNt",
                   "fill": "#A1A1AAFF",
                   "content": "Source",
