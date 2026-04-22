@@ -34,30 +34,30 @@ The data layer and routing are complete. `lib/pages/blog/blog_list.dart` renders
 
 ### `lib/pages/blog/blog_list.dart` — full rewrite
 
-- [ ] Sort posts by `meta.date` descending
-- [ ] Featured post = `posts.first` (if posts non-empty); remaining posts = `posts.skip(1).toList()`
-- [ ] Render in order: BlogHero → Filters → BlogBody
-- [ ] Empty state in place of BlogBody: `<p>No posts yet — check back soon.</p>` inside the body area
+- [x] Sort posts by `meta.date` descending
+- [x] Featured post = `posts.first` (if posts non-empty); remaining posts = `posts.skip(1).toList()`
+- [x] Render in order: BlogHero → Filters → BlogBody
+- [x] Empty state in place of BlogBody: `<p>No posts yet — check back soon.</p>` inside the body area
 
 ### `lib/pages/blog/blog_post.dart` — full rewrite
 
-- [ ] Render nav header + post content + footer
-- [ ] Per-post `Document.head(...)` with title, description, OG tags, canonical link, and JSON-LD BlogPosting schema
+- [x] Render nav header + post content + footer
+- [x] Per-post `Document.head(...)` with title, description, OG tags, canonical link, and JSON-LD BlogPosting schema
 
 ### `lib/main.server.dart` — add highlight.js
 
-- [ ] Add highlight.js CSS `<link>` to `Document(head: [...])`
-- [ ] Add highlight.js `<script>` tag and `hljs.highlightAll()` init script
+- [x] Add highlight.js CSS `<link>` to `Document(head: [...])`
+- [x] Add highlight.js `<script>` tag and `hljs.highlightAll()` init script
 
 ---
 
 ## Files to Create
 
-- [ ] `lib/components/blog_hero.dart` — blog page hero (not the homepage blog preview)
-- [ ] `lib/components/blog_filters.dart` — visual-only filter pills strip
-- [ ] `lib/components/featured_post_card.dart` — horizontal large card for the most recent post
-- [ ] `lib/components/post_list_row.dart` — compact row for the "All Posts" list
-- [ ] `lib/components/blog_sidebar.dart` — sidebar with author bio + topics cards
+- [x] `lib/components/blog_hero.dart` — blog page hero (not the homepage blog preview)
+- [x] `lib/components/blog_filters.dart` — visual-only filter pills strip
+- [x] `lib/components/featured_post_card.dart` — horizontal large card for the most recent post
+- [x] `lib/components/post_list_row.dart` — compact row for the "All Posts" list
+- [x] `lib/components/blog_sidebar.dart` — sidebar with author bio + topics cards
 
 ---
 
@@ -276,15 +276,15 @@ script([RawText('hljs.highlightAll();')]),
 
 ## Acceptance Criteria
 
-- [ ] `/blog` renders: hero, visual-only search box, visual-only filter pills, featured post card, "All Posts" list, visual-only pagination, sidebar
-- [ ] Featured post card = newest post; "All Posts" list shows remaining posts sorted newest-first
-- [ ] `/blog` shows "No posts yet — check back soon." when `posts` is empty
-- [ ] `/blog/:slug` renders correct post with full markdown HTML content
-- [ ] `/blog/:slug` shows byline (date + reading time), tag pills, "← Back to Blog" link
-- [ ] `/blog` and `/blog/:slug` each have unique `<title>` and `<meta name="description">`
-- [ ] Blog post pages have Open Graph tags and JSON-LD `BlogPosting` schema
-- [ ] Code blocks in posts are syntax-highlighted via highlight.js with `github-dark` theme
-- [ ] `jaspr build` completes without errors
+- [x] `/blog` renders: hero, visual-only search box, visual-only filter pills, featured post card, "All Posts" list, visual-only pagination, sidebar
+- [x] Featured post card = newest post; "All Posts" list shows remaining posts sorted newest-first
+- [x] `/blog` shows "No posts yet — check back soon." when `posts` is empty
+- [x] `/blog/:slug` renders correct post with full markdown HTML content
+- [x] `/blog/:slug` shows byline (date + reading time), tag pills, "← Back to Blog" link
+- [x] `/blog` and `/blog/:slug` each have unique `<title>` and `<meta name="description">`
+- [x] Blog post pages have Open Graph tags and JSON-LD `BlogPosting` schema
+- [x] Code blocks in posts are syntax-highlighted via highlight.js with `github-dark` theme
+- [x] `jaspr build` completes without errors
 
 ---
 

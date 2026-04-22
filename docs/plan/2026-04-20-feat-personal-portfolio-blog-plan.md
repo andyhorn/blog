@@ -225,18 +225,20 @@ Router(routes: [
 
 ### Phase 4 — Blog Pages
 
-- [ ] Create `lib/pages/blog/blog_list.dart` — `BlogListPage` component
+- [x] Create `lib/pages/blog/blog_list.dart` — `BlogListPage` component
   - List all posts sorted date-descending
   - Per post: title (linked), date, reading time, description, tag labels
   - Empty state: "No posts yet — check back soon."
-- [ ] Create `lib/pages/blog/blog_post.dart` — `BlogPostPage` component
+- [x] Create `lib/pages/blog/blog_post.dart` — `BlogPostPage` component
   - Render `post.htmlContent` using Jaspr's `RawText`
   - Byline: date + reading time
   - Tag labels
   - "← Back to Blog" link
   - Per-post SEO: `Document.head(title:, meta:{...})`
   - JSON-LD `BlogPosting` schema
-- [ ] Add `highlight.js` CSS/script to `web/index.html` for code block syntax highlighting
+- [x] Add `highlight.js` CSS/script to `lib/main.server.dart` for code block syntax highlighting
+
+> **Status:** Complete (2026-04-22). Full implementation tracked in `docs/plan/2026-04-21-feat-blog-pages-content-plan.md`.
 
 **Blog post page SEO (in `blog_post.dart`):**
 ```dart

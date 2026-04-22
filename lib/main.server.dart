@@ -61,6 +61,15 @@ void main() {
             ],
           }),
         ),
+        // highlight.js — syntax highlighting for code blocks in blog posts
+        link(
+          href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css',
+          rel: 'stylesheet',
+        ),
+        script(
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js',
+        ),
+        script(content: 'hljs.highlightAll();'),
         // Flutter manifest and bootstrap
         link(href: 'manifest.json', rel: 'manifest'),
         script(src: 'flutter_bootstrap.js', async: true),
