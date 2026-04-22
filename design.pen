@@ -172,7 +172,7 @@
               "fill": "#FFFFFFCC",
               "textGrowth": "fixed-width",
               "width": 600,
-              "content": "5+ years crafting polished Flutter apps and Dart packages.\nPublished on pub.dev. Shipped on the App Store.",
+              "content": "6+ years crafting polished Flutter apps and Dart packages.\nPublished on pub.dev. Shipped on the App Store.",
               "lineHeight": 1.6,
               "textAlign": "center",
               "fontFamily": "Inter",
@@ -353,7 +353,7 @@
                   "type": "text",
                   "id": "2KwCh",
                   "fill": "#FFFFFFFF",
-                  "content": "  final experience = '5+ years';",
+                  "content": "  const experience = '6+ years';",
                   "fontFamily": "Geist Mono",
                   "fontSize": 14,
                   "fontWeight": "normal"
@@ -362,7 +362,7 @@
                   "type": "text",
                   "id": "oEBWL",
                   "fill": "#FFFFFFFF",
-                  "content": "  final platform = 'Flutter & Dart';",
+                  "content": "  const company = 'Very Good Ventures';",
                   "fontFamily": "Geist Mono",
                   "fontSize": 14,
                   "fontWeight": "normal"
@@ -371,7 +371,7 @@
                   "type": "text",
                   "id": "mBccy",
                   "fill": "#FFFFFFFF",
-                  "content": "  final pubPackages = 20;",
+                  "content": "  const pubPackages = 12;",
                   "fontFamily": "Geist Mono",
                   "fontSize": 14,
                   "fontWeight": "normal"
@@ -380,7 +380,7 @@
                   "type": "text",
                   "id": "wU6Y5",
                   "fill": "#FFFFFFFF",
-                  "content": "  final appsShipped = 4;",
+                  "content": "  const appsShipped = 4;",
                   "fontFamily": "Geist Mono",
                   "fontSize": 14,
                   "fontWeight": "normal"
@@ -435,16 +435,27 @@
                   "type": "text",
                   "id": "HJbtE",
                   "fill": "#A1A1AAFF",
-                  "content": "name: andrew_portfolio",
+                  "content": "name: blog",
                   "fontFamily": "Geist Mono",
                   "fontSize": 14,
                   "fontWeight": "normal"
                 },
                 {
                   "type": "text",
-                  "id": "hSp3s",
-                  "fill": "#FFFFFFFF",
-                  "content": "sdk: '>=3.0.0 <4.0.0'",
+                  "id": "xs0Gm",
+                  "name": "desc",
+                  "fill": "#A1A1AAFF",
+                  "content": "description: A portfolio app built with Jaspr.",
+                  "fontFamily": "Geist Mono",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "9ADsE",
+                  "name": "repo",
+                  "fill": "#A1A1AAFF",
+                  "content": "repository: https://github.com/andyhorn/blog",
                   "fontFamily": "Geist Mono",
                   "fontSize": 14,
                   "fontWeight": "normal"
@@ -469,15 +480,6 @@
                 },
                 {
                   "type": "text",
-                  "id": "4BfNO",
-                  "fill": "#FFFFFFFF",
-                  "content": "  flutter: sdk: flutter",
-                  "fontFamily": "Geist Mono",
-                  "fontSize": 14,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
                   "id": "eJu9b",
                   "fill": "#FFFFFFFF",
                   "content": "  bloc: ^8.1.0",
@@ -487,9 +489,29 @@
                 },
                 {
                   "type": "text",
+                  "id": "e9sQ5",
+                  "name": "eq",
+                  "fill": "#FFFFFFFF",
+                  "content": "  equatable: ^2.0.0",
+                  "fontFamily": "Geist Mono",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
                   "id": "jw4XC",
                   "fill": "#FFFFFFFF",
                   "content": "  go_router: ^13.0.0",
+                  "fontFamily": "Geist Mono",
+                  "fontSize": 14,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "9BPRB",
+                  "name": "sr",
+                  "fill": "#FFFFFFFF",
+                  "content": "  simple_routes: ^2.0.0",
                   "fontFamily": "Geist Mono",
                   "fontSize": 14,
                   "fontWeight": "normal"
@@ -529,7 +551,7 @@
                   "type": "text",
                   "id": "9TW1F",
                   "fill": "#A855F7FF",
-                  "content": "5+",
+                  "content": "6+",
                   "fontFamily": "Geist Mono",
                   "fontSize": 32,
                   "fontWeight": "700"
@@ -565,7 +587,7 @@
                   "type": "text",
                   "id": "YOl91",
                   "fill": "#A855F7FF",
-                  "content": "20+",
+                  "content": "12",
                   "fontFamily": "Geist Mono",
                   "fontSize": 32,
                   "fontWeight": "700"
@@ -719,7 +741,7 @@
                   "fill": "#A1A1AAFF",
                   "textGrowth": "fixed-width",
                   "width": 500,
-                  "content": "I'm a software engineer specializing in Flutter and Dart. I love building apps that feel native and fast, and publishing open-source packages that help the community ship better products.",
+                  "content": "I'm a Flutter engineer at Very Good Ventures and founder of Ember City Studio. I've spent 6+ years shipping production apps across finance, health, and consumer SaaS — and building open-source tools for the Flutter ecosystem.",
                   "lineHeight": 1.7,
                   "fontFamily": "Inter",
                   "fontSize": 16,
@@ -861,48 +883,172 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "tOmT0",
-                  "name": "expCard",
-                  "fill": "#111111FF",
-                  "cornerRadius": 8,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "#1A1A1AFF"
-                  },
-                  "layout": "vertical",
-                  "gap": 8,
-                  "padding": 24,
+                  "id": "qscAN",
+                  "name": "tl",
+                  "width": "fill_container",
+                  "height": 240,
+                  "layout": "none",
                   "children": [
                     {
-                      "type": "text",
-                      "id": "m4QT8",
+                      "type": "rectangle",
+                      "id": "sUcAq",
+                      "x": 4,
+                      "y": 9,
+                      "fill": "#A855F730",
+                      "width": 2,
+                      "height": 191
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "w867E",
+                      "x": 0,
+                      "y": 4,
                       "fill": "#A855F7FF",
-                      "content": "2019 – Present",
-                      "fontFamily": "Geist Mono",
-                      "fontSize": 12,
-                      "fontWeight": "normal"
+                      "width": 10,
+                      "height": 10
                     },
                     {
-                      "type": "text",
-                      "id": "Ixchh",
-                      "fill": "#FFFFFFFF",
-                      "content": "Senior Flutter Engineer",
-                      "fontFamily": "Geist",
-                      "fontSize": 18,
-                      "fontWeight": "600"
+                      "type": "frame",
+                      "id": "72GyS",
+                      "x": 22,
+                      "y": 0,
+                      "name": "e1",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "WJAjw",
+                          "fill": "#FFFFFFFF",
+                          "content": "Software Engineer 3",
+                          "fontFamily": "Geist",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "3gwrF",
+                          "fill": "#A1A1AAFF",
+                          "content": "Very Good Ventures  ·  Sep 2025 – Present",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
                     },
                     {
-                      "type": "text",
-                      "id": "4Ib0B",
-                      "fill": "#A1A1AAFF",
-                      "textGrowth": "fixed-width",
-                      "width": 400,
-                      "content": "Building cross-platform apps and open-source tooling for teams worldwide.",
-                      "lineHeight": 1.6,
-                      "fontFamily": "Inter",
-                      "fontSize": 14,
-                      "fontWeight": "normal"
+                      "type": "ellipse",
+                      "id": "cxsa5",
+                      "x": 0,
+                      "y": 68,
+                      "fill": "#A855F7FF",
+                      "width": 10,
+                      "height": 10
+                    },
+                    {
+                      "type": "frame",
+                      "id": "LuOGu",
+                      "x": 22,
+                      "y": 64,
+                      "name": "e2",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "pxzoJ",
+                          "fill": "#FFFFFFFF",
+                          "content": "Founder & Principal Engineer",
+                          "fontFamily": "Geist",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "uWAvW",
+                          "fill": "#A1A1AAFF",
+                          "content": "Ember City Studio  ·  Feb 2025 – Present",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "HCNz8",
+                      "x": 0,
+                      "y": 132,
+                      "fill": "#A855F7FF",
+                      "width": 10,
+                      "height": 10
+                    },
+                    {
+                      "type": "frame",
+                      "id": "4jcsH",
+                      "x": 22,
+                      "y": 128,
+                      "name": "e3",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Qpzqh",
+                          "fill": "#FFFFFFFF",
+                          "content": "Senior Flutter Engineer",
+                          "fontFamily": "Geist",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "ZuAgO",
+                          "fill": "#A1A1AAFF",
+                          "content": "MacroFactor  ·  Dec 2024 – Jul 2025",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "ellipse",
+                      "id": "3lpyY",
+                      "x": 0,
+                      "y": 196,
+                      "fill": "#A855F7FF",
+                      "width": 10,
+                      "height": 10
+                    },
+                    {
+                      "type": "frame",
+                      "id": "xaPQl",
+                      "x": 22,
+                      "y": 192,
+                      "name": "e4",
+                      "layout": "vertical",
+                      "gap": 4,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "m4lK4",
+                          "fill": "#FFFFFFFF",
+                          "content": "Software Engineer",
+                          "fontFamily": "Geist",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        },
+                        {
+                          "type": "text",
+                          "id": "xtu6P",
+                          "fill": "#A1A1AAFF",
+                          "content": "Uptech Studio  ·  Jul 2022 – Apr 2024",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 11,
+                          "fontWeight": "normal"
+                        }
+                      ]
                     }
                   ]
                 }
