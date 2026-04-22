@@ -114,5 +114,24 @@ class HeroSection extends StatelessComponent {
         raw: {'background': '#FFFFFF20', 'border': '1px solid #FFFFFF40'},
       ),
     ]),
+    css('@media (max-width: ${breakpointMd}px)', [
+      css('.hero').styles(
+        padding: Spacing.symmetric(vertical: 60.px, horizontal: 24.px),
+        raw: {'min-height': '360px'},
+      ),
+      css('.hero__title').styles(
+        raw: {'font-size': '48px', 'letter-spacing': '-1px'},
+      ),
+      css('.hero__sub').styles(
+        raw: {'font-size': '16px'},
+      ),
+      css('.hero__btns').styles(
+        flexDirection: .column,
+        raw: {'width': '100%'},
+      ),
+      css('.hero__btn').styles(
+        raw: {'justify-content': 'center', 'text-align': 'center'},
+      ),
+    ]),
   ];
 }

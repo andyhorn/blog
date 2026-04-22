@@ -64,5 +64,20 @@ class StatsStrip extends StatelessComponent {
         raw: {'height': '40px', 'flex-shrink': '0'},
       ),
     ]),
+    css('@media (max-width: ${breakpointMd}px)', [
+      css('.stats-strip').styles(
+        padding: Spacing.symmetric(vertical: 32.px, horizontal: 24.px),
+        raw: {
+          'height': 'auto',
+          'flex-wrap': 'wrap',
+          'gap': '32px 0',
+          'justify-content': 'space-around',
+        },
+      ),
+      css('.stats-strip__stat').styles(
+        raw: {'width': '50%'},
+      ),
+      css('.stats-strip__divider').styles(display: .none),
+    ]),
   ];
 }

@@ -56,5 +56,18 @@ class AppsSection extends StatelessComponent {
         },
       ),
     ]),
+    css('@media (max-width: ${breakpointMd}px)', [
+      css('.apps-section').styles(
+        padding: Spacing.symmetric(vertical: 60.px, horizontal: 24.px),
+      ),
+      css('.apps-section__grid').styles(
+        raw: {'grid-template-columns': 'repeat(2, 1fr)'},
+      ),
+    ]),
+    css('@media (max-width: ${breakpointSm}px)', [
+      css('.apps-section__grid').styles(
+        raw: {'grid-template-columns': '1fr'},
+      ),
+    ]),
   ];
 }
