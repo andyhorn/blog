@@ -3,7 +3,10 @@ title: "Hello World"
 date: "2026-04-20"
 description: "Welcome to my new portfolio site and blog, built with Jaspr and Dart."
 tags: ["Dart", "Jaspr", "Meta"]
+image_prompt: A friendly illustrated robot waving hello with a smile. rounded and curvy, no hard edges. light, solid background.
+image: "/images/posts/hello-world.png"
 ---
+
 
 # Hello World
 
