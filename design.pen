@@ -380,7 +380,7 @@
                   "type": "text",
                   "id": "wU6Y5",
                   "fill": "#FFFFFFFF",
-                  "content": "  const appsShipped = 4;",
+                  "content": "  const appsShipped = 2;",
                   "fontFamily": "Geist Mono",
                   "fontSize": 14,
                   "fontWeight": "normal"
@@ -623,7 +623,7 @@
                   "type": "text",
                   "id": "CcJEO",
                   "fill": "#A855F7FF",
-                  "content": "4",
+                  "content": "2",
                   "fontFamily": "Geist Mono",
                   "fontSize": 32,
                   "fontWeight": "700"
