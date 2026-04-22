@@ -36,6 +36,7 @@ Post? _parsePost(File file) {
   final date = DateTime.tryParse(dateStr) ?? DateTime.now();
   final rawTags = data['tags'];
   final tags = rawTags is YamlList ? rawTags.map((t) => t.toString()).toList() : <String>[];
+  final image = data['image'] as String?;
 
   final htmlContent = md.markdownToHtml(
     body,
@@ -51,6 +52,7 @@ Post? _parsePost(File file) {
       description: description,
       tags: tags,
       slug: slug,
+      image: image,
     ),
     htmlContent: htmlContent,
     readingTimeMinutes: readingTimeMinutes,

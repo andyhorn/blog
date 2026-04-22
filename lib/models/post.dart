@@ -8,6 +8,7 @@ class PostMeta {
     required this.description,
     required this.tags,
     required this.slug,
+    this.image,
   });
 
   final String title;
@@ -16,6 +17,9 @@ class PostMeta {
   final List<String> tags;
   final String slug;
 
+  /// Optional path to a cover image (e.g. "/images/posts/my-post.jpg").
+  final String? image;
+
   @encoder
   Map<String, dynamic> encode() => {
     'title': title,
@@ -23,6 +27,7 @@ class PostMeta {
     'description': description,
     'tags': tags,
     'slug': slug,
+    'image': image,
   };
 
   @decoder
@@ -32,6 +37,7 @@ class PostMeta {
     description: data['description'] as String,
     tags: List<String>.from(data['tags'] as List),
     slug: data['slug'] as String,
+    image: data['image'] as String?,
   );
 }
 

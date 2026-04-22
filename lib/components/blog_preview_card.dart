@@ -38,6 +38,12 @@ class BlogPreviewCard extends StatelessComponent {
       href: '/blog/${post.meta.slug}',
       classes: 'blog-preview-card',
       [
+        if (post.meta.image != null)
+          img(
+            src: post.meta.image!,
+            alt: post.meta.title,
+            classes: 'blog-preview-card__image',
+          ),
         // Meta row: date | divider | tag pill
         div(classes: 'blog-preview-card__meta', [
           span(classes: 'blog-preview-card__date', [.text(_formattedDate)]),
@@ -80,6 +86,15 @@ class BlogPreviewCard extends StatelessComponent {
           'border': '1px solid #1A1A1A',
           'gap': '20px',
           'text-decoration': 'none',
+        },
+      ),
+      css('.blog-preview-card__image').styles(
+        width: 100.percent,
+        raw: {
+          'height': '180px',
+          'object-fit': 'cover',
+          'border-radius': '4px',
+          'display': 'block',
         },
       ),
       css('&:hover .blog-preview-card__title').styles(color: accentPurple),
