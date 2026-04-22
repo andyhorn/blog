@@ -14,8 +14,8 @@
 include: package:flutter_lints/flutter.yaml
 
 analyzer:
-#   exclude:
-#     - path/to/excluded/files/**
+  exclude:
+    - build/**
 
 # jaspr_lints plugin disabled — v0.7.x has infinite recursion in
 # ScopeTreeNode.analyzeChildren (UnsafeImportsRule) that crashes the analyzer.
