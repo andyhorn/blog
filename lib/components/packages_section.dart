@@ -23,6 +23,14 @@ class PackagesSection extends StatelessComponent {
       div(classes: 'packages-section__grid', [
         for (final pkg in packages) PackageCard(package: pkg),
       ]),
+      div(classes: 'packages-section__footer', [
+        a(
+          href: 'https://pub.dev/publishers/andyhorn.dev/packages',
+          classes: 'packages-section__view-all',
+          attributes: {'target': '_blank', 'rel': 'noopener noreferrer'},
+          [.text('View all packages →')],
+        ),
+      ]),
     ]);
   }
 
@@ -56,6 +64,28 @@ class PackagesSection extends StatelessComponent {
           'grid-template-columns': 'repeat(3, 1fr)',
           'gap': '24px',
         },
+      ),
+      css('.packages-section__footer').styles(
+        display: .flex,
+        justifyContent: .center,
+      ),
+      css('.packages-section__view-all').styles(
+        display: .inlineBlock,
+        fontFamily: fontInter,
+        fontSize: Unit.pixels(14),
+        fontWeight: FontWeight.w500,
+        color: accentPurple,
+        raw: {
+          'text-decoration': 'none',
+          'border': '1px solid ${accentPurple.value}',
+          'padding': '10px 24px',
+          'border-radius': '8px',
+          'transition': 'background-color 0.2s, color 0.2s',
+        },
+      ),
+      css('.packages-section__view-all:hover').styles(
+        backgroundColor: accentPurple,
+        color: Color('#0A0A0A'),
       ),
     ]),
   ];
