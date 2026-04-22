@@ -18,10 +18,10 @@ class BridgeSection extends StatelessComponent {
             span(classes: 'bridge__code--bright', [.text('  runApp(PortfolioApp());\n')]),
             span(classes: 'bridge__code--muted', [.text('}\n\n')]),
             span(classes: 'bridge__code--muted', [.text('class PortfolioApp extends StatelessWidget {\n')]),
-            span(classes: 'bridge__code--bright', [.text("  final experience = '5+ years';\n")]),
-            span(classes: 'bridge__code--bright', [.text("  final platform = 'Flutter & Dart';\n")]),
-            span(classes: 'bridge__code--bright', [.text('  final pubPackages = 20;\n')]),
-            span(classes: 'bridge__code--bright', [.text('  final appsShipped = 4;\n')]),
+            span(classes: 'bridge__code--bright', [.text("  const experience = '6+ years';\n")]),
+            span(classes: 'bridge__code--bright', [.text("  const company = 'Very Good Ventures';\n")]),
+            span(classes: 'bridge__code--bright', [.text('  const pubPackages = 12;\n')]),
+            span(classes: 'bridge__code--bright', [.text('  const appsShipped = 4;\n')]),
             span(classes: 'bridge__code--muted', [.text('}')]),
           ]),
         ]),
@@ -29,12 +29,20 @@ class BridgeSection extends StatelessComponent {
         div(classes: 'bridge__pane bridge__pane--right', [
           span(classes: 'bridge__file-badge', [.text('pubspec.yaml')]),
           pre(classes: 'bridge__code', [
-            span(classes: 'bridge__code--muted', [.text('name: andrew_portfolio\n')]),
-            span(classes: 'bridge__code--bright', [.text("sdk: '>=3.0.0 <4.0.0'\n")]),
-            span(classes: 'bridge__code--muted', [.text('\ndependencies:\n')]),
-            span(classes: 'bridge__code--bright', [.text('  flutter: sdk: flutter\n')]),
+            span(classes: 'bridge__code--muted', [.text('name: blog\n')]),
+            span(classes: 'bridge__code--muted', [.text('description: A portfolio app built with Jaspr.\n')]),
+            span(classes: 'bridge__code--muted', [
+              .text('repository: '),
+              a(href: 'https://github.com/andyhorn/blog', classes: 'bridge__code--link', [
+                .text('https://github.com/andyhorn/blog'),
+              ]),
+              .text('\n\n'),
+            ]),
+            span(classes: 'bridge__code--muted', [.text('dependencies:\n')]),
             span(classes: 'bridge__code--bright', [.text('  bloc: ^8.1.0\n')]),
-            span(classes: 'bridge__code--bright', [.text('  go_router: ^13.0.0')]),
+            span(classes: 'bridge__code--bright', [.text('  equatable: ^2.0.0\n')]),
+            span(classes: 'bridge__code--bright', [.text('  go_router: ^13.0.0\n')]),
+            span(classes: 'bridge__code--bright', [.text('  simple_routes: ^2.0.0')]),
           ]),
         ]),
       ]),
@@ -99,6 +107,14 @@ class BridgeSection extends StatelessComponent {
       ),
       css('.bridge__code--muted').styles(color: textMuted),
       css('.bridge__code--bright').styles(color: textPrimary),
+      css('.bridge__code--link').styles(
+        color: textMuted,
+        textDecoration: .none,
+        cursor: .pointer,
+      ),
+      css('.bridge__code--link:hover').styles(
+        textDecoration: TextDecoration(line: .underline),
+      ),
     ]),
   ];
 }
