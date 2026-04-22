@@ -7,8 +7,8 @@ class StatsStrip extends StatelessComponent {
   const StatsStrip({super.key});
 
   static const _stats = [
-    ('5+', 'Years Experience'),
-    ('20+', 'pub.dev Packages'),
+    ('6+', 'Years Experience'),
+    ('12', 'pub.dev Packages'),
     ('4', 'Published Apps'),
     ('∞', 'Cups of Coffee'),
   ];

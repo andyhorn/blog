@@ -19,7 +19,7 @@ class HeroSection extends StatelessComponent {
       ]),
       p(classes: 'hero__sub', [
         .text(
-          '5+ years crafting high-quality Flutter apps and open-source packages. '
+          '6+ years crafting high-quality Flutter apps and open-source packages. '
           'Focused on developer experience, clean architecture, and pixel-perfect UI.',
         ),
       ]),
