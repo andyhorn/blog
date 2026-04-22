@@ -21,7 +21,7 @@ class BridgeSection extends StatelessComponent {
             span(classes: 'bridge__code--bright', [.text("  const experience = '6+ years';\n")]),
             span(classes: 'bridge__code--bright', [.text("  const company = 'Very Good Ventures';\n")]),
             span(classes: 'bridge__code--bright', [.text('  const pubPackages = 12;\n')]),
-            span(classes: 'bridge__code--bright', [.text('  const appsShipped = 4;\n')]),
+            span(classes: 'bridge__code--bright', [.text('  const appsShipped = 2;\n')]),
             span(classes: 'bridge__code--muted', [.text('}')]),
           ]),
         ]),

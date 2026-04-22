@@ -9,7 +9,7 @@ class StatsStrip extends StatelessComponent {
   static const _stats = [
     ('6+', 'Years Experience'),
     ('12', 'pub.dev Packages'),
-    ('4', 'Published Apps'),
+    ('2', 'Published Apps'),
     ('∞', 'Cups of Coffee'),
   ];
 
