@@ -9,7 +9,7 @@ class SiteFooter extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return footer(classes: 'site-footer', [
-      span(classes: 'site-footer__left', [.text('andyhorn.dev')]),
+      span(classes: 'site-footer__left', [.text('© ${DateTime.now().year} Andy Horn')]),
       span(classes: 'site-footer__right', [.text('Built with Jaspr')]),
     ]);
   }
