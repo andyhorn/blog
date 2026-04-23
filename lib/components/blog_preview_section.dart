@@ -41,7 +41,7 @@ class BlogPreviewSection extends StatelessComponent {
         flexDirection: .column,
         backgroundColor: bgSecondary,
         padding: Spacing.symmetric(
-          vertical: Unit.pixels(100),
+          vertical: Unit.pixels(85),
           horizontal: Unit.pixels(120),
         ),
         raw: {'gap': '48px'},
@@ -80,7 +80,7 @@ class BlogPreviewSection extends StatelessComponent {
     ]),
     css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
       css('.blog-preview').styles(
-        padding: Spacing.symmetric(vertical: 60.px, horizontal: 24.px),
+        padding: Spacing.symmetric(vertical: 50.px, horizontal: 24.px),
       ),
       css('.blog-preview .blog-preview__header').styles(
         flexDirection: .column,

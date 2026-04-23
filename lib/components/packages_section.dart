@@ -42,7 +42,7 @@ class PackagesSection extends StatelessComponent {
         flexDirection: .column,
         backgroundColor: bgBase,
         padding: Spacing.symmetric(
-          vertical: Unit.pixels(100),
+          vertical: Unit.pixels(85),
           horizontal: Unit.pixels(120),
         ),
         raw: {'gap': '48px'},
@@ -90,7 +90,7 @@ class PackagesSection extends StatelessComponent {
     ]),
     css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
       css('.packages-section').styles(
-        padding: Spacing.symmetric(vertical: 60.px, horizontal: 24.px),
+        padding: Spacing.symmetric(vertical: 50.px, horizontal: 24.px),
       ),
       css('.packages-section .packages-section__grid').styles(
         raw: {'grid-template-columns': 'repeat(2, 1fr)'},

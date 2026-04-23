@@ -74,7 +74,7 @@ class AboutSection extends StatelessComponent {
         display: .flex,
         backgroundColor: bgBase,
         padding: Spacing.symmetric(
-          vertical: Unit.pixels(100),
+          vertical: Unit.pixels(85),
           horizontal: Unit.pixels(120),
         ),
         raw: {'gap': '80px'},
@@ -173,7 +173,7 @@ class AboutSection extends StatelessComponent {
     css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
       css('.about').styles(
         flexDirection: .column,
-        padding: Spacing.symmetric(vertical: 60.px, horizontal: 24.px),
+        padding: Spacing.symmetric(vertical: 50.px, horizontal: 24.px),
         raw: {'gap': '40px'},
       ),
       css('.about .about__right').styles(
