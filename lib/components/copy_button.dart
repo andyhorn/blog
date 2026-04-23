@@ -10,33 +10,6 @@ class CopyButton extends StatefulComponent {
 
   final String codeBlockId;
 
-  @override
-  State<CopyButton> createState() => _CopyButtonState();
-}
-
-class _CopyButtonState extends State<CopyButton> {
-  bool _copied = false;
-
-  void _copy() {
-    if (kIsWeb) {
-      final wrapper = web.document.getElementById(component.codeBlockId);
-      final codeEl = wrapper?.querySelector('code');
-      final text = codeEl?.textContent ?? '';
-      web.window.navigator.clipboard.writeText(text);
-    }
-    setState(() => _copied = true);
-    Future.delayed(const Duration(seconds: 2), () => setState(() => _copied = false));
-  }
-
-  @override
-  Component build(BuildContext context) {
-    return button(
-      classes: 'copy-btn',
-      onClick: _copy,
-      [.text(_copied ? 'Copied!' : 'Copy')],
-    );
-  }
-
   @css
   static List<StyleRule> get styles => [
     css('.copy-btn').styles(
@@ -66,4 +39,31 @@ class _CopyButtonState extends State<CopyButton> {
       },
     ),
   ];
+
+  @override
+  State<CopyButton> createState() => _CopyButtonState();
+}
+
+class _CopyButtonState extends State<CopyButton> {
+  bool _copied = false;
+
+  void _copy() {
+    if (kIsWeb) {
+      final wrapper = web.document.getElementById(component.codeBlockId);
+      final codeEl = wrapper?.querySelector('code');
+      final text = codeEl?.textContent ?? '';
+      web.window.navigator.clipboard.writeText(text);
+    }
+    setState(() => _copied = true);
+    Future.delayed(const Duration(seconds: 2), () => setState(() => _copied = false));
+  }
+
+  @override
+  Component build(BuildContext context) {
+    return button(
+      classes: 'copy-btn',
+      onClick: _copy,
+      [.text(_copied ? 'Copied!' : 'Copy')],
+    );
+  }
 }
