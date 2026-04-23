@@ -55,15 +55,6 @@
                 },
                 {
                   "type": "text",
-                  "id": "9BnOP",
-                  "fill": "#A1A1AAFF",
-                  "content": "Apps",
-                  "fontFamily": "Inter",
-                  "fontSize": 15,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
                   "id": "CKe2J",
                   "fill": "#A1A1AAFF",
                   "content": "Packages",
@@ -2308,15 +2299,6 @@
                 },
                 {
                   "type": "text",
-                  "id": "Ume47",
-                  "fill": "#A1A1AAFF",
-                  "content": "Apps",
-                  "fontFamily": "Inter",
-                  "fontSize": 15,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
                   "id": "wrzKU",
                   "fill": "#A1A1AAFF",
                   "content": "Packages",
@@ -3964,15 +3946,6 @@
                   "id": "cmhvJ",
                   "fill": "#A1A1AAFF",
                   "content": "About",
-                  "fontFamily": "Inter",
-                  "fontSize": 15,
-                  "fontWeight": "normal"
-                },
-                {
-                  "type": "text",
-                  "id": "PMi3n",
-                  "fill": "#A1A1AAFF",
-                  "content": "Apps",
                   "fontFamily": "Inter",
                   "fontSize": 15,
                   "fontWeight": "normal"
