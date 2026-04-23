@@ -3,7 +3,6 @@ import 'package:jaspr/jaspr.dart';
 
 import '../components/about_section.dart';
 import '../components/blog_preview_section.dart';
-import '../components/bridge_section.dart';
 import '../components/contact_section.dart';
 import '../components/hero_section.dart';
 import '../components/packages_section.dart';
@@ -26,7 +25,6 @@ class Home extends StatelessComponent {
         },
       ),
       const HeroSection(),
-      const BridgeSection(),
       const StatsStrip(),
       const AboutSection(),
       const PackagesSection(),

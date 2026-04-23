@@ -12,7 +12,6 @@ import 'package:blog/components/blog_preview_card.dart' as _blog_preview_card;
 import 'package:blog/components/blog_preview_section.dart'
     as _blog_preview_section;
 import 'package:blog/components/blog_sidebar.dart' as _blog_sidebar;
-import 'package:blog/components/bridge_section.dart' as _bridge_section;
 import 'package:blog/components/contact_section.dart' as _contact_section;
 import 'package:blog/components/copy_button.dart' as _copy_button;
 import 'package:blog/components/featured_post_card.dart' as _featured_post_card;
@@ -67,7 +66,6 @@ ServerOptions get defaultServerOptions => ServerOptions(
     ..._blog_preview_card.BlogPreviewCard.styles,
     ..._blog_preview_section.BlogPreviewSection.styles,
     ..._blog_sidebar.BlogSidebar.styles,
-    ..._bridge_section.BridgeSection.styles,
     ..._contact_section.ContactSection.styles,
     ..._copy_button.CopyButton.styles,
     ..._featured_post_card.FeaturedPostCard.styles,
