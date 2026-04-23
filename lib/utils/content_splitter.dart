@@ -1,4 +1,6 @@
-sealed class ContentSegment {}
+sealed class ContentSegment {
+  const ContentSegment();
+}
 
 class HtmlSegment extends ContentSegment {
   const HtmlSegment(this.html);
