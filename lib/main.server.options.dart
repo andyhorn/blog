@@ -14,6 +14,7 @@ import 'package:blog/components/blog_preview_section.dart'
 import 'package:blog/components/blog_sidebar.dart' as _blog_sidebar;
 import 'package:blog/components/bridge_section.dart' as _bridge_section;
 import 'package:blog/components/contact_section.dart' as _contact_section;
+import 'package:blog/components/copy_button.dart' as _copy_button;
 import 'package:blog/components/featured_post_card.dart' as _featured_post_card;
 import 'package:blog/components/header.dart' as _header;
 import 'package:blog/components/hero_section.dart' as _hero_section;
@@ -52,6 +53,10 @@ ServerOptions get defaultServerOptions => ServerOptions(
           'blog_interactive_section',
           params: __blog_interactive_sectionBlogInteractiveSection,
         ),
+    _copy_button.CopyButton: ClientTarget<_copy_button.CopyButton>(
+      'copy_button',
+      params: __copy_buttonCopyButton,
+    ),
     _header.Header: ClientTarget<_header.Header>('header'),
   },
   styles: () => [
@@ -81,3 +86,6 @@ ServerOptions get defaultServerOptions => ServerOptions(
 Map<String, Object?> __blog_interactive_sectionBlogInteractiveSection(
   _blog_interactive_section.BlogInteractiveSection c,
 ) => {'posts': c.posts.map((i) => i.encode()).toList()};
+Map<String, Object?> __copy_buttonCopyButton(_copy_button.CopyButton c) => {
+  'codeBlockId': c.codeBlockId,
+};

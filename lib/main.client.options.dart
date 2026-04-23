@@ -8,6 +8,7 @@ import 'package:jaspr/client.dart';
 
 import 'package:blog/components/blog_interactive_section.dart'
     deferred as _blog_interactive_section;
+import 'package:blog/components/copy_button.dart' deferred as _copy_button;
 import 'package:blog/components/header.dart' deferred as _header;
 import 'package:blog/models/post.dart' as _post;
 
@@ -36,6 +37,10 @@ ClientOptions get defaultClientOptions => ClientOptions(
             .toList(),
       ),
       loader: _blog_interactive_section.loadLibrary,
+    ),
+    'copy_button': ClientLoader(
+      (p) => _copy_button.CopyButton(codeBlockId: p['codeBlockId'] as String),
+      loader: _copy_button.loadLibrary,
     ),
     'header': ClientLoader(
       (p) => _header.Header(),
