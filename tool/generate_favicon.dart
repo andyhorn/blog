@@ -45,7 +45,7 @@ void main() async {
   print('Rendering favicon...');
   final renderResult = await Process.run(magick, [
     '-size',
-    '${size}x${size}',
+    '${size}x$size',
     'xc:none',
     '-font',
     fontPath,
