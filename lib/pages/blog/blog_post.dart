@@ -189,6 +189,35 @@ class BlogPostPage extends StatelessComponent {
           backgroundColor: bgCard,
           raw: {'border-radius': '4px', 'padding': '2px 6px'},
         ),
+        css('.code-wrapper').styles(
+          raw: {'position': 'relative'},
+        ),
+        css('.copy-btn').styles(
+          fontFamily: fontGeistMono,
+          fontSize: Unit.pixels(11),
+          fontWeight: .w600,
+          color: textMuted,
+          raw: {
+            'position': 'absolute',
+            'top': '8px',
+            'right': '8px',
+            'background': 'rgba(255,255,255,0.06)',
+            'border': '1px solid #2A2A2A',
+            'border-radius': '4px',
+            'padding': '3px 10px',
+            'cursor': 'pointer',
+            'transition': 'color 0.15s, background 0.15s, border-color 0.15s',
+            'line-height': '1.4',
+            'z-index': '1',
+          },
+        ),
+        css('.copy-btn:hover').styles(
+          color: accentPurple,
+          raw: {
+            'background': 'rgba(168,85,247,0.1)',
+            'border-color': 'rgba(168,85,247,0.3)',
+          },
+        ),
         css('pre').styles(
           backgroundColor: bgCard,
           radius: .all(.circular(8.px)),
