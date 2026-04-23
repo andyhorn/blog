@@ -69,6 +69,7 @@ ServerOptions get defaultServerOptions => ServerOptions(
     ..._blog_sidebar.BlogSidebar.styles,
     ..._bridge_section.BridgeSection.styles,
     ..._contact_section.ContactSection.styles,
+    ..._copy_button.CopyButton.styles,
     ..._featured_post_card.FeaturedPostCard.styles,
     ..._header.Header.styles,
     ..._hero_section.HeroSection.styles,
