@@ -26,6 +26,11 @@ void main() {
         'twitter:card': 'summary_large_image',
       },
       head: [
+        // Favicon
+        link(href: 'favicon.ico', rel: 'icon', attributes: {'type': 'image/x-icon'}),
+        link(href: 'icons/Icon-192.png', rel: 'icon', attributes: {'type': 'image/png', 'sizes': '192x192'}),
+        link(href: 'icons/Icon-512.png', rel: 'icon', attributes: {'type': 'image/png', 'sizes': '512x512'}),
+        link(href: 'icons/Icon-maskable-192.png', rel: 'apple-touch-icon', attributes: {'sizes': '192x192'}),
         // Viewport meta — must be first for correct mobile scaling
         meta(
           attributes: {
