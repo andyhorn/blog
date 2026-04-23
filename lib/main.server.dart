@@ -19,7 +19,7 @@ void main() {
 
   runApp(
     Document(
-      title: 'Andy Horn',
+      title: 'Andy Horn — Flutter dev & open source enthusiast',
       meta: {
         'description': 'Personal portfolio and blog of Andy Horn, Flutter engineer and pub.dev package author.',
         'twitter:site': '@andyjhorn',
