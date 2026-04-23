@@ -4,9 +4,11 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
+import '../../components/copy_button.dart';
 import '../../components/table_of_contents.dart';
 import '../../constants/theme.dart';
 import '../../models/post.dart';
+import '../../utils/content_splitter.dart';
 import '../../utils/format_date.dart';
 import '../../utils/headings.dart';
 import '../../utils/tag_colors.dart';
@@ -66,7 +68,7 @@ class BlogPostPage extends StatelessComponent {
               classes: 'blog-post__cover',
             ),
           // Content
-          div(classes: 'blog-post__content', [RawText(post.htmlContent)]),
+          div(classes: 'blog-post__content', _buildContent(post.htmlContent)),
           // JSON-LD BlogPosting schema
           script(
             attributes: {'type': 'application/ld+json'},
@@ -95,6 +97,30 @@ class BlogPostPage extends StatelessComponent {
           ]),
       ]),
     ]);
+  }
+
+  static List<Component> _buildContent(String html) {
+    final segments = splitHtmlContent(html);
+    final result = <Component>[];
+    var codeIndex = 0;
+    for (final seg in segments) {
+      switch (seg) {
+        case HtmlSegment(:final html):
+          result.add(RawText(html));
+        case CodeSegment(:final attrs, :final code):
+          final id = 'code-block-$codeIndex';
+          codeIndex++;
+          result.add(div(
+            id: id,
+            classes: 'code-wrapper',
+            [
+              RawText('<pre><code$attrs>$code</code></pre>'),
+              CopyButton(codeBlockId: id),
+            ],
+          ));
+      }
+    }
+    return result;
   }
 
   @css
@@ -191,32 +217,6 @@ class BlogPostPage extends StatelessComponent {
         ),
         css('.code-wrapper').styles(
           raw: {'position': 'relative'},
-        ),
-        css('.copy-btn').styles(
-          fontFamily: fontGeistMono,
-          fontSize: Unit.pixels(11),
-          fontWeight: .w600,
-          color: textMuted,
-          raw: {
-            'position': 'absolute',
-            'top': '8px',
-            'right': '8px',
-            'background': 'rgba(255,255,255,0.06)',
-            'border': '1px solid #2A2A2A',
-            'border-radius': '4px',
-            'padding': '3px 10px',
-            'cursor': 'pointer',
-            'transition': 'color 0.15s, background 0.15s, border-color 0.15s',
-            'line-height': '1.4',
-            'z-index': '1',
-          },
-        ),
-        css('.copy-btn:hover').styles(
-          color: accentPurple,
-          raw: {
-            'background': 'rgba(168,85,247,0.1)',
-            'border-color': 'rgba(168,85,247,0.3)',
-          },
         ),
         css('pre').styles(
           backgroundColor: bgCard,

@@ -79,29 +79,7 @@ void main() {
         script(
           src: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/dart.min.js',
         ),
-        script(
-          content:
-              'document.addEventListener("DOMContentLoaded",function(){'
-              'hljs.highlightAll();'
-              'document.querySelectorAll(".blog-post__content pre").forEach(function(pre){'
-              'var w=document.createElement("div");'
-              'w.className="code-wrapper";'
-              'pre.parentNode.insertBefore(w,pre);'
-              'w.appendChild(pre);'
-              'var b=document.createElement("button");'
-              'b.className="copy-btn";'
-              'b.textContent="Copy";'
-              'b.addEventListener("click",function(){'
-              'var c=pre.querySelector("code");'
-              'navigator.clipboard.writeText(c?c.textContent:pre.textContent).then(function(){'
-              'b.textContent="Copied!";'
-              'setTimeout(function(){b.textContent="Copy";},2000);'
-              '});'
-              '});'
-              'w.appendChild(b);'
-              '});'
-              '});',
-        ),
+        script(content: 'document.addEventListener("DOMContentLoaded",function(){hljs.highlightAll();});'),
         // Flutter manifest and bootstrap
         link(href: 'manifest.json', rel: 'manifest'),
         script(src: 'flutter_bootstrap.js', async: true),
