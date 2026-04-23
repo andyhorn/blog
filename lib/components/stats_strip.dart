@@ -15,7 +15,7 @@ class StatsStrip extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return section(classes: 'stats-strip', [
+    return section(id: 'about', classes: 'stats-strip', [
       for (var i = 0; i < _stats.length; i++) ...[
         if (i > 0) div(classes: 'stats-strip__divider', []),
         div(classes: 'stats-strip__stat', [
@@ -39,6 +39,7 @@ class StatsStrip extends StatelessComponent {
           'height': '100px',
           'border-top': '1px solid #1A1A1A',
           'border-bottom': '1px solid #1A1A1A',
+          'scroll-margin-top': '72px',
         },
       ),
       css('.stats-strip__stat').styles(

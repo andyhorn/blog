@@ -10,7 +10,7 @@ class AboutSection extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return section(id: 'about', classes: 'about', [
+    return section(classes: 'about', [
       // Left column
       div(classes: 'about__left', [
         span(classes: 'section-badge', [.text('// about me')]),
@@ -120,7 +120,7 @@ class AboutSection extends StatelessComponent {
         },
       ),
       css('.about__right').styles(
-        raw: {'width': '480px', 'flex-shrink': '0'},
+        raw: {'width': '380px', 'flex-shrink': '0'},
       ),
       css('.about__timeline').styles(
         raw: {'position': 'relative'},
