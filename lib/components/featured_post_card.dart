@@ -32,23 +32,27 @@ class FeaturedPostCard extends StatelessComponent {
         div(classes: 'featured-post-card__content', [
           // Meta row
           div(classes: 'featured-post-card__meta', [
-            if (firstTag != null)
-              span(
-                classes: 'featured-post-card__tag',
-                styles: Styles(
-                  color: tagColor(firstTag),
-                  backgroundColor: tagBgColor(firstTag),
+            div(classes: 'featured-post-card__meta-tags', [
+              if (firstTag != null)
+                span(
+                  classes: 'featured-post-card__tag',
+                  styles: Styles(
+                    color: tagColor(firstTag),
+                    backgroundColor: tagBgColor(firstTag),
+                  ),
+                  [.text(firstTag)],
                 ),
-                [.text(firstTag)],
-              ),
-            span(classes: 'featured-post-card__featured-badge', [
-              .text('★ Featured'),
+              span(classes: 'featured-post-card__featured-badge', [
+                .text('★ Featured'),
+              ]),
             ]),
-            span(classes: 'featured-post-card__date', [
-              .text(formatDate(post.meta.date)),
-            ]),
-            span(classes: 'featured-post-card__reading-time', [
-              .text('${post.readingTimeMinutes} min read'),
+            div(classes: 'featured-post-card__meta-info', [
+              span(classes: 'featured-post-card__date', [
+                .text(formatDate(post.meta.date)),
+              ]),
+              span(classes: 'featured-post-card__reading-time', [
+                .text('${post.readingTimeMinutes} min read'),
+              ]),
             ]),
           ]),
           // Title
@@ -96,6 +100,16 @@ class FeaturedPostCard extends StatelessComponent {
         raw: {'gap': '16px', 'flex': '1'},
       ),
       css('.featured-post-card__meta').styles(
+        display: .flex,
+        alignItems: .center,
+        raw: {'gap': '12px'},
+      ),
+      css('.featured-post-card__meta-tags').styles(
+        display: .flex,
+        alignItems: .center,
+        raw: {'gap': '8px'},
+      ),
+      css('.featured-post-card__meta-info').styles(
         display: .flex,
         alignItems: .center,
         raw: {'gap': '12px'},
@@ -169,6 +183,11 @@ class FeaturedPostCard extends StatelessComponent {
       ),
       css('.featured-post-card .featured-post-card__content').styles(
         padding: Spacing.all(20.px),
+      ),
+      css('.featured-post-card .featured-post-card__meta').styles(
+        flexDirection: .column,
+        alignItems: .start,
+        raw: {'gap': '6px'},
       ),
     ]),
   ];
