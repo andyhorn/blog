@@ -24,9 +24,6 @@ class HeroSection extends StatelessComponent {
         ),
       ]),
       div(classes: 'hero__btns', [
-        a(href: '/#apps', classes: 'hero__btn hero__btn--primary', [
-          .text('View my work'),
-        ]),
         a(href: '/blog', classes: 'hero__btn hero__btn--secondary', [
           .text('Read the blog'),
         ]),
