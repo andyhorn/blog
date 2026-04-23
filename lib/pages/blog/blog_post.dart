@@ -4,9 +4,11 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
+import '../../components/copy_button.dart';
 import '../../components/table_of_contents.dart';
 import '../../constants/theme.dart';
 import '../../models/post.dart';
+import '../../utils/content_splitter.dart';
 import '../../utils/format_date.dart';
 import '../../utils/headings.dart';
 import '../../utils/tag_colors.dart';
@@ -66,7 +68,7 @@ class BlogPostPage extends StatelessComponent {
               classes: 'blog-post__cover',
             ),
           // Content
-          div(classes: 'blog-post__content', [RawText(post.htmlContent)]),
+          div(classes: 'blog-post__content', _buildContent(post.htmlContent)),
           // JSON-LD BlogPosting schema
           script(
             attributes: {'type': 'application/ld+json'},
@@ -95,6 +97,30 @@ class BlogPostPage extends StatelessComponent {
           ]),
       ]),
     ]);
+  }
+
+  static List<Component> _buildContent(String html) {
+    final segments = splitHtmlContent(html);
+    final result = <Component>[];
+    var codeIndex = 0;
+    for (final seg in segments) {
+      switch (seg) {
+        case HtmlSegment(:final html):
+          result.add(RawText(html));
+        case CodeSegment(:final attrs, :final code):
+          final id = 'code-block-$codeIndex';
+          codeIndex++;
+          result.add(div(
+            id: id,
+            classes: 'code-wrapper',
+            [
+              RawText('<pre><code$attrs>$code</code></pre>'),
+              CopyButton(codeBlockId: id),
+            ],
+          ));
+      }
+    }
+    return result;
   }
 
   @css
@@ -188,6 +214,9 @@ class BlogPostPage extends StatelessComponent {
           fontSize: Unit.pixels(14),
           backgroundColor: bgCard,
           raw: {'border-radius': '4px', 'padding': '2px 6px'},
+        ),
+        css('.code-wrapper').styles(
+          raw: {'position': 'relative'},
         ),
         css('pre').styles(
           backgroundColor: bgCard,
