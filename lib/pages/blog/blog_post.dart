@@ -110,14 +110,16 @@ class BlogPostPage extends StatelessComponent {
         case CodeSegment(:final attrs, :final code):
           final id = 'code-block-$codeIndex';
           codeIndex++;
-          result.add(div(
-            id: id,
-            classes: 'code-wrapper',
-            [
-              RawText('<pre><code$attrs>$code</code></pre>'),
-              CopyButton(codeBlockId: id),
-            ],
-          ));
+          result.add(
+            div(
+              id: id,
+              classes: 'code-wrapper',
+              [
+                RawText('<pre><code$attrs>$code</code></pre>'),
+                CopyButton(codeBlockId: id),
+              ],
+            ),
+          );
       }
     }
     return result;
@@ -222,6 +224,7 @@ class BlogPostPage extends StatelessComponent {
           backgroundColor: bgCard,
           radius: .all(.circular(8.px)),
           padding: Spacing.all(Unit.pixels(24)),
+          margin: Spacing.zero,
           raw: {'border': '1px solid #1A1A1A', 'overflow-x': 'auto'},
         ),
         css('pre code').styles(
