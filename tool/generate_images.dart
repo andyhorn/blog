@@ -4,12 +4,19 @@ import 'dart:io';
 
 import 'package:yaml/yaml.dart';
 
-/// Generates cover images for blog posts that have an [image_prompt] field
-/// in their frontmatter but no [image] field yet.
+/// Generates images for blog posts:
 ///
-/// Calls Gemini's image generation API, saves the result to
-/// [web/images/posts/<slug>.<ext>], and rewrites the post's frontmatter
-/// to set [image: "/images/posts/<slug>.<ext>"].
+/// **Cover images** — posts with an [image_prompt] field in their frontmatter
+/// but no [image] field yet get a 16:9 cover image saved to
+/// [web/images/posts/<slug>.<ext>] and an [image:] field injected.
+///
+/// **Inline images** — any HTML comment in the post body matching:
+///   <!-- image_prompt[name]: prompt text -->
+///   <!-- image_prompt[name] ratio=4:3: prompt text -->
+/// gets generated (default ratio 1:1), saved to
+/// [web/images/posts/<slug>-<name>.<ext>], and a standard Markdown image tag
+/// is inserted directly below the comment (the comment itself is preserved).
+/// If the image file already exists on disk, generation is skipped.
 ///
 /// Requires: GEMINI_API_KEY environment variable.
 ///
@@ -32,8 +39,9 @@ void main() async {
   final files = postsDir.listSync().whereType<File>().where((f) => f.path.endsWith('.md')).toList()
     ..sort((a, b) => a.path.compareTo(b.path));
 
-  var generated = 0;
-  var skipped = 0;
+  var coverGenerated = 0;
+  var coverSkipped = 0;
+  var inlineGenerated = 0;
 
   for (final file in files) {
     final filename = file.uri.pathSegments.last;
@@ -41,44 +49,134 @@ void main() async {
     if (slugMatch == null) continue;
     final slug = slugMatch.group(1)!;
 
-    final raw = file.readAsStringSync();
+    var raw = file.readAsStringSync();
     final data = _parseFrontmatter(raw);
     if (data == null) continue;
 
-    if (data['image'] != null) {
-      print('[$slug] already has image — skipping.');
-      skipped++;
-      continue;
+    // --- Cover image ---
+    final existingCoverExt = ['png', 'jpg', 'webp'].firstWhere(
+      (e) => File('web/images/posts/$slug.$e').existsSync(),
+      orElse: () => '',
+    );
+    if (data['image'] != null || existingCoverExt.isNotEmpty) {
+      print('[$slug] cover: already has image — skipping.');
+      coverSkipped++;
+    } else {
+      final prompt = data['image_prompt'] as String?;
+      if (prompt == null || prompt.isEmpty) {
+        print('[$slug] cover: no image_prompt — skipping.');
+        coverSkipped++;
+      } else {
+        print('[$slug] cover: generating "$prompt"');
+        final result = await _generateImage(apiKey, prompt, aspectRatio: '16:9');
+        if (result == null) {
+          print('[$slug] cover: generation failed — skipping.');
+        } else {
+          final (imageBytes, mimeType) = result;
+          final ext = _extForMime(mimeType);
+          final assetPath = 'web/images/posts/$slug.$ext';
+          final publicPath = '/images/posts/$slug.$ext';
+
+          File(assetPath).writeAsBytesSync(imageBytes);
+          print('[$slug] cover: saved $assetPath');
+
+          raw = _injectImage(raw, publicPath);
+          print('[$slug] cover: frontmatter updated with image: $publicPath');
+          coverGenerated++;
+        }
+      }
     }
 
-    final prompt = data['image_prompt'] as String?;
-    if (prompt == null || prompt.isEmpty) {
-      print('[$slug] no image_prompt — skipping.');
-      skipped++;
-      continue;
-    }
+    // --- Inline images ---
+    final (updatedRaw, count) = await _processInlineImages(apiKey, raw, slug);
+    inlineGenerated += count;
+    raw = updatedRaw;
 
-    print('[$slug] generating: "$prompt"');
-    final result = await _generateImage(apiKey, prompt);
-    if (result == null) {
-      print('[$slug] generation failed — skipping.');
-      continue;
-    }
-
-    final (imageBytes, mimeType) = result;
-    final ext = _extForMime(mimeType);
-    final assetPath = 'web/images/posts/$slug.$ext';
-    final publicPath = '/images/posts/$slug.$ext';
-
-    File(assetPath).writeAsBytesSync(imageBytes);
-    print('[$slug] saved $assetPath');
-
-    file.writeAsStringSync(_injectImage(raw, publicPath));
-    print('[$slug] frontmatter updated with image: $publicPath');
-    generated++;
+    // Write once with all changes applied.
+    file.writeAsStringSync(raw);
   }
 
-  print('\nDone — generated: $generated, skipped: $skipped.');
+  print(
+    '\nDone — cover: $coverGenerated generated, $coverSkipped skipped; '
+    'inline: $inlineGenerated generated.',
+  );
+}
+
+/// Scans [raw] for inline image prompt comments, generates each image,
+/// replaces the comment with an image tag, and returns the updated content
+/// along with the number of images generated.
+///
+/// Syntax:
+///   <!-- image_prompt[name]: prompt text -->
+///   <!-- image_prompt[name] ratio=4:3: prompt text -->
+///   <!-- image_prompt[name] width=300: prompt text -->
+///   <!-- image_prompt[name] height=200: prompt text -->
+///   <!-- image_prompt[name] ratio=4:3 width=300 height=200: prompt text -->
+///
+/// If [width] or [height] are set, outputs an `<img>` tag; otherwise outputs
+/// standard Markdown `![]()` syntax.
+Future<(String, int)> _processInlineImages(String apiKey, String raw, String slug) async {
+  final pattern = RegExp(
+    r'<!--\s*image_prompt\[(\w+)\]((?:\s+\w+=\S+)*)\s*:\s*(.+?)\s*-->',
+  );
+
+  var result = raw;
+  var count = 0;
+
+  for (final match in pattern.allMatches(raw)) {
+    final name = match.group(1)!;
+    final attrs = match.group(2) ?? '';
+    final prompt = match.group(3)!;
+
+    final ratio = RegExp(r'ratio=(\S+)').firstMatch(attrs)?.group(1) ?? '1:1';
+    final width = RegExp(r'width=(\d+)').firstMatch(attrs)?.group(1);
+    final height = RegExp(r'height=(\d+)').firstMatch(attrs)?.group(1);
+
+    // Check for existing image (any supported extension).
+    final existingExt = ['png', 'jpg', 'webp'].firstWhere(
+      (e) => File('web/images/posts/$slug-$name.$e').existsSync(),
+      orElse: () => '',
+    );
+    if (existingExt.isNotEmpty) {
+      print('[$slug] inline[$name]: image already exists — skipping.');
+      continue;
+    }
+
+    print('[$slug] inline[$name]: generating "$prompt"');
+    final imageResult = await _generateImage(apiKey, prompt, aspectRatio: ratio);
+    if (imageResult == null) {
+      print('[$slug] inline[$name]: generation failed — skipping.');
+      continue;
+    }
+
+    final (imageBytes, mimeType) = imageResult;
+    final ext = _extForMime(mimeType);
+    final assetPath = 'web/images/posts/$slug-$name.$ext';
+    final publicPath = '/images/posts/$slug-$name.$ext';
+
+    File(assetPath).writeAsBytesSync(imageBytes);
+    print('[$slug] inline[$name]: saved $assetPath');
+
+    // Keep the comment tag in place and insert the image below it.
+    final tag = _imageTag(publicPath, width: width, height: height);
+    result = result.replaceFirst(match.group(0)!, '${match.group(0)!}\n$tag');
+    count++;
+  }
+
+  return (result, count);
+}
+
+/// Returns an `<img>` tag if [width] or [height] are set, otherwise a Markdown image.
+String _imageTag(String path, {String? width, String? height}) {
+  if (width != null || height != null) {
+    final parts = [
+      'src="$path"',
+      if (width != null) 'width="$width"',
+      if (height != null) 'height="$height"',
+    ];
+    return '<img ${parts.join(' ')} />';
+  }
+  return '![]($path)';
 }
 
 /// Calls Imagen image generation and returns (imageBytes, mimeType), or null on failure.
@@ -86,7 +184,11 @@ void main() async {
 /// Uses the Imagen `predict` endpoint which natively supports aspectRatio.
 /// Note: if you get a 404, the model name may have changed since this was written.
 /// Check https://ai.google.dev/api/images for the current model ID.
-Future<(List<int>, String)?> _generateImage(String apiKey, String prompt) async {
+Future<(List<int>, String)?> _generateImage(
+  String apiKey,
+  String prompt, {
+  String aspectRatio = '16:9',
+}) async {
   final client = HttpClient();
   try {
     final uri = Uri.parse(
@@ -104,7 +206,7 @@ Future<(List<int>, String)?> _generateImage(String apiKey, String prompt) async 
         ],
         'parameters': {
           'sampleCount': 1,
-          'aspectRatio': '16:9',
+          'aspectRatio': aspectRatio,
         },
       }),
     );
