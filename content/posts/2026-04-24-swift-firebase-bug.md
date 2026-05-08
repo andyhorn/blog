@@ -3,6 +3,7 @@ title: "The Firebase Crash That Wasn't a Firebase Bug"
 subtitle: "How a Swift 6.1 compiler regression made me waste an afternoon blaming the wrong thing"
 date: 2026-04-24
 tags: [flutter, firebase, ios, debugging, swift]
+image_prompt: Several translucent panes of glass stacked in receding depth on a deep blue-purple background. The front pane is shattered and glowing warm orange, dramatic and eye-catching. But the crack pattern clearly originates from a single small impact point on the rearmost pane, pulsing faint cyan — the real source, almost invisible behind the noise in front. Flat digital illustration, rounded shapes, no hard edges, cinematic lighting.
 image: "/images/posts/swift-firebase-bug.png"
 ---
 
