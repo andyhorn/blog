@@ -10,6 +10,7 @@ import 'package:blog/components/blog_interactive_section.dart'
     deferred as _blog_interactive_section;
 import 'package:blog/components/copy_button.dart' deferred as _copy_button;
 import 'package:blog/components/header.dart' deferred as _header;
+import 'package:blog/components/package_card.dart' deferred as _package_card;
 import 'package:blog/models/post.dart' as _post;
 
 /// Default [ClientOptions] for use with your Jaspr project.
@@ -45,6 +46,17 @@ ClientOptions get defaultClientOptions => ClientOptions(
     'header': ClientLoader(
       (p) => _header.Header(),
       loader: _header.loadLibrary,
+    ),
+    'package_card': ClientLoader(
+      (p) => _package_card.PackageCard(
+        name: p['name'] as String,
+        description: p['description'] as String,
+        initialVersion: p['initialVersion'] as String,
+        initialStars: p['initialStars'] as int,
+        pubDevUrl: p['pubDevUrl'] as String,
+        iconColor: p['iconColor'] as String,
+      ),
+      loader: _package_card.loadLibrary,
     ),
   },
 );

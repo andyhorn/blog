@@ -1,49 +1,42 @@
+import 'dart:async';
+
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../constants/theme.dart';
 import '../models/package.dart';
+import '../services/pubdev_fetch_stub.dart' if (dart.library.js_interop) '../services/pubdev_fetch_web.dart';
 
-class PackageCard extends StatelessComponent {
-  const PackageCard({required this.package, super.key});
+@client
+class PackageCard extends StatefulComponent {
+  const PackageCard({
+    required this.name,
+    required this.description,
+    required this.initialVersion,
+    required this.initialStars,
+    required this.pubDevUrl,
+    required this.iconColor,
+    super.key,
+  });
 
-  final Package package;
+  factory PackageCard.fromPackage(Package pkg) => PackageCard(
+    name: pkg.name,
+    description: pkg.description,
+    initialVersion: pkg.version,
+    initialStars: pkg.stars,
+    pubDevUrl: pkg.pubDevUrl,
+    iconColor: pkg.iconColor,
+  );
+
+  final String name;
+  final String description;
+  final String initialVersion;
+  final int initialStars;
+  final String pubDevUrl;
+  final String iconColor;
 
   @override
-  Component build(BuildContext context) {
-    return div(classes: 'package-card', [
-      // Top row: icon + stars
-      div(classes: 'package-card__top', [
-        div(
-          classes: 'package-card__icon',
-          styles: Styles(backgroundColor: Color('${package.iconColor}20')),
-          [
-            span(styles: Styles(color: Color(package.iconColor)), [.text('●')]),
-          ],
-        ),
-        span(classes: 'package-card__stars', [.text('⭐ ${package.stars}')]),
-      ]),
-      // Name
-      span(classes: 'package-card__name', [.text(package.name)]),
-      // Description
-      p(classes: 'package-card__desc', [.text(package.description)]),
-      // Footer: version · pub.dev link
-      div(classes: 'package-card__footer', [
-        span(
-          classes: 'package-card__version',
-          styles: Styles(color: Color(package.iconColor)),
-          [.text(package.version)],
-        ),
-        .text(' · '),
-        a(
-          href: package.pubDevUrl,
-          classes: 'package-card__pubdev',
-          attributes: {'target': '_blank', 'rel': 'noopener noreferrer'},
-          [.text('pub.dev')],
-        ),
-      ]),
-    ]);
-  }
+  State<PackageCard> createState() => _PackageCardState();
 
   @css
   static List<StyleRule> get styles => [
@@ -109,4 +102,69 @@ class PackageCard extends StatelessComponent {
       css('.package-card__pubdev:hover').styles(color: textPrimary),
     ]),
   ];
+}
+
+class _PackageCardState extends State<PackageCard> {
+  late String _version = component.initialVersion;
+  late int _likes = component.initialStars;
+
+  @override
+  void initState() {
+    super.initState();
+    if (kIsWeb) {
+      unawaited(_fetchPubDev());
+    }
+  }
+
+  Future<void> _fetchPubDev() async {
+    try {
+      final results = await Future.wait([
+        fetchJson('https://pub.dev/api/packages/${component.name}'),
+        fetchJson('https://pub.dev/api/packages/${component.name}/score'),
+      ]);
+      final latest = (results[0]['latest'] as Map?)?['version'] as String?;
+      final likes = (results[1]['likeCount'] as num?)?.toInt();
+      if (!mounted) return;
+      setState(() {
+        if (latest != null) _version = 'v$latest';
+        if (likes != null) _likes = likes;
+      });
+    } catch (_) {
+      // Keep fallback values if the request fails.
+    }
+  }
+
+  @override
+  Component build(BuildContext context) {
+    return div(classes: 'package-card', [
+      div(classes: 'package-card__top', [
+        div(
+          classes: 'package-card__icon',
+          styles: Styles(backgroundColor: Color('${component.iconColor}20')),
+          [
+            span(styles: Styles(color: Color(component.iconColor)), [
+              .text('●'),
+            ]),
+          ],
+        ),
+        span(classes: 'package-card__stars', [.text('⭐ $_likes')]),
+      ]),
+      span(classes: 'package-card__name', [.text(component.name)]),
+      p(classes: 'package-card__desc', [.text(component.description)]),
+      div(classes: 'package-card__footer', [
+        span(
+          classes: 'package-card__version',
+          styles: Styles(color: Color(component.iconColor)),
+          [.text(_version)],
+        ),
+        .text(' · '),
+        a(
+          href: component.pubDevUrl,
+          classes: 'package-card__pubdev',
+          attributes: {'target': '_blank', 'rel': 'noopener noreferrer'},
+          [.text('pub.dev')],
+        ),
+      ]),
+    ]);
+  }
 }

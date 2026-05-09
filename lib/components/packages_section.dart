@@ -21,7 +21,7 @@ class PackagesSection extends StatelessComponent {
         ]),
       ]),
       div(classes: 'packages-section__grid', [
-        for (final pkg in packages) PackageCard(package: pkg),
+        for (final pkg in packages) PackageCard.fromPackage(pkg),
       ]),
       div(classes: 'packages-section__footer', [
         a(

@@ -57,6 +57,10 @@ ServerOptions get defaultServerOptions => ServerOptions(
       params: __copy_buttonCopyButton,
     ),
     _header.Header: ClientTarget<_header.Header>('header'),
+    _package_card.PackageCard: ClientTarget<_package_card.PackageCard>(
+      'package_card',
+      params: __package_cardPackageCard,
+    ),
   },
   styles: () => [
     ..._theme.globalStyles,
@@ -87,4 +91,12 @@ Map<String, Object?> __blog_interactive_sectionBlogInteractiveSection(
 ) => {'posts': c.posts.map((i) => i.encode()).toList()};
 Map<String, Object?> __copy_buttonCopyButton(_copy_button.CopyButton c) => {
   'codeBlockId': c.codeBlockId,
+};
+Map<String, Object?> __package_cardPackageCard(_package_card.PackageCard c) => {
+  'name': c.name,
+  'description': c.description,
+  'initialVersion': c.initialVersion,
+  'initialStars': c.initialStars,
+  'pubDevUrl': c.pubDevUrl,
+  'iconColor': c.iconColor,
 };
