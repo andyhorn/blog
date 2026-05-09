@@ -29,5 +29,5 @@ jobs:
           channel: stable
           cache: true
           cache-key: flutter-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
-      - run: dart pub global activate jaspr_cli
-      - run: jaspr test
+      - run: dart pub get
+      - run: dart test
