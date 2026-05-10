@@ -12,9 +12,11 @@ const _imagesDir = 'web/images/posts';
 ///
 /// Requires: GEMINI_API_KEY environment variable.
 ///
-/// Run with: dart run tool/generate_post_images.dart
-Future<void> main() async {
+/// Run with: dart run tool/generate_post_images.dart [--quality fast|standard|ultra|gemini]
+Future<void> main(List<String> argv) async {
+  final quality = ImageQuality.parse(_argValue(argv, '--quality') ?? 'fast');
   final apiKey = requireApiKey();
+  print('Using quality: ${quality.name}\n');
   Directory(_imagesDir).createSync(recursive: true);
 
   final missing = findMissingImages(imagesDir: _imagesDir);
@@ -47,7 +49,12 @@ Future<void> main() async {
 
     for (final m in entry.value) {
       print('${m.label}: generating "${m.prompt}"');
-      final image = await generateImage(apiKey, m.prompt, aspectRatio: m.aspectRatio);
+      final image = await generateImage(
+        apiKey,
+        m.prompt,
+        aspectRatio: m.aspectRatio,
+        quality: quality,
+      );
       if (image == null) {
         stderr.writeln('${m.label}: generation failed.');
         failed++;
@@ -76,4 +83,11 @@ Future<void> main() async {
   }
 
   print('\nDone — $generated generated, $failed failed.');
+}
+
+String? _argValue(List<String> argv, String flag) {
+  for (var i = 0; i < argv.length - 1; i++) {
+    if (argv[i] == flag) return argv[i + 1];
+  }
+  return null;
 }
