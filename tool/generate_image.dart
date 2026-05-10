@@ -11,7 +11,8 @@ import 'src/image_api.dart';
 ///   dart run tool/generate_image.dart \
 ///     --prompt "a friendly robot" \
 ///     --output web/images/posts/hello.png \
-///     [--ratio 16:9]
+///     [--ratio 16:9] \
+///     [--quality fast|standard|ultra|gemini]
 ///
 /// `--output` is the desired path. The actual saved file's extension is
 /// replaced with the one matching the API's returned MIME type
@@ -21,19 +22,26 @@ Future<void> main(List<String> argv) async {
   final prompt = args['prompt'];
   final output = args['output'];
   final ratio = args['ratio'] ?? '16:9';
+  final quality = ImageQuality.parse(args['quality'] ?? 'fast');
 
   if (prompt == null || prompt.isEmpty || output == null || output.isEmpty) {
     stderr.writeln(
       'Usage: dart run tool/generate_image.dart '
-      '--prompt "..." --output <path> [--ratio 16:9]',
+      '--prompt "..." --output <path> [--ratio 16:9] '
+      '[--quality fast|standard|ultra|gemini]',
     );
     exit(64);
   }
 
   final apiKey = requireApiKey();
 
-  print('Generating "$prompt" (ratio $ratio)…');
-  final image = await generateImage(apiKey, prompt, aspectRatio: ratio);
+  print('Generating "$prompt" (ratio $ratio, quality ${quality.name})…');
+  final image = await generateImage(
+    apiKey,
+    prompt,
+    aspectRatio: ratio,
+    quality: quality,
+  );
   if (image == null) {
     stderr.writeln('Generation failed.');
     exit(1);
