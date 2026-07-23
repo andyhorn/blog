@@ -112,14 +112,34 @@ class PostListRow extends StatelessComponent {
       ),
     ]),
     css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
-      css('.post-list-row').styles(
-        raw: {
-          'height': 'auto',
-          'min-height': '72px',
-          'padding-top': '12px',
-          'padding-bottom': '12px',
-        },
-      ),
+      css('.post-list-row', [
+        css('&').styles(
+          flexDirection: .column,
+          alignItems: .start,
+          raw: {
+            'height': 'auto',
+            'min-height': '72px',
+            'padding-top': '16px',
+            'padding-bottom': '16px',
+            'gap': '10px',
+          },
+        ),
+        css('.post-list-row__left').styles(
+          raw: {'width': '100%', 'gap': '8px'},
+        ),
+        css('.post-list-row__tags').styles(
+          raw: {'flex-wrap': 'wrap', 'row-gap': '6px'},
+        ),
+        css('.post-list-row__right').styles(
+          flexDirection: .row,
+          alignItems: .center,
+          raw: {'gap': '8px'},
+        ),
+        css('.post-list-row__reading-time::before').styles(
+          color: textMuted,
+          raw: {'content': '"·"', 'margin-right': '8px'},
+        ),
+      ]),
     ]),
   ];
 }
