@@ -104,10 +104,15 @@ class BlogInteractiveSection extends StatefulComponent {
         display: .flex,
         alignItems: .center,
         backgroundColor: bgSecondary,
-        padding: Spacing.symmetric(horizontal: Unit.pixels(120)),
+        padding: Spacing.symmetric(
+          vertical: Unit.pixels(12),
+          horizontal: Unit.pixels(120),
+        ),
         raw: {
-          'height': '56px',
+          'min-height': '56px',
           'gap': '12px',
+          'row-gap': '8px',
+          'flex-wrap': 'wrap',
           'border-top': '1px solid #1A1A1A',
           'border-bottom': '1px solid #1A1A1A',
         },

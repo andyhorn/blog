@@ -75,7 +75,7 @@ class FeaturedPostCard extends StatelessComponent {
     css('.featured-post-card', [
       css('&').styles(
         display: .flex,
-        flexDirection: .row,
+        flexDirection: .column,
         backgroundColor: bgCard,
         radius: .all(.circular(8.px)),
         overflow: .clip,
@@ -86,9 +86,8 @@ class FeaturedPostCard extends StatelessComponent {
       css('.featured-post-card__image').styles(
         backgroundColor: Color('#A855F710'),
         raw: {
-          'width': '436px',
-          'height': '315px',
-          'flex-shrink': '0',
+          'width': '100%',
+          'height': '320px',
           'object-fit': 'cover',
           'display': 'block',
         },
@@ -171,14 +170,9 @@ class FeaturedPostCard extends StatelessComponent {
       ),
     ]),
     css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
-      css('.featured-post-card').styles(
-        flexDirection: .column,
-      ),
       css('.featured-post-card .featured-post-card__image').styles(
         raw: {
-          'width': '100%',
           'height': '200px',
-          'flex-shrink': '1',
         },
       ),
       css('.featured-post-card .featured-post-card__content').styles(
