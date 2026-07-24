@@ -99,4 +99,5 @@ Map<String, Object?> __package_cardPackageCard(_package_card.PackageCard c) => {
   'initialStars': c.initialStars,
   'pubDevUrl': c.pubDevUrl,
   'iconColor': c.iconColor,
+  'featured': c.featured,
 };

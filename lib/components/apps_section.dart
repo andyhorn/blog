@@ -12,7 +12,6 @@ class AppsSection extends StatelessComponent {
   Component build(BuildContext context) {
     return section(id: 'apps', classes: 'apps-section', [
       div(classes: 'apps-section__header', [
-        span(classes: 'section-badge', [.text('// apps')]),
         h2(classes: 'section-heading', [.text('Published Apps')]),
         p(classes: 'apps-section__sub', [
           .text('Cross-platform iOS apps built with Flutter, available on the App Store.'),

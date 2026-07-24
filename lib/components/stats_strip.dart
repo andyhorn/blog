@@ -10,7 +10,6 @@ class StatsStrip extends StatelessComponent {
     ('6+', 'Years Experience'),
     ('12', 'pub.dev Packages'),
     ('2', 'Published Apps'),
-    ('∞', 'Cups of Coffee'),
   ];
 
   @override

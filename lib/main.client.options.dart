@@ -55,6 +55,7 @@ ClientOptions get defaultClientOptions => ClientOptions(
         initialStars: p['initialStars'] as int,
         pubDevUrl: p['pubDevUrl'] as String,
         iconColor: p['iconColor'] as String,
+        featured: p['featured'] as bool,
       ),
       loader: _package_card.loadLibrary,
     ),

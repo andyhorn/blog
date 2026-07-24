@@ -16,7 +16,6 @@ class BlogPreviewSection extends StatelessComponent {
     return section(classes: 'blog-preview', [
       div(classes: 'blog-preview__header', [
         div(classes: 'blog-preview__header-left', [
-          span(classes: 'section-badge', [.text('// blog')]),
           h2(classes: 'section-heading', [.text('Latest Writing')]),
         ]),
         Link(

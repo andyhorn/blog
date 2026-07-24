@@ -108,22 +108,6 @@ List<StyleRule> get globalStyles => [
     padding: const Spacing.symmetric(horizontal: space8),
     margin: const Spacing.symmetric(horizontal: Unit.auto),
   ),
-  // Shared section badge — used by all homepage sections
-  css('.section-badge').styles(
-    fontSize: Unit.pixels(12),
-    color: accentPurple,
-    padding: Spacing.symmetric(
-      vertical: Unit.pixels(4),
-      horizontal: Unit.pixels(10),
-    ),
-    raw: {
-      'font-family': "'Geist Mono', monospace",
-      'background': '#A855F715',
-      'border-radius': '4px',
-      'display': 'inline-block',
-      'align-self': 'flex-start',
-    },
-  ),
   // Shared section heading — 40px Geist bold, used by Apps/Packages/Blog sections
   css('.section-heading').styles(
     fontSize: Unit.pixels(40),
