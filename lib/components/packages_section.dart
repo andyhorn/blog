@@ -10,9 +10,12 @@ class PackagesSection extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
+    const featuredName = 'flutter_resizable_container';
+    final featured = packages.firstWhere((pkg) => pkg.name == featuredName);
+    final side = packages.where((pkg) => pkg.name != featuredName).toList();
+
     return section(id: 'packages', classes: 'packages-section', [
       div(classes: 'packages-section__header', [
-        span(classes: 'section-badge', [.text('// packages')]),
         h2(classes: 'section-heading', [.text('Open Source Packages')]),
         p(classes: 'packages-section__sub', [
           .text(
@@ -20,8 +23,11 @@ class PackagesSection extends StatelessComponent {
           ),
         ]),
       ]),
-      div(classes: 'packages-section__grid', [
-        for (final pkg in packages) PackageCard.fromPackage(pkg),
+      div(classes: 'packages-section__bento', [
+        PackageCard.featuredFromPackage(featured),
+        div(classes: 'packages-section__side', [
+          for (final pkg in side) PackageCard.fromPackage(pkg),
+        ]),
       ]),
       div(classes: 'packages-section__footer', [
         a(
@@ -58,12 +64,20 @@ class PackagesSection extends StatelessComponent {
         color: textMuted,
         margin: Spacing.zero,
       ),
-      css('.packages-section__grid').styles(
-        raw: {
-          'display': 'grid',
-          'grid-template-columns': 'repeat(3, 1fr)',
-          'gap': '24px',
-        },
+      css('.packages-section__bento').styles(
+        display: .flex,
+        raw: {'gap': '16px', 'align-items': 'stretch'},
+      ),
+      css('.packages-section__bento .package-card--featured').styles(
+        raw: {'flex': '1.4'},
+      ),
+      css('.packages-section__side').styles(
+        display: .flex,
+        flexDirection: .column,
+        raw: {'flex': '1', 'gap': '16px'},
+      ),
+      css('.packages-section__side .package-card').styles(
+        raw: {'flex': '1'},
       ),
       css('.packages-section__footer').styles(
         display: .flex,
@@ -92,13 +106,11 @@ class PackagesSection extends StatelessComponent {
       css('.packages-section').styles(
         padding: Spacing.symmetric(vertical: 50.px, horizontal: 24.px),
       ),
-      css('.packages-section .packages-section__grid').styles(
-        raw: {'grid-template-columns': 'repeat(2, 1fr)'},
+      css('.packages-section .packages-section__bento').styles(
+        flexDirection: .column,
       ),
-    ]),
-    css.media(MediaQuery.all(maxWidth: breakpointSm.px), [
-      css('.packages-section .packages-section__grid').styles(
-        raw: {'grid-template-columns': '1fr'},
+      css('.packages-section .packages-section__bento .package-card--featured').styles(
+        raw: {'flex': 'none'},
       ),
     ]),
   ];
