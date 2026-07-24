@@ -77,6 +77,14 @@ class BlogPreviewSection extends StatelessComponent {
         margin: Spacing.zero,
       ),
     ]),
+    css.media(MediaQuery.all(maxWidth: breakpointLg.px), [
+      css('.blog-preview').styles(
+        padding: Spacing.symmetric(vertical: 70.px, horizontal: 64.px),
+      ),
+      css('.blog-preview .blog-preview__grid').styles(
+        raw: {'grid-template-columns': 'repeat(2, 1fr)'},
+      ),
+    ]),
     css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
       css('.blog-preview').styles(
         padding: Spacing.symmetric(vertical: 50.px, horizontal: 24.px),
