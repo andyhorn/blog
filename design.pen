@@ -157,7 +157,7 @@
                       "id": "zuCht",
                       "name": "hl3",
                       "fill": "#A855F7FF",
-                      "content": "packages under them.",
+                      "content": "packages behind them.",
                       "lineHeight": 1.05,
                       "fontFamily": "Geist",
                       "fontSize": 68,
@@ -1738,48 +1738,6 @@
                   "fontFamily": "Inter",
                   "fontSize": 17,
                   "fontWeight": "normal"
-                },
-                {
-                  "type": "frame",
-                  "id": "AkHCq",
-                  "name": "contactBtns",
-                  "gap": 16,
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "v6uXj",
-                      "name": "contactBtnPrimary",
-                      "height": 54,
-                      "fill": "#A855F7FF",
-                      "cornerRadius": 9999,
-                      "gap": 10,
-                      "padding": [
-                        0,
-                        32
-                      ],
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "icon",
-                          "id": "hPDgy",
-                          "width": 18,
-                          "height": 18,
-                          "icon": "linkedin",
-                          "library": "lucide",
-                          "fill": "#0A0A0AFF"
-                        },
-                        {
-                          "type": "text",
-                          "id": "IcDCy",
-                          "fill": "#0A0A0AFF",
-                          "content": "Connect on LinkedIn",
-                          "fontFamily": "Inter",
-                          "fontSize": 15,
-                          "fontWeight": "600"
-                        }
-                      ]
-                    }
-                  ]
                 }
               ]
             },

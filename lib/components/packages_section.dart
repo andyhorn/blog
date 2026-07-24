@@ -11,8 +11,11 @@ class PackagesSection extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     const featuredName = 'flutter_resizable_container';
-    final featured = packages.firstWhere((pkg) => pkg.name == featuredName);
-    final side = packages.where((pkg) => pkg.name != featuredName).toList();
+    final featured = packages.firstWhere(
+      (pkg) => pkg.name == featuredName,
+      orElse: () => packages.first,
+    );
+    final side = packages.where((pkg) => pkg.name != featured.name).toList();
 
     return section(id: 'packages', classes: 'packages-section', [
       div(classes: 'packages-section__header', [

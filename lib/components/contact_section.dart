@@ -21,12 +21,6 @@ class ContactSection extends StatelessComponent {
             'Find me on LinkedIn, GitHub, or pub.dev.',
           ),
         ]),
-        a(
-          href: 'https://linkedin.com/in/andyjhorn',
-          classes: 'contact__cta',
-          attributes: {'target': '_blank', 'rel': 'noopener noreferrer'},
-          [.text('Connect on LinkedIn')],
-        ),
       ]),
       div(classes: 'contact__links', [
         a(
@@ -87,23 +81,6 @@ class ContactSection extends StatelessComponent {
         margin: Spacing.zero,
         maxWidth: Unit.pixels(480),
         raw: {'line-height': '1.7'},
-      ),
-      css('.contact__cta').styles(
-        fontFamily: fontInter,
-        fontSize: Unit.pixels(15),
-        fontWeight: .w600,
-        color: bgBase,
-        backgroundColor: accentPurple,
-        padding: Spacing.symmetric(
-          vertical: Unit.pixels(16),
-          horizontal: Unit.pixels(32),
-        ),
-        raw: {
-          'border-radius': '9999px',
-          'text-decoration': 'none',
-          'display': 'inline-flex',
-          'align-items': 'center',
-        },
       ),
       css('.contact__links').styles(
         display: .flex,

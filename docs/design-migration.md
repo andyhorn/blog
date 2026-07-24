@@ -78,7 +78,7 @@ buttons (purple primary + ghost secondary).
 | Element | Before | After |
 |---------|--------|-------|
 | Badge | `Open to collaboration` | *(removed)* |
-| Headline | `Flutter Engineer.` / `Package Author.` / `App Builder.` | `I build Flutter apps` / `and the open-source` / `packages under them.` |
+| Headline | `Flutter Engineer.` / `Package Author.` / `App Builder.` | `I build Flutter apps` / `and the open-source` / `packages behind them.` |
 | Subhead | `6+ years crafting high-quality Flutter apps and open-source packages. Focused on developer experience, clean architecture, and pixel-perfect UI.` | `Six years shipping polished mobile apps and the Dart packages that power them. Published on pub.dev, live on the App Store.` |
 | Buttons | `Read the blog` (secondary only) | `Read the blog` (**primary**, purple fill) → `/blog`, and `View packages` (**secondary**, ghost) → `/#packages` |
 
@@ -121,7 +121,7 @@ return section(classes: 'hero', [
   h1(classes: 'hero__title', [
     span([.text('I build Flutter apps')]),
     span(classes: 'hero__title--accent', [.text('and the open-source')]),
-    span(classes: 'hero__title--accent', [.text('packages under them.')]),
+    span(classes: 'hero__title--accent', [.text('packages behind them.')]),
   ]),
   p(classes: 'hero__sub', [
     .text('Six years shipping polished mobile apps and the Dart packages '
