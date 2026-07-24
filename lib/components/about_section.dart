@@ -13,11 +13,10 @@ class AboutSection extends StatelessComponent {
     return section(classes: 'about', [
       // Left column
       div(classes: 'about__left', [
-        span(classes: 'section-badge', [.text('// about me')]),
         h2(classes: 'about__heading', [
-          .text('Building beautiful'),
+          .text('From production apps'),
           br(),
-          .text('things with Flutter'),
+          .text('to pub.dev packages'),
         ]),
         p(classes: 'about__bio', [
           .text(

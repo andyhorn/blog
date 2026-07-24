@@ -30,21 +30,6 @@ class BlogInteractiveSection extends StatefulComponent {
         ),
         raw: {'gap': '20px', 'border-bottom': '1px solid #1A1A1A'},
       ),
-      css('.blog-hero__badge').styles(
-        fontFamily: fontGeistMono,
-        fontSize: Unit.pixels(12),
-        color: accentPurple,
-        padding: Spacing.symmetric(
-          vertical: Unit.pixels(4),
-          horizontal: Unit.pixels(10),
-        ),
-        raw: {
-          'background': '#A855F715',
-          'border-radius': '4px',
-          'display': 'inline-block',
-          'align-self': 'flex-start',
-        },
-      ),
       css('.blog-hero__title').styles(
         fontFamily: fontGeist,
         fontSize: Unit.pixels(56),
@@ -104,10 +89,15 @@ class BlogInteractiveSection extends StatefulComponent {
         display: .flex,
         alignItems: .center,
         backgroundColor: bgSecondary,
-        padding: Spacing.symmetric(horizontal: Unit.pixels(120)),
+        padding: Spacing.symmetric(
+          vertical: Unit.pixels(12),
+          horizontal: Unit.pixels(120),
+        ),
         raw: {
-          'height': '56px',
+          'min-height': '56px',
           'gap': '12px',
+          'row-gap': '8px',
+          'flex-wrap': 'wrap',
           'border-top': '1px solid #1A1A1A',
           'border-bottom': '1px solid #1A1A1A',
         },
@@ -254,7 +244,6 @@ class _BlogInteractiveSectionState extends State<BlogInteractiveSection> {
     return div([
       // Hero
       div(classes: 'blog-hero', [
-        span(classes: 'blog-hero__badge', [.text('// blog')]),
         h1(classes: 'blog-hero__title', [
           .text('Writing on Flutter,\nDart & Software Craft'),
         ]),

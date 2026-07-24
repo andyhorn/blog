@@ -1,5 +1,5 @@
 {
-  "version": "2.11",
+  "version": "2.14",
   "children": [
     {
       "type": "frame",
@@ -8,7 +8,7 @@
       "y": 0,
       "name": "Portfolio – Desktop",
       "width": 1440,
-      "height": 3239,
+      "height": 3321,
       "fill": "#0A0A0AFF",
       "layout": "vertical",
       "alignItems": "center",
@@ -105,103 +105,136 @@
           "name": "Hero",
           "width": "fill_container",
           "height": 620,
-          "fill": "#A855F7FF",
+          "fill": "#0A0A0AFF",
           "layout": "vertical",
-          "gap": 24,
+          "gap": 32,
           "padding": [
-            80,
-            120,
-            160,
+            0,
             120
           ],
           "justifyContent": "center",
-          "alignItems": "center",
           "children": [
             {
               "type": "frame",
-              "id": "YBUQZ",
-              "name": "heroBadge",
-              "height": 30,
-              "fill": "#00000020",
-              "cornerRadius": 9999,
-              "padding": [
-                0,
-                14
-              ],
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "text",
-                  "id": "WA1NS",
-                  "fill": "#FFFFFFFF",
-                  "content": "Open to collaboration",
-                  "fontFamily": "Geist Mono",
-                  "fontSize": 12,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "text",
-              "id": "995QX",
-              "name": "heroTitle",
-              "fill": "#FFFFFFFF",
-              "textGrowth": "fixed-width",
-              "width": 900,
-              "content": "Flutter Engineer.\nPackage Author.\nApp Builder.",
-              "lineHeight": 1.05,
-              "textAlign": "center",
-              "fontFamily": "Geist",
-              "fontSize": 72,
-              "fontWeight": "700",
-              "letterSpacing": -2
-            },
-            {
-              "type": "text",
-              "id": "9TdUX",
-              "name": "heroSub",
-              "fill": "#FFFFFFCC",
-              "textGrowth": "fixed-width",
-              "width": 600,
-              "content": "6+ years crafting polished Flutter apps and Dart packages.\nPublished on pub.dev. Shipped on the App Store.",
-              "lineHeight": 1.6,
-              "textAlign": "center",
-              "fontFamily": "Inter",
-              "fontSize": 18,
-              "fontWeight": "normal"
-            },
-            {
-              "type": "frame",
-              "id": "FVHIK",
-              "name": "heroBtns",
-              "gap": 16,
+              "id": "dP8Y4",
+              "name": "heroText",
+              "layout": "vertical",
+              "gap": 32,
               "children": [
                 {
                   "type": "frame",
-                  "id": "pXN71",
-                  "name": "heroBtnSecondary",
-                  "height": 52,
-                  "fill": "#FFFFFF20",
-                  "cornerRadius": 9999,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "#FFFFFF40"
-                  },
-                  "padding": [
-                    0,
-                    28
-                  ],
-                  "alignItems": "center",
+                  "id": "dkgDD",
+                  "name": "heroHeadline",
+                  "layout": "vertical",
+                  "gap": 2,
                   "children": [
                     {
                       "type": "text",
-                      "id": "DUTCe",
+                      "id": "AV8bs",
+                      "name": "hl1",
                       "fill": "#FFFFFFFF",
-                      "content": "Read the blog",
-                      "fontFamily": "Inter",
-                      "fontSize": 15,
-                      "fontWeight": "600"
+                      "content": "I build Flutter apps",
+                      "lineHeight": 1.05,
+                      "fontFamily": "Geist",
+                      "fontSize": 68,
+                      "fontWeight": "700",
+                      "letterSpacing": -2.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "DgTNG",
+                      "name": "hl2",
+                      "fill": "#A855F7FF",
+                      "content": "and the open-source",
+                      "lineHeight": 1.05,
+                      "fontFamily": "Geist",
+                      "fontSize": 68,
+                      "fontWeight": "700",
+                      "letterSpacing": -2.5
+                    },
+                    {
+                      "type": "text",
+                      "id": "zuCht",
+                      "name": "hl3",
+                      "fill": "#A855F7FF",
+                      "content": "packages behind them.",
+                      "lineHeight": 1.05,
+                      "fontFamily": "Geist",
+                      "fontSize": 68,
+                      "fontWeight": "700",
+                      "letterSpacing": -2.5
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "s7ZdgZ",
+                  "name": "heroSub",
+                  "fill": "#A1A1AAFF",
+                  "textGrowth": "fixed-width",
+                  "width": 560,
+                  "content": "Six years shipping polished mobile apps and the Dart packages that power them. Published on pub.dev, live on the App Store.",
+                  "lineHeight": 1.6,
+                  "fontFamily": "Inter",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "fUUNb",
+                  "name": "heroBtns",
+                  "gap": 14,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "lAral",
+                      "name": "btnPrimary",
+                      "height": 52,
+                      "fill": "#A855F7FF",
+                      "cornerRadius": 9999,
+                      "padding": [
+                        0,
+                        28
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "U5joCx",
+                          "fill": "#0A0A0AFF",
+                          "content": "Read the blog",
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "vxmx9",
+                      "name": "btnSecondary",
+                      "height": 52,
+                      "cornerRadius": 9999,
+                      "stroke": "#FFFFFF26",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
+                      "padding": [
+                        0,
+                        28
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "z9kXX",
+                          "fill": "#FFFFFFFF",
+                          "content": "View packages",
+                          "fontFamily": "Inter",
+                          "fontSize": 15,
+                          "fontWeight": "600"
+                        }
+                      ]
                     }
                   ]
                 }
@@ -216,11 +249,9 @@
           "width": "fill_container",
           "height": 100,
           "fill": "#0D0D0DFF",
-          "stroke": {
-            "align": "inside",
-            "thickness": 1,
-            "fill": "#1A1A1AFF"
-          },
+          "stroke": "#1A1A1AFF",
+          "strokeWidth": 1,
+          "strokeAlignment": "inner",
           "padding": [
             0,
             120
@@ -348,7 +379,7 @@
                   "type": "text",
                   "id": "5XWzi",
                   "fill": "#A855F7FF",
-                  "content": "∞",
+                  "content": "38k",
                   "fontFamily": "Geist Mono",
                   "fontSize": 32,
                   "fontWeight": "700"
@@ -357,7 +388,7 @@
                   "type": "text",
                   "id": "HCo6Z",
                   "fill": "#A1A1AAFF",
-                  "content": "Cups of Coffee",
+                  "content": "Monthly Downloads",
                   "fontFamily": "Inter",
                   "fontSize": 13,
                   "fontWeight": "normal"
@@ -388,36 +419,12 @@
               "gap": 24,
               "children": [
                 {
-                  "type": "frame",
-                  "id": "IhwPM",
-                  "name": "aboutBadge",
-                  "height": 28,
-                  "fill": "#A855F715",
-                  "cornerRadius": 4,
-                  "padding": [
-                    0,
-                    12
-                  ],
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "text",
-                      "id": "tM9iL",
-                      "fill": "#A855F7FF",
-                      "content": "// about me",
-                      "fontFamily": "Geist Mono",
-                      "fontSize": 12,
-                      "fontWeight": "normal"
-                    }
-                  ]
-                },
-                {
                   "type": "text",
                   "id": "SKwmN",
                   "fill": "#FFFFFFFF",
                   "textGrowth": "fixed-width",
                   "width": 500,
-                  "content": "Building beautiful\nthings with Flutter",
+                  "content": "From production apps\nto pub.dev packages",
                   "lineHeight": 1.1,
                   "fontFamily": "Geist",
                   "fontSize": 48,
@@ -449,11 +456,9 @@
                       "height": 32,
                       "fill": "#1A1A1AFF",
                       "cornerRadius": 9999,
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "#2A2A2AFF"
-                      },
+                      "stroke": "#2A2A2AFF",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
                       "padding": [
                         0,
                         14
@@ -478,11 +483,9 @@
                       "height": 32,
                       "fill": "#1A1A1AFF",
                       "cornerRadius": 9999,
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "#2A2A2AFF"
-                      },
+                      "stroke": "#2A2A2AFF",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
                       "padding": [
                         0,
                         14
@@ -507,11 +510,9 @@
                       "height": 32,
                       "fill": "#1A1A1AFF",
                       "cornerRadius": 9999,
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "#2A2A2AFF"
-                      },
+                      "stroke": "#2A2A2AFF",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
                       "padding": [
                         0,
                         14
@@ -536,11 +537,9 @@
                       "height": 32,
                       "fill": "#1A1A1AFF",
                       "cornerRadius": 9999,
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "#2A2A2AFF"
-                      },
+                      "stroke": "#2A2A2AFF",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
                       "padding": [
                         0,
                         14
@@ -774,30 +773,6 @@
                   "gap": 12,
                   "children": [
                     {
-                      "type": "frame",
-                      "id": "MiG0H",
-                      "name": "pkgsBadge",
-                      "height": 28,
-                      "fill": "#A855F715",
-                      "cornerRadius": 4,
-                      "padding": [
-                        0,
-                        12
-                      ],
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "6r7DZ",
-                          "fill": "#A855F7FF",
-                          "content": "// pub.dev",
-                          "fontFamily": "Geist Mono",
-                          "fontSize": 12,
-                          "fontWeight": "normal"
-                        }
-                      ]
-                    },
-                    {
                       "type": "text",
                       "id": "nJQsc",
                       "fill": "#FFFFFFFF",
@@ -816,11 +791,9 @@
                   "height": 40,
                   "fill": "#1A1A1AFF",
                   "cornerRadius": 9999,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "#2A2A2AFF"
-                  },
+                  "stroke": "#2A2A2AFF",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "padding": [
                     0,
                     20
@@ -849,344 +822,70 @@
               "children": [
                 {
                   "type": "frame",
-                  "id": "2FB92",
-                  "name": "pkg1",
-                  "width": "fill_container",
-                  "height": 232,
+                  "id": "NW59Q",
+                  "name": "pkgFeatured",
+                  "width": 600,
+                  "height": 380,
                   "fill": "#111111FF",
                   "cornerRadius": 8,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "#1A1A1AFF"
-                  },
+                  "stroke": "#1A1A1AFF",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
-                  "gap": 16,
-                  "padding": 24,
+                  "gap": 20,
+                  "padding": 28,
                   "children": [
                     {
                       "type": "frame",
-                      "id": "75UAS",
-                      "name": "pkg1Top",
+                      "id": "o8yLAE",
+                      "name": "featTop",
                       "width": "fill_container",
                       "justifyContent": "space_between",
                       "alignItems": "center",
                       "children": [
                         {
                           "type": "frame",
-                          "id": "wgkcn",
-                          "name": "pkg1Icon",
-                          "width": 40,
-                          "height": 40,
-                          "fill": "#A855F720",
-                          "cornerRadius": 8,
-                          "justifyContent": "center",
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "icon_font",
-                              "id": "A8aOZ",
-                              "width": 20,
-                              "height": 20,
-                              "iconFontName": "route",
-                              "iconFontFamily": "lucide",
-                              "fill": "#A855F7FF"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "eIGAm",
-                          "name": "pkg1Stars",
-                          "gap": 4,
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "icon_font",
-                              "id": "4Uh9U",
-                              "width": 14,
-                              "height": 14,
-                              "iconFontName": "star",
-                              "iconFontFamily": "lucide",
-                              "fill": "#F59E0BFF"
-                            },
-                            {
-                              "type": "text",
-                              "id": "WUM3L",
-                              "fill": "#A1A1AAFF",
-                              "content": "8",
-                              "fontFamily": "Geist Mono",
-                              "fontSize": 12,
-                              "fontWeight": "normal"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "text",
-                      "id": "y3MMR",
-                      "fill": "#FFFFFFFF",
-                      "content": "simple_routes",
-                      "fontFamily": "Geist Mono",
-                      "fontSize": 15,
-                      "fontWeight": "600"
-                    },
-                    {
-                      "type": "text",
-                      "id": "mzcDa",
-                      "fill": "#A1A1AAFF",
-                      "textGrowth": "fixed-width",
-                      "width": 260,
-                      "content": "Simple, declarative route and navigation management for go_router. Type-safe routing with zero magic strings.",
-                      "lineHeight": 1.6,
-                      "fontFamily": "Inter",
-                      "fontSize": 13,
-                      "fontWeight": "normal"
-                    },
-                    {
-                      "type": "frame",
-                      "id": "754I5",
-                      "name": "pkg1Footer",
-                      "gap": 8,
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "X7txN",
-                          "fill": "#A855F7FF",
-                          "content": "v2.1.3",
-                          "fontFamily": "Geist Mono",
-                          "fontSize": 11,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "DPyO4",
-                          "fill": "#A1A1AAFF",
-                          "content": "·",
-                          "fontFamily": "Inter",
-                          "fontSize": 11,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "0j3i9",
-                          "fill": "#A1A1AAFF",
-                          "content": "pub.dev",
-                          "fontFamily": "Inter",
-                          "fontSize": 11,
-                          "fontWeight": "normal"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "buXNp",
-                  "name": "pkg2",
-                  "width": "fill_container",
-                  "height": 232,
-                  "fill": "#111111FF",
-                  "cornerRadius": 8,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "#1A1A1AFF"
-                  },
-                  "layout": "vertical",
-                  "gap": 16,
-                  "padding": 24,
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "3PiRn",
-                      "name": "pkg2Top",
-                      "width": "fill_container",
-                      "justifyContent": "space_between",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "frame",
-                          "id": "9cnvO",
-                          "name": "pkg2Icon",
-                          "width": 40,
-                          "height": 40,
-                          "fill": "#F9731620",
-                          "cornerRadius": 8,
-                          "justifyContent": "center",
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "icon_font",
-                              "id": "5KTZ7",
-                              "width": 20,
-                              "height": 20,
-                              "iconFontName": "flame",
-                              "iconFontFamily": "lucide",
-                              "fill": "#F97316FF"
-                            }
-                          ]
-                        },
-                        {
-                          "type": "frame",
-                          "id": "kDNqn",
-                          "name": "pkg2Stars",
-                          "gap": 4,
-                          "alignItems": "center",
-                          "children": [
-                            {
-                              "type": "icon_font",
-                              "id": "p03Ix",
-                              "width": 14,
-                              "height": 14,
-                              "iconFontName": "star",
-                              "iconFontFamily": "lucide",
-                              "fill": "#F59E0BFF"
-                            },
-                            {
-                              "type": "text",
-                              "id": "hjFrq",
-                              "fill": "#A1A1AAFF",
-                              "content": "0",
-                              "fontFamily": "Geist Mono",
-                              "fontSize": 12,
-                              "fontWeight": "normal"
-                            }
-                          ]
-                        }
-                      ]
-                    },
-                    {
-                      "type": "text",
-                      "id": "8gMkM",
-                      "fill": "#FFFFFFFF",
-                      "content": "firebase_flavors",
-                      "fontFamily": "Geist Mono",
-                      "fontSize": 15,
-                      "fontWeight": "600"
-                    },
-                    {
-                      "type": "text",
-                      "id": "sfjLJ",
-                      "fill": "#A1A1AAFF",
-                      "textGrowth": "fixed-width",
-                      "width": 260,
-                      "content": "Automate Firebase configuration across Flutter app flavors.",
-                      "lineHeight": 1.6,
-                      "fontFamily": "Inter",
-                      "fontSize": 13,
-                      "fontWeight": "normal"
-                    },
-                    {
-                      "type": "frame",
-                      "id": "Lca9K",
-                      "name": "pkg2Footer",
-                      "gap": 8,
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "Kcneo",
-                          "fill": "#F97316FF",
-                          "content": "v2.0.2",
-                          "fontFamily": "Geist Mono",
-                          "fontSize": 11,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "srGNh",
-                          "fill": "#A1A1AAFF",
-                          "content": "·",
-                          "fontFamily": "Inter",
-                          "fontSize": 11,
-                          "fontWeight": "normal"
-                        },
-                        {
-                          "type": "text",
-                          "id": "luZ1a",
-                          "fill": "#A1A1AAFF",
-                          "content": "pub.dev",
-                          "fontFamily": "Inter",
-                          "fontSize": 11,
-                          "fontWeight": "normal"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "type": "frame",
-                  "id": "olkqI",
-                  "name": "pkg3",
-                  "width": "fill_container",
-                  "height": 232,
-                  "fill": "#111111FF",
-                  "cornerRadius": 8,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "#1A1A1AFF"
-                  },
-                  "layout": "vertical",
-                  "gap": 16,
-                  "padding": 24,
-                  "children": [
-                    {
-                      "type": "frame",
-                      "id": "zujpP",
-                      "name": "pkg3Top",
-                      "width": "fill_container",
-                      "justifyContent": "space_between",
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "frame",
-                          "id": "PL2Vu",
-                          "name": "pkg3Icon",
-                          "width": 40,
-                          "height": 40,
+                          "id": "amGId",
+                          "name": "featIcon",
+                          "width": 44,
+                          "height": 44,
                           "fill": "#10B98120",
-                          "cornerRadius": 8,
+                          "cornerRadius": 10,
                           "justifyContent": "center",
                           "alignItems": "center",
                           "children": [
                             {
-                              "type": "icon_font",
-                              "id": "hONbF",
-                              "width": 20,
-                              "height": 20,
-                              "iconFontName": "layout-panel-left",
-                              "iconFontFamily": "lucide",
+                              "type": "icon",
+                              "id": "LBUZU",
+                              "name": "i",
+                              "width": 22,
+                              "height": 22,
+                              "icon": "layout-grid",
+                              "library": "lucide",
                               "fill": "#10B981FF"
                             }
                           ]
                         },
                         {
                           "type": "frame",
-                          "id": "GPrlt",
-                          "name": "pkg3Stars",
-                          "gap": 4,
+                          "id": "Gbj6t",
+                          "name": "featBadge",
+                          "height": 26,
+                          "fill": "#10B98115",
+                          "cornerRadius": 9999,
+                          "padding": [
+                            0,
+                            12
+                          ],
                           "alignItems": "center",
                           "children": [
                             {
-                              "type": "icon_font",
-                              "id": "daMf8",
-                              "width": 14,
-                              "height": 14,
-                              "iconFontName": "star",
-                              "iconFontFamily": "lucide",
-                              "fill": "#F59E0BFF"
-                            },
-                            {
                               "type": "text",
-                              "id": "G1sif",
-                              "fill": "#A1A1AAFF",
-                              "content": "56",
+                              "id": "zziUP",
+                              "fill": "#10B981FF",
+                              "content": "Most popular",
                               "fontFamily": "Geist Mono",
-                              "fontSize": 12,
+                              "fontSize": 11,
                               "fontWeight": "normal"
                             }
                           ]
@@ -1195,58 +894,370 @@
                     },
                     {
                       "type": "text",
-                      "id": "CEqcY",
+                      "id": "s8zhNX",
+                      "name": "featName",
                       "fill": "#FFFFFFFF",
                       "content": "flutter_resizable_container",
                       "fontFamily": "Geist Mono",
-                      "fontSize": 15,
+                      "fontSize": 22,
                       "fontWeight": "600"
                     },
                     {
                       "type": "text",
-                      "id": "1W8xx",
+                      "id": "Sx1XJ",
+                      "name": "featDesc",
                       "fill": "#A1A1AAFF",
                       "textGrowth": "fixed-width",
-                      "width": 260,
-                      "content": "Add nestable, resizable containers to your Flutter app. Supports custom dividers, programmatic control, and drag events.",
+                      "width": "fill_container",
+                      "content": "Add nestable, resizable containers to your Flutter layouts. Custom dividers, programmatic control, drag events, and full keyboard support — no dependencies.",
                       "lineHeight": 1.6,
                       "fontFamily": "Inter",
-                      "fontSize": 13,
+                      "fontSize": 15,
                       "fontWeight": "normal"
                     },
                     {
                       "type": "frame",
-                      "id": "I8C24",
-                      "name": "pkg3Footer",
+                      "id": "Srzid",
+                      "name": "featSpacer",
+                      "width": "fill_container",
+                      "height": "fill_container"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "xeqx2",
+                      "name": "featStats",
+                      "width": "fill_container",
+                      "gap": 24,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "Pbse7",
+                          "name": "fstat",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "rr403",
+                              "fill": "#FFFFFFFF",
+                              "content": "243",
+                              "fontFamily": "Geist Mono",
+                              "fontSize": 18,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "jkUiV",
+                              "fill": "#71717AFF",
+                              "content": "LIKES",
+                              "fontFamily": "Geist Mono",
+                              "fontSize": 10,
+                              "fontWeight": "normal",
+                              "letterSpacing": 0.5
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "EbprB",
+                          "name": "fstat",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "IxtBa",
+                              "fill": "#FFFFFFFF",
+                              "content": "160",
+                              "fontFamily": "Geist Mono",
+                              "fontSize": 18,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "K82IcD",
+                              "fill": "#71717AFF",
+                              "content": "PUB POINTS",
+                              "fontFamily": "Geist Mono",
+                              "fontSize": 10,
+                              "fontWeight": "normal",
+                              "letterSpacing": 0.5
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "j03lfx",
+                          "name": "fstat",
+                          "layout": "vertical",
+                          "gap": 2,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "HuGDv",
+                              "fill": "#FFFFFFFF",
+                              "content": "31k",
+                              "fontFamily": "Geist Mono",
+                              "fontSize": 18,
+                              "fontWeight": "700"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Yx1PK",
+                              "fill": "#71717AFF",
+                              "content": "DOWNLOADS",
+                              "fontFamily": "Geist Mono",
+                              "fontSize": 10,
+                              "fontWeight": "normal",
+                              "letterSpacing": 0.5
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "brzqk",
+                      "name": "featInstall",
+                      "fill": "#0A0A0AFF",
+                      "cornerRadius": 6,
+                      "stroke": "#1A1A1AFF",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
                       "gap": 8,
+                      "padding": [
+                        10,
+                        14
+                      ],
                       "alignItems": "center",
                       "children": [
                         {
                           "type": "text",
-                          "id": "iDxnn",
+                          "id": "wUuIS",
                           "fill": "#10B981FF",
-                          "content": "v4.2.0",
+                          "content": "$",
                           "fontFamily": "Geist Mono",
-                          "fontSize": 11,
+                          "fontSize": 13,
                           "fontWeight": "normal"
                         },
                         {
                           "type": "text",
-                          "id": "BcaYT",
-                          "fill": "#A1A1AAFF",
-                          "content": "·",
-                          "fontFamily": "Inter",
-                          "fontSize": 11,
+                          "id": "HHYbE",
+                          "fill": "#E4E4E7FF",
+                          "content": "flutter pub add flutter_resizable_container",
+                          "fontFamily": "Geist Mono",
+                          "fontSize": 13,
                           "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "MhU61",
+                  "name": "pkgSideCol",
+                  "width": "fill_container",
+                  "height": 380,
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "TffBZ",
+                      "name": "sideCard",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "#111111FF",
+                      "cornerRadius": 8,
+                      "stroke": "#1A1A1AFF",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 24,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "OaRW5",
+                          "name": "top",
+                          "width": "fill_container",
+                          "gap": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "RTJPY",
+                              "name": "iw",
+                              "width": 36,
+                              "height": 36,
+                              "fill": "#A855F720",
+                              "cornerRadius": 8,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "j3WrN",
+                                  "width": 18,
+                                  "height": 18,
+                                  "icon": "route",
+                                  "library": "lucide",
+                                  "fill": "#A855F7FF"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "v55Gv",
+                              "fill": "#FFFFFFFF",
+                              "content": "simple_routes",
+                              "fontFamily": "Geist Mono",
+                              "fontSize": 15,
+                              "fontWeight": "600"
+                            }
+                          ]
                         },
                         {
                           "type": "text",
-                          "id": "rZqdP",
+                          "id": "g2uLZ",
                           "fill": "#A1A1AAFF",
-                          "content": "pub.dev",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Declarative, type-safe routing for go_router with zero magic strings.",
+                          "lineHeight": 1.6,
                           "fontFamily": "Inter",
-                          "fontSize": 11,
+                          "fontSize": 13,
                           "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "B7J0E",
+                          "name": "foot",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "gap": 8,
+                          "alignItems": "end",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "Oubqp",
+                              "fill": "#A855F7FF",
+                              "content": "v2.1.3",
+                              "fontFamily": "Geist Mono",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "ucSWN",
+                              "fill": "#71717AFF",
+                              "content": "· pub.dev",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "FbCny",
+                      "name": "sideCard",
+                      "width": "fill_container",
+                      "height": "fill_container",
+                      "fill": "#111111FF",
+                      "cornerRadius": 8,
+                      "stroke": "#1A1A1AFF",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 24,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "cFiH5",
+                          "name": "top",
+                          "width": "fill_container",
+                          "gap": 12,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "frame",
+                              "id": "nHbCw",
+                              "name": "iw",
+                              "width": 36,
+                              "height": 36,
+                              "fill": "#F9731620",
+                              "cornerRadius": 8,
+                              "justifyContent": "center",
+                              "alignItems": "center",
+                              "children": [
+                                {
+                                  "type": "icon",
+                                  "id": "SNtuC",
+                                  "width": 18,
+                                  "height": 18,
+                                  "icon": "flame",
+                                  "library": "lucide",
+                                  "fill": "#F97316FF"
+                                }
+                              ]
+                            },
+                            {
+                              "type": "text",
+                              "id": "ATADv",
+                              "fill": "#FFFFFFFF",
+                              "content": "firebase_flavors",
+                              "fontFamily": "Geist Mono",
+                              "fontSize": 15,
+                              "fontWeight": "600"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "jDRWq",
+                          "fill": "#A1A1AAFF",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "Automate Firebase configuration across your Flutter app flavors.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Inter",
+                          "fontSize": 13,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "O15cJ",
+                          "name": "foot",
+                          "width": "fill_container",
+                          "height": "fill_container",
+                          "gap": 8,
+                          "alignItems": "end",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "nakDV",
+                              "fill": "#F97316FF",
+                              "content": "v2.0.2",
+                              "fontFamily": "Geist Mono",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "dBnoP",
+                              "fill": "#71717AFF",
+                              "content": "· pub.dev",
+                              "fontFamily": "Inter",
+                              "fontSize": 11,
+                              "fontWeight": "normal"
+                            }
+                          ]
                         }
                       ]
                     }
@@ -1285,30 +1296,6 @@
                   "gap": 12,
                   "children": [
                     {
-                      "type": "frame",
-                      "id": "UBYBM",
-                      "name": "blogBadge",
-                      "height": 28,
-                      "fill": "#A855F715",
-                      "cornerRadius": 4,
-                      "padding": [
-                        0,
-                        12
-                      ],
-                      "alignItems": "center",
-                      "children": [
-                        {
-                          "type": "text",
-                          "id": "Ry73a",
-                          "fill": "#A855F7FF",
-                          "content": "// blog",
-                          "fontFamily": "Geist Mono",
-                          "fontSize": 12,
-                          "fontWeight": "normal"
-                        }
-                      ]
-                    },
-                    {
                       "type": "text",
                       "id": "0GEuw",
                       "fill": "#FFFFFFFF",
@@ -1327,11 +1314,9 @@
                   "height": 40,
                   "fill": "#1A1A1AFF",
                   "cornerRadius": 9999,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "#2A2A2AFF"
-                  },
+                  "stroke": "#2A2A2AFF",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "padding": [
                     0,
                     20
@@ -1365,11 +1350,9 @@
                   "width": "fill_container",
                   "fill": "#111111FF",
                   "cornerRadius": 8,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "#1A1A1AFF"
-                  },
+                  "stroke": "#1A1A1AFF",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 20,
                   "padding": 32,
@@ -1464,12 +1447,12 @@
                           "fontWeight": "600"
                         },
                         {
-                          "type": "icon_font",
+                          "type": "icon",
                           "id": "vLAKZ",
                           "width": 14,
                           "height": 14,
-                          "iconFontName": "arrow-right",
-                          "iconFontFamily": "lucide",
+                          "icon": "arrow-right",
+                          "library": "lucide",
                           "fill": "#A855F7FF"
                         }
                       ]
@@ -1483,11 +1466,9 @@
                   "width": "fill_container",
                   "fill": "#111111FF",
                   "cornerRadius": 8,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "#1A1A1AFF"
-                  },
+                  "stroke": "#1A1A1AFF",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 20,
                   "padding": 32,
@@ -1582,12 +1563,12 @@
                           "fontWeight": "600"
                         },
                         {
-                          "type": "icon_font",
+                          "type": "icon",
                           "id": "vWaYH",
                           "width": 14,
                           "height": 14,
-                          "iconFontName": "arrow-right",
-                          "iconFontFamily": "lucide",
+                          "icon": "arrow-right",
+                          "library": "lucide",
                           "fill": "#A855F7FF"
                         }
                       ]
@@ -1601,11 +1582,9 @@
                   "width": "fill_container",
                   "fill": "#111111FF",
                   "cornerRadius": 8,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "#1A1A1AFF"
-                  },
+                  "stroke": "#1A1A1AFF",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 20,
                   "padding": 32,
@@ -1700,12 +1679,12 @@
                           "fontWeight": "600"
                         },
                         {
-                          "type": "icon_font",
+                          "type": "icon",
                           "id": "67x5G",
                           "width": 14,
                           "height": 14,
-                          "iconFontName": "arrow-right",
-                          "iconFontFamily": "lucide",
+                          "icon": "arrow-right",
+                          "library": "lucide",
                           "fill": "#A855F7FF"
                         }
                       ]
@@ -1722,104 +1701,43 @@
           "name": "Contact Section",
           "width": "fill_container",
           "fill": "#0A0A0AFF",
-          "layout": "vertical",
-          "gap": 40,
-          "padding": [
-            100,
-            120
-          ],
+          "gap": 80,
+          "padding": 120,
+          "justifyContent": "space_between",
           "alignItems": "center",
           "children": [
             {
               "type": "frame",
-              "id": "3B1su",
-              "name": "contactBadge",
-              "height": 28,
-              "fill": "#A855F715",
-              "cornerRadius": 4,
-              "padding": [
-                0,
-                12
-              ],
-              "alignItems": "center",
+              "id": "B7r3t",
+              "name": "contactLeft",
+              "width": 600,
+              "layout": "vertical",
+              "gap": 24,
               "children": [
                 {
                   "type": "text",
-                  "id": "dsO44",
-                  "fill": "#A855F7FF",
-                  "content": "// get in touch",
-                  "fontFamily": "Geist Mono",
-                  "fontSize": 12,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
-            {
-              "type": "text",
-              "id": "VumS5",
-              "fill": "#FFFFFFFF",
-              "textGrowth": "fixed-width",
-              "width": 700,
-              "content": "Let's build something\ntogether",
-              "lineHeight": 1.05,
-              "textAlign": "center",
-              "fontFamily": "Geist",
-              "fontSize": 56,
-              "fontWeight": "700",
-              "letterSpacing": -2
-            },
-            {
-              "type": "text",
-              "id": "kljhb",
-              "fill": "#A1A1AAFF",
-              "textGrowth": "fixed-width",
-              "width": 500,
-              "content": "Open to collaboration and open-source projects.\nFind me on LinkedIn, GitHub, or pub.dev.",
-              "lineHeight": 1.7,
-              "textAlign": "center",
-              "fontFamily": "Inter",
-              "fontSize": 17,
-              "fontWeight": "normal"
-            },
-            {
-              "type": "frame",
-              "id": "AkHCq",
-              "name": "contactBtns",
-              "gap": 16,
-              "children": [
+                  "id": "VumS5",
+                  "fill": "#FFFFFFFF",
+                  "textGrowth": "fixed-width",
+                  "width": 560,
+                  "content": "Let's build\nsomething together",
+                  "lineHeight": 1.05,
+                  "fontFamily": "Geist",
+                  "fontSize": 56,
+                  "fontWeight": "700",
+                  "letterSpacing": -2
+                },
                 {
-                  "type": "frame",
-                  "id": "v6uXj",
-                  "name": "contactBtnPrimary",
-                  "height": 54,
-                  "fill": "#A855F7FF",
-                  "cornerRadius": 9999,
-                  "gap": 10,
-                  "padding": [
-                    0,
-                    32
-                  ],
-                  "alignItems": "center",
-                  "children": [
-                    {
-                      "type": "icon_font",
-                      "id": "hPDgy",
-                      "width": 18,
-                      "height": 18,
-                      "iconFontName": "linkedin",
-                      "iconFontFamily": "lucide",
-                      "fill": "#0A0A0AFF"
-                    },
-                    {
-                      "type": "text",
-                      "id": "IcDCy",
-                      "fill": "#0A0A0AFF",
-                      "content": "Connect on LinkedIn",
-                      "fontFamily": "Inter",
-                      "fontSize": 15,
-                      "fontWeight": "600"
-                    }
-                  ]
+                  "type": "text",
+                  "id": "kljhb",
+                  "fill": "#A1A1AAFF",
+                  "textGrowth": "fixed-width",
+                  "width": 480,
+                  "content": "Open to collaboration and open-source work. Find me on LinkedIn, GitHub, or pub.dev.",
+                  "lineHeight": 1.7,
+                  "fontFamily": "Inter",
+                  "fontSize": 17,
+                  "fontWeight": "normal"
                 }
               ]
             },
@@ -1827,8 +1745,14 @@
               "type": "frame",
               "id": "UwfEM",
               "name": "contactLinks",
-              "gap": 24,
-              "alignItems": "center",
+              "fill": "#0D0D0DFF",
+              "cornerRadius": 12,
+              "stroke": "#1A1A1AFF",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
+              "layout": "vertical",
+              "gap": 18,
+              "padding": 28,
               "children": [
                 {
                   "type": "frame",
@@ -1838,12 +1762,12 @@
                   "alignItems": "center",
                   "children": [
                     {
-                      "type": "icon_font",
+                      "type": "icon",
                       "id": "Jw6wR",
                       "width": 18,
                       "height": 18,
-                      "iconFontName": "linkedin",
-                      "iconFontFamily": "lucide",
+                      "icon": "linkedin",
+                      "library": "lucide",
                       "fill": "#A1A1AAFF"
                     },
                     {
@@ -1865,12 +1789,12 @@
                   "alignItems": "center",
                   "children": [
                     {
-                      "type": "icon_font",
+                      "type": "icon",
                       "id": "o7xkJ",
                       "width": 18,
                       "height": 18,
-                      "iconFontName": "github",
-                      "iconFontFamily": "lucide",
+                      "icon": "github",
+                      "library": "lucide",
                       "fill": "#A1A1AAFF"
                     },
                     {
@@ -1892,12 +1816,12 @@
                   "alignItems": "center",
                   "children": [
                     {
-                      "type": "icon_font",
+                      "type": "icon",
                       "id": "d0If7",
                       "width": 18,
                       "height": 18,
-                      "iconFontName": "box",
-                      "iconFontFamily": "lucide",
+                      "icon": "box",
+                      "library": "lucide",
                       "fill": "#A1A1AAFF"
                     },
                     {
@@ -1922,11 +1846,9 @@
           "width": "fill_container",
           "height": 72,
           "fill": "#0D0D0DFF",
-          "stroke": {
-            "align": "inside",
-            "thickness": 1,
-            "fill": "#1A1A1AFF"
-          },
+          "stroke": "#1A1A1AFF",
+          "strokeWidth": 1,
+          "strokeAlignment": "inner",
           "padding": [
             0,
             120
@@ -1982,11 +1904,9 @@
           "width": "fill_container",
           "height": 72,
           "fill": "#0A0A0AFF",
-          "stroke": {
-            "align": "inside",
-            "thickness": 1,
-            "fill": "#1A1A1AFF"
-          },
+          "stroke": "#1A1A1AFF",
+          "strokeWidth": 1,
+          "strokeAlignment": "inner",
           "padding": [
             0,
             120
@@ -2071,11 +1991,9 @@
           "name": "Blog Hero",
           "width": "fill_container",
           "fill": "#0D0D0DFF",
-          "stroke": {
-            "align": "inside",
-            "thickness": 1,
-            "fill": "#1A1A1AFF"
-          },
+          "stroke": "#1A1A1AFF",
+          "strokeWidth": 1,
+          "strokeAlignment": "inner",
           "layout": "vertical",
           "gap": 20,
           "padding": [
@@ -2083,30 +2001,6 @@
             120
           ],
           "children": [
-            {
-              "type": "frame",
-              "id": "4okuW",
-              "name": "blHeroBadge",
-              "height": 28,
-              "fill": "#A855F715",
-              "cornerRadius": 4,
-              "padding": [
-                0,
-                12
-              ],
-              "alignItems": "center",
-              "children": [
-                {
-                  "type": "text",
-                  "id": "H6xld",
-                  "fill": "#A855F7FF",
-                  "content": "// blog",
-                  "fontFamily": "Geist Mono",
-                  "fontSize": 12,
-                  "fontWeight": "normal"
-                }
-              ]
-            },
             {
               "type": "text",
               "id": "zfAtM",
@@ -2140,11 +2034,9 @@
               "height": 52,
               "fill": "#111111FF",
               "cornerRadius": 8,
-              "stroke": {
-                "align": "inside",
-                "thickness": 1,
-                "fill": "#2A2A2AFF"
-              },
+              "stroke": "#2A2A2AFF",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
               "gap": 12,
               "padding": [
                 0,
@@ -2153,12 +2045,12 @@
               "alignItems": "center",
               "children": [
                 {
-                  "type": "icon_font",
+                  "type": "icon",
                   "id": "AxaBi",
                   "width": 18,
                   "height": 18,
-                  "iconFontName": "search",
-                  "iconFontFamily": "lucide",
+                  "icon": "search",
+                  "library": "lucide",
                   "fill": "#A1A1AAFF"
                 },
                 {
@@ -2181,11 +2073,9 @@
           "width": "fill_container",
           "height": 56,
           "fill": "#0D0D0DFF",
-          "stroke": {
-            "align": "inside",
-            "thickness": 1,
-            "fill": "#1A1A1AFF"
-          },
+          "stroke": "#1A1A1AFF",
+          "strokeWidth": 1,
+          "strokeAlignment": "inner",
           "gap": 12,
           "padding": [
             0,
@@ -2233,11 +2123,9 @@
               "height": 30,
               "fill": "#1A1A1AFF",
               "cornerRadius": 9999,
-              "stroke": {
-                "align": "inside",
-                "thickness": 1,
-                "fill": "#2A2A2AFF"
-              },
+              "stroke": "#2A2A2AFF",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
               "padding": [
                 0,
                 14
@@ -2262,11 +2150,9 @@
               "height": 30,
               "fill": "#1A1A1AFF",
               "cornerRadius": 9999,
-              "stroke": {
-                "align": "inside",
-                "thickness": 1,
-                "fill": "#2A2A2AFF"
-              },
+              "stroke": "#2A2A2AFF",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
               "padding": [
                 0,
                 14
@@ -2291,11 +2177,9 @@
               "height": 30,
               "fill": "#1A1A1AFF",
               "cornerRadius": 9999,
-              "stroke": {
-                "align": "inside",
-                "thickness": 1,
-                "fill": "#2A2A2AFF"
-              },
+              "stroke": "#2A2A2AFF",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
               "padding": [
                 0,
                 14
@@ -2320,11 +2204,9 @@
               "height": 30,
               "fill": "#1A1A1AFF",
               "cornerRadius": 9999,
-              "stroke": {
-                "align": "inside",
-                "thickness": 1,
-                "fill": "#2A2A2AFF"
-              },
+              "stroke": "#2A2A2AFF",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
               "padding": [
                 0,
                 14
@@ -2349,11 +2231,9 @@
               "height": 30,
               "fill": "#1A1A1AFF",
               "cornerRadius": 9999,
-              "stroke": {
-                "align": "inside",
-                "thickness": 1,
-                "fill": "#2A2A2AFF"
-              },
+              "stroke": "#2A2A2AFF",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
               "padding": [
                 0,
                 14
@@ -2401,11 +2281,9 @@
                   "width": "fill_container",
                   "fill": "#111111FF",
                   "cornerRadius": 8,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "#1A1A1AFF"
-                  },
+                  "stroke": "#1A1A1AFF",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "children": [
                     {
                       "type": "frame",
@@ -2555,12 +2433,12 @@
                               "fontWeight": "600"
                             },
                             {
-                              "type": "icon_font",
+                              "type": "icon",
                               "id": "FxbtD",
                               "width": 14,
                               "height": 14,
-                              "iconFontName": "arrow-right",
-                              "iconFontFamily": "lucide",
+                              "icon": "arrow-right",
+                              "library": "lucide",
                               "fill": "#A855F7FF"
                             }
                           ]
@@ -2587,11 +2465,9 @@
                   "width": "fill_container",
                   "fill": "#111111FF",
                   "cornerRadius": 8,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "#1A1A1AFF"
-                  },
+                  "stroke": "#1A1A1AFF",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 1,
                   "children": [
@@ -3125,11 +3001,9 @@
                       "height": 38,
                       "fill": "#111111FF",
                       "cornerRadius": 6,
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "#1A1A1AFF"
-                      },
+                      "stroke": "#1A1A1AFF",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
                       "gap": 6,
                       "padding": [
                         0,
@@ -3138,12 +3012,12 @@
                       "alignItems": "center",
                       "children": [
                         {
-                          "type": "icon_font",
+                          "type": "icon",
                           "id": "49gDU",
                           "width": 14,
                           "height": 14,
-                          "iconFontName": "chevron-left",
-                          "iconFontFamily": "lucide",
+                          "icon": "chevron-left",
+                          "library": "lucide",
                           "fill": "#A1A1AAFF"
                         },
                         {
@@ -3187,11 +3061,9 @@
                       "height": 38,
                       "fill": "#111111FF",
                       "cornerRadius": 6,
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "#1A1A1AFF"
-                      },
+                      "stroke": "#1A1A1AFF",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
                       "justifyContent": "center",
                       "alignItems": "center",
                       "children": [
@@ -3214,11 +3086,9 @@
                       "height": 38,
                       "fill": "#111111FF",
                       "cornerRadius": 6,
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "#1A1A1AFF"
-                      },
+                      "stroke": "#1A1A1AFF",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
                       "justifyContent": "center",
                       "alignItems": "center",
                       "children": [
@@ -3240,11 +3110,9 @@
                       "height": 38,
                       "fill": "#111111FF",
                       "cornerRadius": 6,
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "#1A1A1AFF"
-                      },
+                      "stroke": "#1A1A1AFF",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
                       "gap": 6,
                       "padding": [
                         0,
@@ -3262,12 +3130,12 @@
                           "fontWeight": "normal"
                         },
                         {
-                          "type": "icon_font",
+                          "type": "icon",
                           "id": "z9aQP",
                           "width": 14,
                           "height": 14,
-                          "iconFontName": "chevron-right",
-                          "iconFontFamily": "lucide",
+                          "icon": "chevron-right",
+                          "library": "lucide",
                           "fill": "#A1A1AAFF"
                         }
                       ]
@@ -3290,11 +3158,9 @@
                   "name": "sideAbout",
                   "fill": "#111111FF",
                   "cornerRadius": 8,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "#1A1A1AFF"
-                  },
+                  "stroke": "#1A1A1AFF",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 16,
                   "padding": 24,
@@ -3339,12 +3205,12 @@
                           "alignItems": "center",
                           "children": [
                             {
-                              "type": "icon_font",
+                              "type": "icon",
                               "id": "WlRmR",
                               "width": 16,
                               "height": 16,
-                              "iconFontName": "github",
-                              "iconFontFamily": "lucide",
+                              "icon": "github",
+                              "library": "lucide",
                               "fill": "#A1A1AAFF"
                             }
                           ]
@@ -3361,12 +3227,12 @@
                           "alignItems": "center",
                           "children": [
                             {
-                              "type": "icon_font",
+                              "type": "icon",
                               "id": "B8nEK",
                               "width": 16,
                               "height": 16,
-                              "iconFontName": "linkedin",
-                              "iconFontFamily": "lucide",
+                              "icon": "linkedin",
+                              "library": "lucide",
                               "fill": "#A1A1AAFF"
                             }
                           ]
@@ -3381,11 +3247,9 @@
                   "name": "sideTags",
                   "fill": "#111111FF",
                   "cornerRadius": 8,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "#1A1A1AFF"
-                  },
+                  "stroke": "#1A1A1AFF",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 16,
                   "padding": 24,
@@ -3413,11 +3277,9 @@
                           "height": 28,
                           "fill": "#A855F720",
                           "cornerRadius": 9999,
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "#A855F730"
-                          },
+                          "stroke": "#A855F730",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "padding": [
                             0,
                             12
@@ -3442,11 +3304,9 @@
                           "height": 28,
                           "fill": "#3B82F620",
                           "cornerRadius": 9999,
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "#3B82F630"
-                          },
+                          "stroke": "#3B82F630",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "padding": [
                             0,
                             12
@@ -3471,11 +3331,9 @@
                           "height": 28,
                           "fill": "#10B98120",
                           "cornerRadius": 9999,
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "#10B98130"
-                          },
+                          "stroke": "#10B98130",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "padding": [
                             0,
                             12
@@ -3509,11 +3367,9 @@
                           "height": 28,
                           "fill": "#F59E0B20",
                           "cornerRadius": 9999,
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "#F59E0B30"
-                          },
+                          "stroke": "#F59E0B30",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "padding": [
                             0,
                             12
@@ -3538,11 +3394,9 @@
                           "height": 28,
                           "fill": "#1A1A1AFF",
                           "cornerRadius": 9999,
-                          "stroke": {
-                            "align": "inside",
-                            "thickness": 1,
-                            "fill": "#2A2A2AFF"
-                          },
+                          "stroke": "#2A2A2AFF",
+                          "strokeWidth": 1,
+                          "strokeAlignment": "inner",
                           "padding": [
                             0,
                             12
@@ -3575,11 +3429,9 @@
           "width": "fill_container",
           "height": 72,
           "fill": "#0D0D0DFF",
-          "stroke": {
-            "align": "inside",
-            "thickness": 1,
-            "fill": "#1A1A1AFF"
-          },
+          "stroke": "#1A1A1AFF",
+          "strokeWidth": 1,
+          "strokeAlignment": "inner",
           "padding": [
             0,
             120
@@ -3635,11 +3487,9 @@
           "width": "fill_container",
           "height": 72,
           "fill": "#0A0A0AFF",
-          "stroke": {
-            "align": "inside",
-            "thickness": 1,
-            "fill": "#1A1A1AFF"
-          },
+          "stroke": "#1A1A1AFF",
+          "strokeWidth": 1,
+          "strokeAlignment": "inner",
           "padding": [
             0,
             120
@@ -3742,12 +3592,12 @@
               "fontWeight": "normal"
             },
             {
-              "type": "icon_font",
+              "type": "icon",
               "id": "GnKeJ",
               "width": 14,
               "height": 14,
-              "iconFontName": "chevron-right",
-              "iconFontFamily": "lucide",
+              "icon": "chevron-right",
+              "library": "lucide",
               "fill": "#3A3A3AFF"
             },
             {
@@ -3760,12 +3610,12 @@
               "fontWeight": "normal"
             },
             {
-              "type": "icon_font",
+              "type": "icon",
               "id": "qGkTJ",
               "width": 14,
               "height": 14,
-              "iconFontName": "chevron-right",
-              "iconFontFamily": "lucide",
+              "icon": "chevron-right",
+              "library": "lucide",
               "fill": "#3A3A3AFF"
             },
             {
@@ -3939,7 +3789,7 @@
                       "type": "text",
                       "id": "vd7uX",
                       "fill": "#FFFFFFFF",
-                      "content": "Andrew Dev",
+                      "content": "Andy Horn",
                       "fontFamily": "Inter",
                       "fontSize": 14,
                       "fontWeight": "600"
@@ -3948,7 +3798,7 @@
                       "type": "text",
                       "id": "n5moC",
                       "fill": "#A1A1AAFF",
-                      "content": "Flutter Engineer · pub.dev/publishers/andrewdev.io",
+                      "content": "Flutter Engineer at Very Good Ventures · pub.dev/publishers/andyhorn.dev",
                       "fontFamily": "Inter",
                       "fontSize": 12,
                       "fontWeight": "normal"
@@ -4042,11 +3892,9 @@
                   "width": "fill_container",
                   "fill": "#0D0D0DFF",
                   "cornerRadius": 8,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "#1A1A1AFF"
-                  },
+                  "stroke": "#1A1A1AFF",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "children": [
                     {
@@ -4056,11 +3904,9 @@
                       "width": "fill_container",
                       "height": 40,
                       "fill": "#141414FF",
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "#1A1A1AFF"
-                      },
+                      "stroke": "#1A1A1AFF",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
                       "padding": [
                         0,
                         16
@@ -4092,12 +3938,12 @@
                           "alignItems": "center",
                           "children": [
                             {
-                              "type": "icon_font",
+                              "type": "icon",
                               "id": "xUpj7",
                               "width": 12,
                               "height": 12,
-                              "iconFontName": "copy",
-                              "iconFontFamily": "lucide",
+                              "icon": "copy",
+                              "library": "lucide",
                               "fill": "#A1A1AAFF"
                             },
                             {
@@ -4238,21 +4084,19 @@
                   "width": "fill_container",
                   "fill": "#A855F710",
                   "cornerRadius": 8,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "#A855F730"
-                  },
+                  "stroke": "#A855F730",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "gap": 16,
                   "padding": 24,
                   "children": [
                     {
-                      "type": "icon_font",
+                      "type": "icon",
                       "id": "EFO8m",
                       "width": 18,
                       "height": 18,
-                      "iconFontName": "info",
-                      "iconFontFamily": "lucide",
+                      "icon": "info",
+                      "library": "lucide",
                       "fill": "#A855F7FF"
                     },
                     {
@@ -4302,11 +4146,9 @@
                   "width": "fill_container",
                   "fill": "#0D0D0DFF",
                   "cornerRadius": 8,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "#1A1A1AFF"
-                  },
+                  "stroke": "#1A1A1AFF",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "children": [
                     {
@@ -4316,11 +4158,9 @@
                       "width": "fill_container",
                       "height": 40,
                       "fill": "#141414FF",
-                      "stroke": {
-                        "align": "inside",
-                        "thickness": 1,
-                        "fill": "#1A1A1AFF"
-                      },
+                      "stroke": "#1A1A1AFF",
+                      "strokeWidth": 1,
+                      "strokeAlignment": "inner",
                       "padding": [
                         0,
                         16
@@ -4352,12 +4192,12 @@
                           "alignItems": "center",
                           "children": [
                             {
-                              "type": "icon_font",
+                              "type": "icon",
                               "id": "ClwRx",
                               "width": 12,
                               "height": 12,
-                              "iconFontName": "copy",
-                              "iconFontFamily": "lucide",
+                              "icon": "copy",
+                              "library": "lucide",
                               "fill": "#A1A1AAFF"
                             },
                             {
@@ -4473,11 +4313,9 @@
               "width": 260,
               "fill": "#111111FF",
               "cornerRadius": 8,
-              "stroke": {
-                "align": "inside",
-                "thickness": 1,
-                "fill": "#1A1A1AFF"
-              },
+              "stroke": "#1A1A1AFF",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
               "layout": "vertical",
               "gap": 8,
               "padding": 24,
@@ -4676,11 +4514,9 @@
                   "width": "fill_container",
                   "fill": "#111111FF",
                   "cornerRadius": 8,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "#1A1A1AFF"
-                  },
+                  "stroke": "#1A1A1AFF",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 16,
                   "padding": 24,
@@ -4756,12 +4592,12 @@
                           "fontWeight": "600"
                         },
                         {
-                          "type": "icon_font",
+                          "type": "icon",
                           "id": "EROtu",
                           "width": 13,
                           "height": 13,
-                          "iconFontName": "arrow-right",
-                          "iconFontFamily": "lucide",
+                          "icon": "arrow-right",
+                          "library": "lucide",
                           "fill": "#A855F7FF"
                         }
                       ]
@@ -4775,11 +4611,9 @@
                   "width": "fill_container",
                   "fill": "#111111FF",
                   "cornerRadius": 8,
-                  "stroke": {
-                    "align": "inside",
-                    "thickness": 1,
-                    "fill": "#1A1A1AFF"
-                  },
+                  "stroke": "#1A1A1AFF",
+                  "strokeWidth": 1,
+                  "strokeAlignment": "inner",
                   "layout": "vertical",
                   "gap": 16,
                   "padding": 24,
@@ -4855,12 +4689,12 @@
                           "fontWeight": "600"
                         },
                         {
-                          "type": "icon_font",
+                          "type": "icon",
                           "id": "9yir9",
                           "width": 13,
                           "height": 13,
-                          "iconFontName": "arrow-right",
-                          "iconFontFamily": "lucide",
+                          "icon": "arrow-right",
+                          "library": "lucide",
                           "fill": "#A855F7FF"
                         }
                       ]
@@ -4878,11 +4712,9 @@
           "width": "fill_container",
           "height": 72,
           "fill": "#0A0A0AFF",
-          "stroke": {
-            "align": "inside",
-            "thickness": 1,
-            "fill": "#1A1A1AFF"
-          },
+          "stroke": "#1A1A1AFF",
+          "strokeWidth": 1,
+          "strokeAlignment": "inner",
           "gap": 16,
           "padding": [
             0,
@@ -4906,11 +4738,9 @@
               "height": 36,
               "fill": "#1A1A1AFF",
               "cornerRadius": 9999,
-              "stroke": {
-                "align": "inside",
-                "thickness": 1,
-                "fill": "#2A2A2AFF"
-              },
+              "stroke": "#2A2A2AFF",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
               "gap": 8,
               "padding": [
                 0,
@@ -4919,12 +4749,12 @@
               "alignItems": "center",
               "children": [
                 {
-                  "type": "icon_font",
+                  "type": "icon",
                   "id": "a8tEL",
                   "width": 14,
                   "height": 14,
-                  "iconFontName": "twitter",
-                  "iconFontFamily": "lucide",
+                  "icon": "twitter",
+                  "library": "lucide",
                   "fill": "#A1A1AAFF"
                 },
                 {
@@ -4945,11 +4775,9 @@
               "height": 36,
               "fill": "#1A1A1AFF",
               "cornerRadius": 9999,
-              "stroke": {
-                "align": "inside",
-                "thickness": 1,
-                "fill": "#2A2A2AFF"
-              },
+              "stroke": "#2A2A2AFF",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
               "gap": 8,
               "padding": [
                 0,
@@ -4958,12 +4786,12 @@
               "alignItems": "center",
               "children": [
                 {
-                  "type": "icon_font",
+                  "type": "icon",
                   "id": "mtOSv",
                   "width": 14,
                   "height": 14,
-                  "iconFontName": "flame",
-                  "iconFontFamily": "lucide",
+                  "icon": "flame",
+                  "library": "lucide",
                   "fill": "#A1A1AAFF"
                 },
                 {
@@ -4984,11 +4812,9 @@
               "height": 36,
               "fill": "#1A1A1AFF",
               "cornerRadius": 9999,
-              "stroke": {
-                "align": "inside",
-                "thickness": 1,
-                "fill": "#2A2A2AFF"
-              },
+              "stroke": "#2A2A2AFF",
+              "strokeWidth": 1,
+              "strokeAlignment": "inner",
               "gap": 8,
               "padding": [
                 0,
@@ -4997,12 +4823,12 @@
               "alignItems": "center",
               "children": [
                 {
-                  "type": "icon_font",
+                  "type": "icon",
                   "id": "Y9mr9",
                   "width": 14,
                   "height": 14,
-                  "iconFontName": "link",
-                  "iconFontFamily": "lucide",
+                  "icon": "link",
+                  "library": "lucide",
                   "fill": "#A1A1AAFF"
                 },
                 {
@@ -5025,11 +4851,9 @@
           "width": "fill_container",
           "height": 72,
           "fill": "#0D0D0DFF",
-          "stroke": {
-            "align": "inside",
-            "thickness": 1,
-            "fill": "#1A1A1AFF"
-          },
+          "stroke": "#1A1A1AFF",
+          "strokeWidth": 1,
+          "strokeAlignment": "inner",
           "padding": [
             0,
             120
@@ -5068,5 +4892,6 @@
         }
       ]
     }
-  ]
+  ],
+  "fileToken": "6323054d-deeb-4573-ab6f-2c33196baafd"
 }

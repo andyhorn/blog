@@ -16,7 +16,6 @@ class BlogPreviewSection extends StatelessComponent {
     return section(classes: 'blog-preview', [
       div(classes: 'blog-preview__header', [
         div(classes: 'blog-preview__header-left', [
-          span(classes: 'section-badge', [.text('// blog')]),
           h2(classes: 'section-heading', [.text('Latest Writing')]),
         ]),
         Link(
@@ -76,6 +75,14 @@ class BlogPreviewSection extends StatelessComponent {
         fontSize: Unit.pixels(16),
         color: textMuted,
         margin: Spacing.zero,
+      ),
+    ]),
+    css.media(MediaQuery.all(maxWidth: breakpointLg.px), [
+      css('.blog-preview').styles(
+        padding: Spacing.symmetric(vertical: 70.px, horizontal: 64.px),
+      ),
+      css('.blog-preview .blog-preview__grid').styles(
+        raw: {'grid-template-columns': 'repeat(2, 1fr)'},
       ),
     ]),
     css.media(MediaQuery.all(maxWidth: breakpointMd.px), [
